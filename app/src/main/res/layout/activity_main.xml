@@ -5,15 +5,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@drawable/log_in_image">
+    android:background="@drawable/colorb">
 
     <ImageView
-        android:layout_width="120dp"
-        android:layout_height="120dp"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
         android:src="@drawable/prueba"
-        android:layout_gravity="center"
-        android:layout_marginTop="60dp"
-        android:layout_marginBottom="60dp"/>
+        android:layout_gravity="end"
+        android:layout_marginBottom="80dp"/>
 
     <EditText
         android:layout_width="match_parent"
@@ -31,20 +30,29 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Log In"
+        android:text=" Iniciar sesión "
+        android:textSize="20sp"
         android:layout_gravity="center"
-        android:background="@color/colorPrimaryDark"
-        android:layout_marginTop="20dp"/>
+        android:background="#000000"
+        android:textColor="#ffff"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Registrarse"/>
+        android:text="Registrarse"
+        android:textColor="#000000"
+        android:layout_gravity="center"
+        android:textSize="20sp"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="¿Olvidaste tu contraseña?"
+        android:textColor="#000000"
+        android:layout_gravity="center"
+        android:textSize="20sp"
         android:layout_marginTop="20dp"
         android:layout_marginBottom="20dp"/>
 
