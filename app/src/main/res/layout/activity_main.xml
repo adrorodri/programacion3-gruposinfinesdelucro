@@ -5,29 +5,36 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android>
+    android:background="@drawable/log_in_image">
 
     <ImageView
-        android:layout_width="60dp"
-        android:layout_height="60dp"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
         android:src="@drawable/prueba"
-        android:layout_gravity="center"/>
+        android:layout_gravity="center"
+        android:layout_marginTop="60dp"
+        android:layout_marginBottom="60dp"/>
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Usuario"/>
+        android:hint="Usuario"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"/>
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Contraseña"/>
+        android:hint="Contraseña"
+        android:layout_marginBottom="20dp"/>
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Log In"
-        android:layout_gravity="center"/>
+        android:layout_gravity="center"
+        android:background="@color/colorPrimaryDark"
+        android:layout_marginTop="20dp"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -37,7 +44,9 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="¿Olvidaste tu contraseña "/>
+        android:text="¿Olvidaste tu contraseña?"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"/>
 
 
 </LinearLayout>
