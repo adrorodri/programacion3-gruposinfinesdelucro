@@ -7,7 +7,16 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center_horizontal"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
         android:orientation="vertical">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold|italic"
+            android:text="Unete a nuestra comunidad"
+            android:textColor="#cc000000"
+            android:textSize="30sp"/>
 
         <EditText
             android:layout_marginTop="30dp"
@@ -41,6 +50,10 @@
             android:layout_marginTop="30dp"
             android:inputType="textPassword"
             android:hint="Repetir contraseña" />
+      <LinearLayout
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:orientation="horizontal">
         <RadioGroup
             android:layout_marginTop="30dp"
             android:layout_height="wrap_content"
@@ -54,7 +67,13 @@
                 android:layout_width="wrap_content"
                 android:text="mujer"/>
         </RadioGroup>
-
+          <CheckBox
+              android:layout_marginTop="50dp"
+              android:layout_marginLeft="30dp"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:text="Acepto los términos de usuario"/>
+      </LinearLayout>
     </LinearLayout>
 
 
