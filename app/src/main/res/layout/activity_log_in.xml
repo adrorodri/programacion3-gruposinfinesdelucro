@@ -45,7 +45,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="end"
+        android:layout_gravity="center_horizontal"
         android:text="¿Has olvidado tu contraseña?"
         android:layout_margin="20dp"/>
 
@@ -54,7 +54,7 @@
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
         android:text="¿No tienes cuenta?"
-        android:layout_gravity="center"/>
+        android:layout_gravity="center_horizontal"/>
 
     <TextView
         android:layout_width="wrap_content"
