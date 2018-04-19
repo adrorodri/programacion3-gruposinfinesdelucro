@@ -21,6 +21,11 @@
         <activity android:name=".LogInActivity">
         </activity>
         <activity android:name=".SignUpActivity"/>
+        <activity
+            android:name=".MenuActivity"
+            android:label="@string/title_activity_menu"
+            android:theme="@style/AppTheme">
+        </activity>
     </application>
 
 </manifest>

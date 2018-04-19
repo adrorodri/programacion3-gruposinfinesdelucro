@@ -16,7 +16,8 @@
             android:gravity="center"
             android:textColor="@color/bg_color"
             android:textSize="50dp"
-            android:background="@color/colorPrimary"/>
+            android:background="@color/colorPrimary"
+            android:marginBottom="20dp"/>
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

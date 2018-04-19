@@ -3,4 +3,10 @@
     <string name="hombre">hombre</string>
     <string name="mujer">mujer</string>
     <string name="sample_string">Rutina \n Diaria</string>
+    <string name="title_activity_menu">MenuActivity</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
 </resources>
