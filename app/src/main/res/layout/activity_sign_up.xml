@@ -11,53 +11,46 @@
         android:layout_marginEnd="10dp"
         android:orientation="vertical">
         <TextView
+            android:text="Unete a nuestra comunidad"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textStyle="bold|italic"
-            android:text="Unete a nuestra comunidad"
-            android:textColor="#cc000000"
-            android:textSize="30sp"/>
+            android:textSize="40sp"
+            android:padding="10dp"
+            android:textAppearance="@style/Theme.AppCompat.Light"
+            android:textAlignment="center"/>
 
         <EditText
-            android:layout_marginTop="30dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            style="@style/EditTextBox"
             android:hint="Nombre"
             android:id="@+id/nombre"
             android:inputType="text"/>
 
         <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
+            style="@style/EditTextBox"
             android:inputType="textEmailAddress"
             android:id="@+id/correo"
             android:hint="Correo" />
 
 
         <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            style="@style/EditTextBox"
             android:id="@+id/pass"
-            android:layout_marginTop="30dp"
             android:inputType="textPassword"
             android:hint="Contraseña" />
 
         <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            style="@style/EditTextBox"
             android:id="@+id/pass2"
-            android:layout_marginTop="30dp"
             android:inputType="textPassword"
             android:hint="Repetir contraseña" />
-      <LinearLayout
-          android:layout_width="match_parent"
-          android:layout_height="wrap_content"
-          android:orientation="horizontal">
+
+
         <RadioGroup
-            android:layout_marginTop="30dp"
+            android:layout_margin="10dp"
             android:layout_height="wrap_content"
-            android:layout_width="wrap_content">
+            android:layout_width="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="start">
             <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -67,13 +60,18 @@
                 android:layout_width="wrap_content"
                 android:text="mujer"/>
         </RadioGroup>
-          <CheckBox
-              android:layout_marginTop="50dp"
-              android:layout_marginLeft="30dp"
+
+        <CheckBox
+              android:layout_margin="10dp"
               android:layout_width="wrap_content"
               android:layout_height="wrap_content"
+              android:layout_gravity="start"
               android:text="Acepto los términos de usuario"/>
-      </LinearLayout>
+
+        <Button
+            android:text="CREAR CUENTA"
+            style="@style/RoundedButton"/>
+
     </LinearLayout>
 
 
