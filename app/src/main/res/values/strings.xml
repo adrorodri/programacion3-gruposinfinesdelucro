@@ -2,4 +2,5 @@
     <string name="app_name">App</string>
     <string name="hombre">hombre</string>
     <string name="mujer">mujer</string>
+    <string name="sample_string">Rutina \n Diaria</string>
 </resources>
