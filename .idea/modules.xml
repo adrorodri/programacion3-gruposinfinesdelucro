@@ -2,12 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://C:\Users\Joaco99\Joaco99\Desktop\Android Games\programacion3-gruposinfinesdelucro\Grupo4.iml" filepath="C:\Users\Joaco99\Joaco99\Desktop\Android Games\programacion3-gruposinfinesdelucro\Grupo4.iml" />
-      <module fileurl="file://C:\Users\Joaco99\Desktop\Android Games\programacion3-gruposinfinesdelucro\Grupo4.iml" filepath="C:\Users\Joaco99\Desktop\Android Games\programacion3-gruposinfinesdelucro\Grupo4.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/programacion3-gruposinfinesdelucro.iml" filepath="$PROJECT_DIR$/programacion3-gruposinfinesdelucro.iml" />
-      <module fileurl="file://C:\Users\adro_\AndroidStudioProjects\Programacion3\Grupo4\.idea\programacion3-gruposinfinesdelucro.iml" filepath="C:\Users\adro_\AndroidStudioProjects\Programacion3\Grupo4\.idea\programacion3-gruposinfinesdelucro.iml" />
-      <module fileurl="file://C:\Users\Joaco99\Desktop\Android Games\programacion3-gruposinfinesdelucro\programacion3-gruposinfinesdelucro.iml" filepath="C:\Users\Joaco99\Desktop\Android Games\programacion3-gruposinfinesdelucro\programacion3-gruposinfinesdelucro.iml" />
     </modules>
   </component>
 </project>
