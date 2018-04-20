@@ -6,15 +6,15 @@
 
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/nav_camera"
+            android:id="@+id/nav_perfil"
             android:icon="@drawable/ic_person_black_24dp"
             android:title="Perfil"/>
         <item
-            android:id="@+id/nav_gallery"
+            android:id="@+id/nav_actividad_diaria"
             android:icon="@drawable/ic_query_builder_black_24dp"
             android:title="Actividad Diaria"/>
         <item
-            android:id="@+id/nav_manage"
+            android:id="@+id/nav_rutinas"
             android:icon="@drawable/ic_accessibility_black_24dp"
             android:title="Rutinas"/>
     </group>
@@ -22,11 +22,11 @@
     <item android:title="Opciones">
         <menu>
             <item
-                android:id="@+id/nav_share"
+                android:id="@+id/nav_configuration"
                 android:icon="@drawable/ic_menu_manage"
                 android:title="Configuración"/>
             <item
-                android:id="@+id/nav_send"
+                android:id="@+id/nav_cerrar_sesión"
                 android:icon="@drawable/ic_vpn_key_black_24dp"
                 android:title="Cerrar sesión"/>
         </menu>

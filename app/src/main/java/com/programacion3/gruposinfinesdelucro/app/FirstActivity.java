@@ -96,12 +96,12 @@ public class FirstActivity extends AppCompatActivity {
     }
 
     public void startLogInActviy(){
-        Intent intent = new Intent(this, MenuActivity.class);
+        Intent intent = new Intent(this, ActividadDiariaActivity.class);
         startActivity(intent);
     }
 
     public void startSignUpActivity(){
-        Intent intent = new Intent(this, SignUpActivity.class);
+        Intent intent = new Intent(this, MenuActivity.class);
         startActivity(intent);
     }
 }
