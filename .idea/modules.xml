@@ -3,7 +3,8 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/programacion3-gruposinfinesdelucroOriginal.iml" filepath="$PROJECT_DIR$/programacion3-gruposinfinesdelucroOriginal.iml" />
+      <module fileurl="file://$PROJECT_DIR$/programacion3-gruposinfinesdelucro.iml" filepath="$PROJECT_DIR$/programacion3-gruposinfinesdelucro.iml" />
+      <module fileurl="file://C:\Users\Samuel\StudioProjects\GrupoSinFinesDeLucro\programacion3-gruposinfinesdelucro\programacion3-gruposinfinesdelucroOriginal.iml" filepath="C:\Users\Samuel\StudioProjects\GrupoSinFinesDeLucro\programacion3-gruposinfinesdelucro\programacion3-gruposinfinesdelucroOriginal.iml" />
     </modules>
   </component>
 </project>
