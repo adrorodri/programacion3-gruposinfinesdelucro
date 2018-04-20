@@ -8,15 +8,17 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
+import java.util.zip.Inflater;
 
 public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.RecyclerViewHolder> {
-    private ArrayList<DataProvider> arrayList=new ArrayList<DataProvider>();
+    private ArrayList<DataProvider> arrayList=new ArrayList<>();
     public RecyclerAdapter(ArrayList<DataProvider> arrayList){
         this.arrayList=arrayList;
     }
     @Override
     public RecyclerViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view= LayoutInflater.from(parent.getContext()).inflate(R.layout.preview_exercises,parent,false);
+        LayoutInflater layoutInflater= LayoutInflater.from(parent.getContext());
+        View view= layoutInflater.inflate(R.layout.preview_exercises,parent,false);
         RecyclerViewHolder recyclerViewHolder= new RecyclerViewHolder(view);
         return recyclerViewHolder;
     }

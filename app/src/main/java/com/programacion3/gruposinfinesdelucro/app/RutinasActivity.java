@@ -13,7 +13,12 @@ public class RutinasActivity extends AppCompatActivity {
     RecyclerView.LayoutManager layoutManager;
     String[] exercises,duration,img_res;
 
-    ArrayList<DataProvider> arrayList= new ArrayList<DataProvider>();
+    ArrayList<DataProvider> arrayList;
+
+    {
+        arrayList = new ArrayList<>();
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,8 +35,10 @@ public class RutinasActivity extends AppCompatActivity {
             i++;
         }
         */
-        DataProvider dataProvider=new DataProvider("bicep1","curl","4 sets de 14");
+        DataProvider dataProvider=new DataProvider(1,"curl","4 sets de 14");
+        DataProvider dataProvider2=new DataProvider(2,"curl","4 sets de 14");
         arrayList.add(dataProvider);
+        arrayList.add(dataProvider2);
         adapter= new RecyclerAdapter(arrayList);
         recyclerView.setHasFixedSize(true);
         layoutManager = new LinearLayoutManager(this);

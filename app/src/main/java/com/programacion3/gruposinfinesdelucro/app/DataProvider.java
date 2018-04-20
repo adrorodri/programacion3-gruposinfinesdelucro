@@ -1,18 +1,18 @@
 package com.programacion3.gruposinfinesdelucro.app;
 
 public class DataProvider {
-    private String img_res;
+    private int img_res;
     private String exercise,duration;
-    public DataProvider(String img_res,String exercise,String duration){
-        this.setImg_res(img_res);
-        this.setExercise(exercise);
-        this.setDuration(duration);
+    public DataProvider(int img_res,String exercise,String duration){
+        this.img_res=img_res;
+        this.exercise=exercise;
+        this.duration=duration;
     }
-    public String getImg_res() {
+    public int getImg_res() {
         return img_res;
     }
 
-    public void setImg_res(String img_res) {
+    public void setImg_res(int img_res) {
         this.img_res = img_res;
     }
 
