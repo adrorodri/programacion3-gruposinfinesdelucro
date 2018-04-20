@@ -34,7 +34,7 @@ public class FirstActivity extends AppCompatActivity {
     }
 
     public void startLogInActviy(){
-        Intent intent = new Intent(this, MenuActivity.class);
+        Intent intent = new Intent(this, RutinasActivity.class);
         startActivity(intent);
     }
 

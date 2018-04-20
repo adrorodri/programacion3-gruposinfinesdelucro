@@ -9,4 +9,33 @@
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
     <string name="action_settings">Settings</string>
+
+    <string-array name="img">
+        <item>abs1</item>
+        <item>back1</item>
+        <item>bicep1</item>
+        <item>cardio1</item>
+        <item>chest1</item>
+        <item>shoulder1</item>
+        <item>tricep1</item>
+    </string-array>
+    <string-array name="exercises">
+        <item>crunches</item>
+        <item>lat pull</item>
+        <item>curl</item>
+        <item>spinning</item>
+        <item>chest press</item>
+        <item>militar press</item>
+        <item>dip</item>
+    </string-array>
+    <string-array name="duration">
+        <item>15 sets</item>
+        <item>15 sets</item>
+        <item>15 sets</item>
+        <item>15 sets</item>
+        <item>15 sets</item>
+        <item>15 sets</item>
+        <item>15 sets</item>
+    </string-array>
+
 </resources>
