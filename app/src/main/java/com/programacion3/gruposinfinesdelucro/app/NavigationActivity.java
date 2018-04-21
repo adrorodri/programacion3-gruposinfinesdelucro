@@ -71,7 +71,8 @@ public class NavigationActivity extends AppCompatActivity implements NavigationV
 
         Intent intent;
         if (id == R.id.nav_perfil) {
-            // Handle the camera action
+            intent = new Intent(this, PerfilActivity.class);
+            startActivity(intent);
         } else if (id == R.id.nav_actividad_diaria) {
             intent = new Intent(this, ActividadDiariaActivity.class);
             startActivity(intent);
