@@ -27,6 +27,7 @@
         <activity android:name=".NavigationActivity">
         </activity>
         <activity android:name=".ActividadDiariaActivity"/>
+        <activity android:name=".RutinasActivity" />
     </application>
 
 </manifest>
