@@ -12,10 +12,11 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Are you ready?xD "
+        android:text="¿Aceptas el reto? "
         android:textSize="40sp"
-        android:padding="10dp"
+        android:padding="30dp"
         android:textAppearance="@style/Theme.AppCompat.Light"
+        android:fontFamily="@font/AndyFont"
         android:textAlignment="center"/>
 
     <EditText
