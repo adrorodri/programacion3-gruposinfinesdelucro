@@ -73,6 +73,9 @@ public class NavigationActivity extends AppCompatActivity implements NavigationV
         if (id == R.id.nav_perfil) {
             intent = new Intent(this, PerfilActivity.class);
             startActivity(intent);
+        }else if(id == R.id.nav_perfil){
+            intent = new Intent(this, PerfilActivity.class);
+            startActivity(intent);
         } else if (id == R.id.nav_actividad_diaria) {
             intent = new Intent(this, ActividadDiariaActivity.class);
             startActivity(intent);

@@ -8,15 +8,7 @@
     android:layout_height="match_parent"
     android:background="@color/colorPrimaryDark"
     android:fitsSystemWindows="true"
-    tools:openDrawer="end">
-
-    <include
-        layout="@layout/app_bar_menu"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
-
-
-    <include layout="@layout/navigation_menu" />
+    tools:openDrawer="start">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -93,5 +85,14 @@
 
         </LinearLayout>
     </ScrollView>
+
+    <include
+        layout="@layout/app_bar_menu"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+    <include
+        layout="@layout/navigation_menu"/>
+
 
 </android.support.v4.widget.DrawerLayout>

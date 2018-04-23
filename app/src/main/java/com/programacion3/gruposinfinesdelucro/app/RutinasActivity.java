@@ -12,7 +12,7 @@ import android.view.MenuItem;
 
 import java.util.ArrayList;
 
-public class RutinasActivity extends AppCompatActivity  {
+public class RutinasActivity extends NavigationActivity  {
     RecyclerView recyclerView;
     RecyclerView.Adapter adapter;
     RecyclerView.LayoutManager layoutManager;
@@ -21,9 +21,10 @@ public class RutinasActivity extends AppCompatActivity  {
     ArrayList<DataProvider> arrayList= new ArrayList<DataProvider>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_rutinas);
-        recyclerView = (RecyclerView)findViewById(R.id.recycler_view);
+        super.onCreate(savedInstanceState);
+
+        recyclerView = (RecyclerView)findViewById(R.id.recycler);
         DataProvider dataProvider= new DataProvider(R.drawable.bicep1,"curl","12 min");
         arrayList.add(dataProvider);
         adapter= new RecyclerAdapter(arrayList);

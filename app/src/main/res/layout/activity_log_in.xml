@@ -28,6 +28,7 @@
 
     <Button
         android:text="INICIAR SESIÓN"
+        android:id="@+id/logButton"
         style="@style/RoundedButton"/>
 
     <TextView
