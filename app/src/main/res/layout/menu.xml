@@ -62,7 +62,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="bottom|end"
                 android:layout_margin="50dp"
-                android:background="@drawable/rounded_button_purple"
+                android:background="@drawable/rounded_button_black"
                 android:text="Ayuda"
                 android:textColor="@color/colorAccent" />
 
