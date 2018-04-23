@@ -22,14 +22,14 @@
         style="@style/EditTextBox"
         android:hint="example@gmail.com"
         android:inputType="textEmailAddress"
-        android:textColorHint="#cce6f9"
+        android:textColorHint="#a2a3a3"
         android:maxLength="30"/>
 
     <EditText
         style="@style/EditTextBox"
         android:hint="password"
         android:inputType="textPassword"
-        android:textColorHint="#cce6f9"
+        android:textColorHint="#a3a4a4"
         android:maxLength="20"/>
 
     <Button
