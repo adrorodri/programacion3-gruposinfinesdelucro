@@ -12,7 +12,7 @@ public class ViewPagerAdapter extends PagerAdapter {
 
     private Context context;
     private LayoutInflater layoutInflater;
-    private Integer [] images;
+    private Integer[] images;
 
     public ViewPagerAdapter(Context context, Integer[] images) {
         this.context = context;

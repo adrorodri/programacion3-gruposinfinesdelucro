@@ -20,11 +20,17 @@
 
     <EditText
         style="@style/EditTextBox"
-        android:hint="example@gmail.com"/>
+        android:hint="example@gmail.com"
+        android:inputType="textEmailAddress"
+        android:textColorHint="#cce6f9"
+        android:maxLength="30"/>
 
     <EditText
         style="@style/EditTextBox"
-        android:hint="password"/>
+        android:hint="password"
+        android:inputType="textPassword"
+        android:textColorHint="#cce6f9"
+        android:maxLength="20"/>
 
     <Button
         android:text="INICIAR SESIÓN"
