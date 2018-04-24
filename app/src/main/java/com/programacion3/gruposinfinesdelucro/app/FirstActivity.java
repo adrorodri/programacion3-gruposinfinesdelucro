@@ -101,7 +101,7 @@ public class FirstActivity extends AppCompatActivity {
     }
 
     public void startSignUpActivity(){
-        Intent intent = new Intent(this, PerfilActivity.class);
+        Intent intent = new Intent(this, SignUpActivity.class);
         startActivity(intent);
     }
 }
