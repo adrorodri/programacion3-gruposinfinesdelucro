@@ -20,6 +20,7 @@
         android:textAlignment="center"/>
 
     <EditText
+        android:id="@+id/Usua"
         style="@style/EditTextBox"
         android:hint="example@gmail.com"
         android:inputType="textEmailAddress"
@@ -27,6 +28,7 @@
         android:maxLength="30"/>
 
     <EditText
+        android:id="@+id/Contra"
         style="@style/EditTextBox"
         android:hint="password"
         android:inputType="textPassword"
