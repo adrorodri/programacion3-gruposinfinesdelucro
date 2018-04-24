@@ -27,7 +27,9 @@
         <activity android:name=".NavigationActivity">
         </activity>
         <activity android:name=".ActividadDiariaActivity"/>
-        <activity android:name=".RutinasActivity" />
+        <activity android:name=".RutinasActivity"/>
+        <activity android:name=".EjercicioActivity">
+        </activity>
     </application>
 
 </manifest>
