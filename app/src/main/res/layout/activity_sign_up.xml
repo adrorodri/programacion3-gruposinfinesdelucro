@@ -55,12 +55,14 @@
             android:orientation="horizontal">
 
             <RadioButton
+                android:id="@+id/bhombre"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:buttonTint="@color/bg_color"
                 android:text="hombre" />
 
             <RadioButton
+                android:id="@+id/bmujer"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:buttonTint="@color/bg_color"
@@ -68,6 +70,7 @@
         </RadioGroup>
 
         <CheckBox
+            android:id="@+id/cond"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="start"
