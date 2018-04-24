@@ -8,7 +8,7 @@
     android:layout_height="match_parent"
     android:background="@color/colorPrimaryDark"
     android:fitsSystemWindows="true"
-    tools:openDrawer="start">
+    tools:openDrawer="end">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -32,18 +32,19 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="20dp"
                 android:orientation="vertical">
-
-                <TextView
+                <EditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Jorge Rodriguez"
+                    android:id="@+id/nombrePerfil"
                     android:textColor="@color/colorAccent"
                     android:textSize="30dp" />
 
-                <TextView
+                <EditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="20 años"
+                    android:id="@+id/años_perfil"
                     android:textColor="@color/colorAccent"
                     android:textSize="20dp" />
 
@@ -70,16 +71,23 @@
                         android:textColor="@color/colorAccent"
                         android:textSize="20dp" />
 
-                    <TextView
+                    <EditText
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="20dp"
                         android:layout_marginBottom="20dp"
+                        android:id="@+id/metas_perfil"
                         android:text="Ser como Popeye"
                         android:textColor="@color/colorAccent"
                         android:textSize="20dp" />
                 </LinearLayout>
-
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Edit"
+                    android:onClick="onEditClick"
+                    android:textColor="@color/colorAccent"
+                    android:background="@drawable/rounded_button_grey"/>
             </LinearLayout>
 
 
