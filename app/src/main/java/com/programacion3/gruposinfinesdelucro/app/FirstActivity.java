@@ -42,12 +42,12 @@ public class FirstActivity extends AppCompatActivity {
             }
         });
 
-        viewPager = (ViewPager) findViewById(R.id.viewPager);
+        viewPager = findViewById(R.id.viewPager);
 
-        sliderDotspanel = (LinearLayout) findViewById(R.id.SliderDots);
+        sliderDotspanel = findViewById(R.id.SliderDots);
 
 
-        Integer[] images = {R.drawable.slide, R.drawable.slide2};
+        Integer[] images = {R.drawable.slide, R.drawable.slide2,R.drawable.slide3};
 
         ViewPagerAdapter viewPagerAdapter = new ViewPagerAdapter(this, images);
 
