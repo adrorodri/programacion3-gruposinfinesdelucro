@@ -17,6 +17,7 @@
             android:textSize="40sp"
             android:padding="10dp"
             android:textAppearance="@style/Theme.AppCompat.Light"
+            android:fontFamily="@font/dk"
             android:textAlignment="center"/>
 
         <EditText
