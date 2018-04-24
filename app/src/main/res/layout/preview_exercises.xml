@@ -16,13 +16,13 @@
         android:layout_toRightOf="@+id/img"
         android:gravity="center"
         android:textSize="15dp"
-        android:id="@+id/exercise"
+        android:id="@+id/name"
         />
     <TextView
         android:layout_width="400dp"
         android:layout_height="80dp"
         android:textSize="15dp"
-        android:layout_toRightOf="@+id/exercise"
+        android:layout_toRightOf="@+id/name"
         android:gravity="center"
         android:textStyle="bold"
         android:id="@+id/duration"/>
