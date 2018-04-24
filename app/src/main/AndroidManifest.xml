@@ -30,6 +30,7 @@
         <activity android:name=".RutinasActivity"/>
         <activity android:name=".EjercicioActivity">
         </activity>
+        <activity android:name=".SignUpSuccess" />
     </application>
 
 </manifest>

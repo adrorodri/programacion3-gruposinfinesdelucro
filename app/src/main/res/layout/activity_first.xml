@@ -40,7 +40,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:text="ÚNETE"
+            android:text="INICIAR SESIÓN"
             android:textSize="18sp"
             android:background="@drawable/edit_text_style"/>
 
@@ -49,7 +49,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="INICIAR SESIÓN"
+            android:text="ÚNETE"
             android:textSize="18sp"
             android:background="@drawable/edit_text_style"/>
     </LinearLayout>
