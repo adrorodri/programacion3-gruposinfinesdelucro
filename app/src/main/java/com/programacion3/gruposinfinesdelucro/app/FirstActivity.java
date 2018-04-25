@@ -99,7 +99,6 @@ public class FirstActivity extends AppCompatActivity {
         Intent intent = new Intent(this, LogInActivity.class);
         startActivity(intent);
     }
-
     public void startSignUpActivity(){
         Intent intent = new Intent(this, SignUpActivity.class);
         startActivity(intent);
