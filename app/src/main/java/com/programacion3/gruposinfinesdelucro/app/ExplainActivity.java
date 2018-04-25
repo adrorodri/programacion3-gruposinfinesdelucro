@@ -5,7 +5,7 @@ import android.os.Bundle;
 import android.widget.ImageView;
 
 public class ExplainActivity extends NavigationActivity {
-    ImageView imageView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         setContentView(R.layout.activity_explaintest);

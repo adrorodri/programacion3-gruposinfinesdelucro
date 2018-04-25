@@ -36,10 +36,15 @@ public class EjercicioActivity extends NavigationActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent1= new Intent(EjercicioActivity.this,ExplainActivity.class);
-                startActivity(intent1);
+                start();
             }
         });
 
     }
+
+    public void start() {
+        Intent intent= new Intent(this,ExplainActivity.class);
+        startActivity(intent);
+    }
+
 }
