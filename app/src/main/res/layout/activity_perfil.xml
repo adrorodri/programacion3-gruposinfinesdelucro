@@ -8,7 +8,7 @@
     android:layout_height="match_parent"
     android:background="@color/colorPrimaryDark"
     android:fitsSystemWindows="true"
-    tools:openDrawer="end">
+    tools:openDrawer="start">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -32,19 +32,20 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="20dp"
                 android:orientation="vertical">
+
                 <EditText
+                    android:id="@+id/nombrePerfil"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Jorge Rodriguez"
-                    android:id="@+id/nombrePerfil"
                     android:textColor="@color/colorAccent"
                     android:textSize="30dp" />
 
                 <EditText
+                    android:id="@+id/años_perfil"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="20 años"
-                    android:id="@+id/años_perfil"
                     android:textColor="@color/colorAccent"
                     android:textSize="20dp" />
 
@@ -72,36 +73,35 @@
                         android:textSize="20dp" />
 
                     <EditText
+                        android:id="@+id/metas_perfil"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="20dp"
                         android:layout_marginBottom="20dp"
-                        android:id="@+id/metas_perfil"
+                        android:layout_marginStart="20dp"
                         android:text="Ser como Popeye"
                         android:textColor="@color/colorAccent"
                         android:textSize="20dp" />
                 </LinearLayout>
+
                 <Button
+                    android:id="@+id/editButton"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Edit"
-                    android:id="@+id/editButton"
+                    android:layout_gravity="center"
+                    android:background="@drawable/rounded_button_white"
                     android:onClick="onEditClick"
-                    android:textColor="@color/colorAccent"
-                    android:background="@drawable/rounded_button_grey"/>
+                    android:text="Edit"
+                    android:textColor="@color/colorAccent" />
             </LinearLayout>
-
-
         </LinearLayout>
     </ScrollView>
 
     <include
         layout="@layout/app_bar_menu"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="match_parent" />
 
-    <include
-        layout="@layout/navigation_menu"/>
+    <include layout="@layout/navigation_menu" />
 
 
 </android.support.v4.widget.DrawerLayout>

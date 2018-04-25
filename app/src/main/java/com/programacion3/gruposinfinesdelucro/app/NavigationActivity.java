@@ -42,7 +42,7 @@ public class NavigationActivity extends AppCompatActivity implements NavigationV
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu_samu; this adds items to the action bar if it is present.
+        // Inflate the menu_samu this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu, menu);
         return true;
     }
