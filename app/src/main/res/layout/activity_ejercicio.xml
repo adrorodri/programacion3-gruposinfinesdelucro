@@ -99,6 +99,7 @@
                 android:background="@drawable/edit_text_style"
                 android:layout_weight="1"
                 android:textSize="18sp"
+                android:id="@+id/info"
                 android:layout_gravity="bottom"/>
 
             <Button

@@ -22,7 +22,12 @@ public class RutinasActivity extends NavigationActivity  {
 
         recyclerView = (RecyclerView)findViewById(R.id.recycler);
         Ejercicio ejercicio = new Ejercicio(R.drawable.bicep1,"Curl","12 min");
+        Ejercicio ejercicio1 = new Ejercicio(R.drawable.chest1,"press","12 reps");
+        Ejercicio ejercicio2 = new Ejercicio(R.drawable.cardio1,"legs","12 min");
+
         arrayList.add(ejercicio);
+        arrayList.add(ejercicio1);
+        arrayList.add(ejercicio2);
         adapter= new RecyclerAdapter(arrayList, this);
         recyclerView.setHasFixedSize(true);
         layoutManager = new LinearLayoutManager(this);

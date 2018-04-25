@@ -2,6 +2,8 @@ package com.programacion3.gruposinfinesdelucro.app;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -11,6 +13,7 @@ public class EjercicioActivity extends NavigationActivity {
 
     ImageView exerciseImage;
     TextView exerciseNameTextView, seriesNumberTextView, repetitionsNumberTextView;
+    Button button;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,7 +30,21 @@ public class EjercicioActivity extends NavigationActivity {
 
         exerciseImage.setImageResource(R.drawable.prueba);
         exerciseNameTextView.setText(eje.getName());
-        seriesNumberTextView.setText("20");
-        repetitionsNumberTextView.setText("5");
+        seriesNumberTextView.setText("4");
+        repetitionsNumberTextView.setText("20");
+        button= findViewById(R.id.info);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                start();
+            }
+        });
+
     }
+
+    public void start() {
+        Intent intent= new Intent(this,ExplainActivity.class);
+        startActivity(intent);
+    }
+
 }

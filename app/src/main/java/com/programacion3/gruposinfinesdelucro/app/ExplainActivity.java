@@ -5,13 +5,11 @@ import android.os.Bundle;
 import android.widget.ImageView;
 
 public class ExplainActivity extends NavigationActivity {
-    ImageView imageView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        setContentView(R.layout.activity_explain);
+        setContentView(R.layout.activity_explaintest);
         super.onCreate(savedInstanceState);
-        imageView = findViewById(R.id.ejercicio);
-        Bundle parametros = this.getIntent().getExtras();
 
     }
 }
