@@ -6,71 +6,82 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center_horizontal"
-        android:layout_marginStart="10dp"
         android:layout_marginEnd="10dp"
+        android:layout_marginStart="10dp"
+        android:gravity="center_horizontal"
         android:orientation="vertical">
+
         <TextView
-            android:text="Unete a nuestra comunidad"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="40sp"
+            android:fontFamily="@font/dk"
             android:padding="10dp"
+            android:text="Unete a nuestra comunidad"
+            android:textAlignment="center"
             android:textAppearance="@style/Theme.AppCompat.Light"
-            android:textAlignment="center"/>
+            android:textSize="40sp" />
 
         <EditText
+            android:id="@+id/nombre"
             style="@style/EditTextBox"
             android:hint="Nombre"
-            android:id="@+id/nombre"
-            android:inputType="text"/>
+            android:inputType="textPersonName|textCapWords" />
 
         <EditText
-            style="@style/EditTextBox"
-            android:inputType="textEmailAddress"
             android:id="@+id/correo"
-            android:hint="Correo" />
+            style="@style/EditTextBox"
+            android:hint="Correo"
+            android:inputType="textEmailAddress" />
 
 
         <EditText
-            style="@style/EditTextBox"
             android:id="@+id/pass"
-            android:inputType="textPassword"
-            android:hint="Contraseña" />
+            style="@style/EditTextBox"
+            android:hint="Contraseña"
+            android:inputType="textPassword" />
 
         <EditText
-            style="@style/EditTextBox"
             android:id="@+id/pass2"
-            android:inputType="textPassword"
-            android:hint="Repetir contraseña" />
+            style="@style/EditTextBox"
+            android:hint="Repetir contraseña"
+            android:inputType="textPassword" />
 
 
         <RadioGroup
-            android:layout_margin="10dp"
-            android:layout_height="wrap_content"
             android:layout_width="wrap_content"
-            android:orientation="horizontal"
-            android:layout_gravity="start">
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:layout_margin="10dp"
+            android:orientation="horizontal">
+
             <RadioButton
+                android:id="@+id/bhombre"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="hombre"/>
+                android:buttonTint="@color/bg_color"
+                android:text="hombre" />
+
             <RadioButton
-                android:layout_height="wrap_content"
+                android:id="@+id/bmujer"
                 android:layout_width="wrap_content"
-                android:text="mujer"/>
+                android:layout_height="wrap_content"
+                android:buttonTint="@color/bg_color"
+                android:text="mujer" />
         </RadioGroup>
 
         <CheckBox
-              android:layout_margin="10dp"
-              android:layout_width="wrap_content"
-              android:layout_height="wrap_content"
-              android:layout_gravity="start"
-              android:text="Acepto los términos de usuario"/>
+            android:id="@+id/cond"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:layout_margin="10dp"
+            android:buttonTint="@color/bg_color"
+            android:text="Acepto los términos de usuario" />
 
         <Button
-            android:text="CREAR CUENTA"
-            style="@style/RoundedButton"/>
+            android:id="@+id/crearCuenta"
+            style="@style/RoundedButton"
+            android:text="CREAR CUENTA" />
 
     </LinearLayout>
 
