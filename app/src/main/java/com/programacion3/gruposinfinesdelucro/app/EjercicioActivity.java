@@ -32,7 +32,7 @@ public class EjercicioActivity extends NavigationActivity {
         exerciseNameTextView.setText(eje.getName());
         seriesNumberTextView.setText("4");
         repetitionsNumberTextView.setText("20");
-        button= findViewById(R.id.info);
+        button = findViewById(R.id.info);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -43,7 +43,7 @@ public class EjercicioActivity extends NavigationActivity {
     }
 
     public void start() {
-        Intent intent= new Intent(this,ExplainActivity.class);
+        Intent intent = new Intent(this, ExplainActivity.class);
         startActivity(intent);
     }
 

@@ -1,10 +1,10 @@
 package com.programacion3.gruposinfinesdelucro.app;
 
 import android.content.Intent;
+import android.os.Bundle;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -47,7 +47,7 @@ public class FirstActivity extends AppCompatActivity {
         sliderDotspanel = findViewById(R.id.SliderDots);
 
 
-        Integer[] images = {R.drawable.slide, R.drawable.slide2,R.drawable.slide3};
+        Integer[] images = {R.drawable.slide, R.drawable.slide2, R.drawable.slide3};
 
         ViewPagerAdapter viewPagerAdapter = new ViewPagerAdapter(this, images);
 
@@ -80,7 +80,7 @@ public class FirstActivity extends AppCompatActivity {
             @Override
             public void onPageSelected(int position) {
 
-                for(int i = 0; i< dotscount; i++){
+                for (int i = 0; i < dotscount; i++) {
                     dots[i].setImageDrawable(ContextCompat.getDrawable(getApplicationContext(), R.drawable.non_active_dot));
                 }
 
@@ -95,11 +95,12 @@ public class FirstActivity extends AppCompatActivity {
         });
     }
 
-    public void startLogInActviy(){
+    public void startLogInActviy() {
         Intent intent = new Intent(this, LogInActivity.class);
         startActivity(intent);
     }
-    public void startSignUpActivity(){
+
+    public void startSignUpActivity() {
         Intent intent = new Intent(this, SignUpActivity.class);
         startActivity(intent);
     }

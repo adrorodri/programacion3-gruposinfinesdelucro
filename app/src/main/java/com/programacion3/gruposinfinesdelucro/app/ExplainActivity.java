@@ -1,8 +1,6 @@
 package com.programacion3.gruposinfinesdelucro.app;
 
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
-import android.widget.ImageView;
 
 public class ExplainActivity extends NavigationActivity {
 

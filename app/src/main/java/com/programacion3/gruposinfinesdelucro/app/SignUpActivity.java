@@ -14,7 +14,7 @@ import android.widget.Toast;
 public class SignUpActivity extends AppCompatActivity {
 
     Button ccButton;
-    RadioButton hombre,mujer;
+    RadioButton hombre, mujer;
     CheckBox condiciones;
     EditText nombre, correo, contra1, contra2;
     String checkNombre, checkCorreo, checkContra1, checkContra2;
@@ -52,20 +52,21 @@ public class SignUpActivity extends AppCompatActivity {
                     correo.requestFocus();
                     correo.setError("Campo obligatorio");
 
-                } else if (!checkContra1.equals(checkContra2) || TextUtils.isEmpty(checkContra1) ) {
+                } else if (!checkContra1.equals(checkContra2) || TextUtils.isEmpty(checkContra1)) {
                     contra1.requestFocus();
                     contra2.requestFocus();
                     contra1.setError("Las contraseñas no son iguales");
-                } else if(!hombre.isChecked() && !mujer.isChecked()){
+                } else if (!hombre.isChecked() && !mujer.isChecked()) {
                     Toast.makeText(SignUpActivity.this, "Debes especificar un genero", Toast.LENGTH_SHORT).show();
 
-                } else if(!condiciones.isChecked()){
+                } else if (!condiciones.isChecked()) {
                     Toast.makeText(SignUpActivity.this, "Debe aceptar las condiciones", Toast.LENGTH_SHORT).show();
-                } else{
+                } else {
 
-                Intent intent = new Intent(SignUpActivity.this, SignUpSuccess.class);
-                startActivity(intent);
-            }}
+                    Intent intent = new Intent(SignUpActivity.this, SignUpSuccess.class);
+                    startActivity(intent);
+                }
+            }
         });
 
     }
