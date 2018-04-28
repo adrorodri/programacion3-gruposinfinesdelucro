@@ -11,6 +11,8 @@ import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.Toast;
 
+import com.google.gson.Gson;
+
 public class SignUpActivity extends AppCompatActivity {
 
     Button ccButton;
