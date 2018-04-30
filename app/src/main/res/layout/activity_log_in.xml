@@ -40,6 +40,15 @@
         android:id="@+id/logButton"
         style="@style/RoundedButton"/>
 
+    <CheckBox
+    android:id="@+id/cond"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="start"
+    android:layout_margin="5dp"
+    android:buttonTint="@color/bg_color"
+    android:text="Recuérdame" />
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
