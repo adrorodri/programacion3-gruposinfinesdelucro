@@ -1,0 +1,66 @@
+package com.programacion3.gruposinfinesdelucro.app;
+
+import android.content.Context;
+import android.content.Intent;
+import android.support.v7.widget.RecyclerView;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.TextView;
+
+import java.util.ArrayList;
+
+public class RutinasAdapter extends RecyclerView.Adapter<RutinasAdapter.RecyclerViewHolder> {
+    private ArrayList<Routines> arrayList = new ArrayList<Routines>();
+    private Context context;
+
+    RutinasAdapter(ArrayList<Routines> arrayList, Context context) {
+        this.arrayList = arrayList;
+        this.context = context;
+    }
+
+    @Override
+    public RutinasAdapter.RecyclerViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.routines_preview, parent, false);
+        return new RutinasAdapter.RecyclerViewHolder(view);
+    }
+
+    @Override
+    public void onBindViewHolder(RutinasAdapter.RecyclerViewHolder holder, int position) {
+        final Routines rutina = arrayList.get(position);
+        if(rutina.getCreador()!=null){
+            holder.creador.setText(rutina.getCreador());
+        }
+        holder.nombre.setText(rutina.getNombre());
+        holder.dificultad.setText(rutina.getDificultad());
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(context, RutinasActivity.class);
+                context.startActivity(intent);
+            }
+        });
+
+    }
+
+    @Override
+    public int getItemCount() {
+        return arrayList.size();
+    }
+
+    public static class RecyclerViewHolder extends RecyclerView.ViewHolder {
+
+        View itemView;
+        TextView nombre,creador,dificultad;
+
+        public RecyclerViewHolder(View view) {
+            super(view);
+            itemView = view;
+            nombre = (TextView) view.findViewById(R.id.nombre);
+            creador= (TextView) view.findViewById(R.id.creador);
+            dificultad= (TextView) view.findViewById(R.id.dificultad);
+
+        }
+    }
+}

@@ -28,8 +28,10 @@
         </activity>
         <activity android:name=".ActividadDiariaActivity"/>
         <activity android:name=".RutinasActivity"/>
-        <activity android:name=".EjercicioActivity">
-        </activity>
+        <activity android:name=".EjercicioActivity"/>
+        <activity android:name=".ChooseRutineActivity"/>
+
+
         <activity android:name=".ExplainActivity">
         </activity>
         <activity android:name=".SignUpSuccess" />
