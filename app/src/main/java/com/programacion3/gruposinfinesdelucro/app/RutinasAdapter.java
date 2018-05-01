@@ -2,6 +2,7 @@ package com.programacion3.gruposinfinesdelucro.app;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -29,11 +30,18 @@ public class RutinasAdapter extends RecyclerView.Adapter<RutinasAdapter.Recycler
     @Override
     public void onBindViewHolder(RutinasAdapter.RecyclerViewHolder holder, int position) {
         final Routines rutina = arrayList.get(position);
-        if(rutina.getCreador()!=null){
-            holder.creador.setText(rutina.getCreador());
-        }
         holder.nombre.setText(rutina.getNombre());
         holder.dificultad.setText(rutina.getDificultad());
+        if(rutina.getCreador()!= null){
+            holder.creador.setText(rutina.getCreador());
+        }
+        if(rutina.getDificultad()=="hard"){
+            holder.dificultad.setTextColor(Color.parseColor("#CCFF1E1E"));
+        }else if(rutina.getDificultad()=="medium"){
+            holder.dificultad.setTextColor(Color.parseColor("#CCFFB20C"));
+        }else{
+            holder.dificultad.setTextColor(Color.parseColor("#CC69FF0C"));
+        }
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -57,7 +65,7 @@ public class RutinasAdapter extends RecyclerView.Adapter<RutinasAdapter.Recycler
         public RecyclerViewHolder(View view) {
             super(view);
             itemView = view;
-            nombre = (TextView) view.findViewById(R.id.nombre);
+            nombre = (TextView) view.findViewById(R.id.rutina);
             creador= (TextView) view.findViewById(R.id.creador);
             dificultad= (TextView) view.findViewById(R.id.dificultad);
 
