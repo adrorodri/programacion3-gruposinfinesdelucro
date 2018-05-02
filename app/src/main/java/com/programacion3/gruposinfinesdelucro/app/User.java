@@ -1,5 +1,8 @@
 package com.programacion3.gruposinfinesdelucro.app;
 
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
 public class User {
     private String name;
     private String mail;
@@ -36,7 +39,7 @@ public class User {
         return name;
     }
 
-    public String getMail() {
+    public String getEmail() {
         return mail;
     }
 
@@ -52,7 +55,7 @@ public class User {
         this.name = name;
     }
 
-    public void setMail(String mail) {
+    public void setEmail(String mail) {
         this.mail = mail;
     }
 
@@ -63,5 +66,4 @@ public class User {
     public void setRoutines(Routines routines) {
         this.routines = routines;
     }
-
 }

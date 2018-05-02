@@ -9,9 +9,6 @@ public class PerfilActivity extends NavigationActivity {
     boolean edit = false;
     User user;
 
-    public PerfilActivity(User user) {
-        super(user);
-    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

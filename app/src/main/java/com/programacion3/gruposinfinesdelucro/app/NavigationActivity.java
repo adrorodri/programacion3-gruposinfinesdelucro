@@ -16,12 +16,12 @@ import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.google.firebase.auth.FirebaseAuth;
+
+import com.google.firebase.auth.FirebaseAuth;
+
 public class NavigationActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     private User user;
-
-    public NavigationActivity(User user) {
-        this.user = user;
-    }
 
 
     @Override
@@ -104,7 +104,8 @@ public class NavigationActivity extends AppCompatActivity implements NavigationV
 
                     Toast.makeText(NavigationActivity.this, "Saliste exitosamente", Toast.LENGTH_SHORT).show();
                     dialogInterface.dismiss();
-
+                    FirebaseAuth auth = FirebaseAuth.getInstance();
+                    auth.signOut();
                     startActivity(intent);
                 }
             });

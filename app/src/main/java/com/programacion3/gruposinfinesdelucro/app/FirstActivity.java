@@ -10,6 +10,8 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
+import com.google.firebase.auth.FirebaseAuth;
+
 public class FirstActivity extends AppCompatActivity {
 
     private Button joinButton, logInButton;
@@ -24,6 +26,11 @@ public class FirstActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_first);
+
+        if(FirebaseAuth.getInstance().getCurrentUser() != null){
+            startApp();
+        }
+
 
         joinButton = findViewById(R.id.joinButton);
         logInButton = findViewById(R.id.logInButton);
@@ -97,11 +104,17 @@ public class FirstActivity extends AppCompatActivity {
 
     public void startLogInActviy() {
         Intent intent = new Intent(this, LogInActivity.class);
+        intent.putExtra("signed_recently", false);
         startActivity(intent);
     }
 
     public void startSignUpActivity() {
         Intent intent = new Intent(this, SignUpActivity.class);
+        startActivity(intent);
+    }
+
+    public void startApp(){
+        Intent intent = new Intent(this, ActividadDiariaActivity.class);
         startActivity(intent);
     }
 }
