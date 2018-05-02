@@ -7,6 +7,11 @@ import android.widget.EditText;
 
 public class PerfilActivity extends NavigationActivity {
     boolean edit = false;
+    User user;
+
+    public PerfilActivity(User user) {
+        super(user);
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -16,12 +21,12 @@ public class PerfilActivity extends NavigationActivity {
         editNombre = findViewById(R.id.nombrePerfil);
         editEdad = findViewById(R.id.años_perfil);
         editMetas = findViewById(R.id.metas_perfil);
+        updateInformation(editNombre, editEdad, editMetas);
         editNombre.setEnabled(false);
         editEdad.setEnabled(false);
         editMetas.setEnabled(false);
 
     }
-
 
     public void onEditClick(View view) {
         Button editButton;
@@ -41,7 +46,22 @@ public class PerfilActivity extends NavigationActivity {
             editEdad.setEnabled(false);
             editMetas.setEnabled(false);
             editButton.setText("Edit");
+            updateInformation(editNombre, editEdad, editMetas);
             edit = false;
         }
+    }
+
+    public void updateInformation(EditText editNombre, EditText editEdad, EditText editMetas) {
+        editNombre.setText(user.getName());
+        editEdad.setText(user.getEdad());
+        editMetas.setText(user.getMetas());
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
     }
 }

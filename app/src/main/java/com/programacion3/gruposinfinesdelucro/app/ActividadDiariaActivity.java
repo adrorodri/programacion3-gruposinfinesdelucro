@@ -8,6 +8,10 @@ import android.os.Bundle;
 
 public class ActividadDiariaActivity extends NavigationActivity {
 
+    public ActividadDiariaActivity(User user) {
+        super(user);
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         setContentView(R.layout.activity_actividad_diaria);
