@@ -10,7 +10,9 @@ public class User {
     private String metas;
     private transient String password;
     private Routines routines;
-    public User(String name, String mail, String password, Routines routines, int edad, String metas) {
+
+
+    public User(String name, String mail, String password, int edad, String metas) {
         this.name = name;
         this.mail = mail;
         this.password = password;

@@ -1,13 +1,15 @@
 package com.programacion3.gruposinfinesdelucro.app;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.text.Editable;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
 public class PerfilActivity extends NavigationActivity {
     boolean edit = false;
-    User user;
+    User user = super.getUser();
 
 
     @Override
@@ -43,14 +45,24 @@ public class PerfilActivity extends NavigationActivity {
             editEdad.setEnabled(false);
             editMetas.setEnabled(false);
             editButton.setText("Edit");
+            updateUser(editNombre.getText().toString(),editEdad.getText().toString(),editMetas.getText().toString());
             updateInformation(editNombre, editEdad, editMetas);
             edit = false;
         }
     }
 
+    private void updateUser(String nombre, String edad, String metas) {
+        user.setName(nombre);
+        int edad2 = Integer.parseInt(edad);
+        user.setEdad(edad2);
+        user.setMetas(metas);
+        super.setUser(this.user);
+    }
+
     public void updateInformation(EditText editNombre, EditText editEdad, EditText editMetas) {
         editNombre.setText(user.getName());
-        editEdad.setText(user.getEdad());
+        String years = String.valueOf(user.getEdad());
+        editEdad.setText(years);
         editMetas.setText(user.getMetas());
     }
 
