@@ -14,6 +14,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
@@ -21,11 +22,14 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class NavigationActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
-    private User user;
+
+
+    private User user = new User("Jorge", "123@gmail.com", "123", 19, "Ser como popeye");
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
 
         Toolbar toolbar = findViewById(R.id.toolbar);
@@ -137,6 +141,7 @@ public class NavigationActivity extends AppCompatActivity implements NavigationV
     }
 
     public void setUser(User user) {
+
         this.user = user;
     }
 
