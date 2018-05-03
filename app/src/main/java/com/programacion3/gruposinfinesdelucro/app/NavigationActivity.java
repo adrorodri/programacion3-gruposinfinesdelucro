@@ -165,6 +165,7 @@ public class NavigationActivity extends AppCompatActivity implements NavigationV
 
     public void updateHeader(){
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+
         displayNameTextView.setText(user.getDisplayName());
         emailTextView.setText(user.getEmail());
     }
