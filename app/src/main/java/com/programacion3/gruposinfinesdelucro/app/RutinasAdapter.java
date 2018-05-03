@@ -7,13 +7,12 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
 
 public class RutinasAdapter extends RecyclerView.Adapter<RutinasAdapter.RecyclerViewHolder> {
-    private ArrayList<Routines> arrayList = new ArrayList<Routines>();
+    private ArrayList<Routines> arrayList = new ArrayList<>();
     private Context context;
 
     RutinasAdapter(ArrayList<Routines> arrayList, Context context) {
@@ -35,12 +34,16 @@ public class RutinasAdapter extends RecyclerView.Adapter<RutinasAdapter.Recycler
         if(rutina.getCreador()!= null){
             holder.creador.setText(rutina.getCreador());
         }
-        if(rutina.getDificultad()=="hard"){
-            holder.dificultad.setTextColor(Color.parseColor("#CCFF1E1E"));
-        }else if(rutina.getDificultad()=="medium"){
-            holder.dificultad.setTextColor(Color.parseColor("#CCFFB20C"));
-        }else{
-            holder.dificultad.setTextColor(Color.parseColor("#CC69FF0C"));
+        switch (rutina.getDificultad()) {
+            case "hard":
+                holder.dificultad.setTextColor(Color.parseColor("#CCFF1E1E"));
+                break;
+            case "medium":
+                holder.dificultad.setTextColor(Color.parseColor("#CCFFB20C"));
+                break;
+            default:
+                holder.dificultad.setTextColor(Color.parseColor("#CC69FF0C"));
+                break;
         }
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -57,17 +60,17 @@ public class RutinasAdapter extends RecyclerView.Adapter<RutinasAdapter.Recycler
         return arrayList.size();
     }
 
-    public static class RecyclerViewHolder extends RecyclerView.ViewHolder {
+    static class RecyclerViewHolder extends RecyclerView.ViewHolder {
 
         View itemView;
         TextView nombre,creador,dificultad;
 
-        public RecyclerViewHolder(View view) {
+        RecyclerViewHolder(View view) {
             super(view);
             itemView = view;
-            nombre = (TextView) view.findViewById(R.id.rutina);
-            creador= (TextView) view.findViewById(R.id.creador);
-            dificultad= (TextView) view.findViewById(R.id.dificultad);
+            nombre = view.findViewById(R.id.rutina);
+            creador= view.findViewById(R.id.creador);
+            dificultad= view.findViewById(R.id.dificultad);
 
         }
     }

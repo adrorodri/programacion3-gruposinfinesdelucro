@@ -21,6 +21,7 @@ import com.google.firebase.auth.ActionCodeSettings;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.auth.UserProfileChangeRequest;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.gson.Gson;
@@ -108,7 +109,7 @@ public class SignUpActivity extends AppCompatActivity {
                         if (task.isSuccessful()) {
                             Log.d("SignUpActivity", "Correo enviado con éxito");
                             showDialog("Verificación de correo", "Correo de verificación de cuenta fue enviado con éxito");
-                            goToLoginActivity();
+                            updateUserInfo();
                         }else {
                             Log.d("SignUpActivity", "No se pudo enviar correo");
                             showDialog("Error", "No se pudo enviar el correo");
@@ -132,6 +133,26 @@ public class SignUpActivity extends AppCompatActivity {
                                     ", por favor verifica tus datos");
                         }
 
+                    }
+                });
+    }
+
+    private void updateUserInfo(){
+        FirebaseUser user = auth.getCurrentUser();
+        UserProfileChangeRequest profileUpdates = new UserProfileChangeRequest.Builder()
+                .setDisplayName(nombre.getText().toString())
+                .build();
+
+        user.updateProfile(profileUpdates)
+                .addOnCompleteListener(new OnCompleteListener<Void>() {
+                    @Override
+                    public void onComplete(@NonNull Task<Void> task) {
+                        if (task.isSuccessful()) {
+                            Log.d("SignUpActivity", "User profile updated.");
+                            goToLoginActivity();
+                        }else{
+                            Log.d("SignUpActivity", "Couldnt update info");
+                        }
                     }
                 });
     }

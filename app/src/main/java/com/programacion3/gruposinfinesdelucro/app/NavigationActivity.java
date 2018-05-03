@@ -11,17 +11,22 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.text.TextUtils;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 public class NavigationActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
-    private User user;
+    private TextView displayNameTextView, emailTextView;
 
 
     @Override
@@ -39,6 +44,28 @@ public class NavigationActivity extends AppCompatActivity implements NavigationV
 
         NavigationView navigationView = findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+
+        View header = navigationView.getHeaderView(0);
+        displayNameTextView = header.findViewById(R.id.displayNameTextView);
+        emailTextView = header.findViewById(R.id.emailTextView);
+
+
+        if(displayNameTextView == null){
+            Log.d("NavigationActivity", "Display name is null");
+        }
+
+        if(emailTextView == null){
+            Log.d("NavigationActivity", "Email is null");
+        }
+
+        View view = findViewById(R.id.nav_view);
+
+        if(view == null){
+            Log.d("NavigationActivity", "Nav-view is null");
+        }
+
+        updateHeader();
     }
 
 
@@ -136,11 +163,9 @@ public class NavigationActivity extends AppCompatActivity implements NavigationV
         return true;
     }
 
-    public void setUser(User user) {
-        this.user = user;
-    }
-
-    public User getUser() {
-        return user;
+    public void updateHeader(){
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        displayNameTextView.setText(user.getDisplayName());
+        emailTextView.setText(user.getEmail());
     }
 }

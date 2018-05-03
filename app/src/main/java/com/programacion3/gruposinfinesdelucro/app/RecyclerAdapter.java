@@ -56,9 +56,9 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.Recycl
         public RecyclerViewHolder(View view) {
             super(view);
             itemView = view;
-            imageView = (ImageView) view.findViewById(R.id.img);
-            exercise = (TextView) view.findViewById(R.id.name);
-            duration = (TextView) view.findViewById(R.id.duration);
+            imageView = view.findViewById(R.id.img);
+            exercise = view.findViewById(R.id.name);
+            duration = view.findViewById(R.id.duration);
 
         }
     }

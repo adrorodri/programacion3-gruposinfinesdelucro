@@ -6,24 +6,24 @@
         android:layout_width="120dp"
         android:layout_height="80dp"
         android:id="@+id/rutina"
-        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
         android:gravity="center"
         android:layout_marginStart="5dp"
         />
     <TextView
         android:layout_width="120dp"
         android:layout_height="80dp"
-        android:layout_toRightOf="@+id/rutina"
+        android:layout_toEndOf="@+id/rutina"
         android:gravity="center"
-        android:textSize="15dp"
+        android:textSize="15sp"
         android:text="@string/creador"
         android:id="@+id/creador"
         />
     <TextView
         android:layout_width="match_parent"
         android:layout_height="80dp"
-        android:textSize="15dp"
-        android:layout_toRightOf="@+id/creador"
+        android:textSize="15sp"
+        android:layout_toEndOf="@id/creador"
         android:gravity="center"
         android:textStyle="bold"
         android:id="@+id/dificultad"/>
