@@ -41,10 +41,10 @@
                     android:textSize="30dp" />
 
                 <EditText
-                    android:id="@+id/años_perfil"
+                    android:id="@+id/email_perfil"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="20 años"
+                    android:text="jorger@gmail.com"
                     android:textColor="@color/colorWhite"
                     android:textSize="20dp" />
 
