@@ -74,6 +74,7 @@ public class PerfilActivity extends NavigationActivity {
                     public void onComplete(@NonNull Task<Void> task) {
                         if (task.isSuccessful()) {
                             Log.d("PerfilActivity", "User profile updated.");
+                            PerfilActivity.super.updateHeader();
                         } else {
                             Log.d("PerfilActivity", "Couldn't update info");
                         }
