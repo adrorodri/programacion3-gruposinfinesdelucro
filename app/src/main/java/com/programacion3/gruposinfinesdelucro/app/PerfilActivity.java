@@ -41,6 +41,7 @@ public class PerfilActivity extends NavigationActivity {
     public void onEditClick(View view) {
         Button editButton;
         editButton = findViewById(R.id.editButton);
+        //TODO
         EditText editNombre, editEdad, editMetas;
         editNombre = findViewById(R.id.nombrePerfil);
         //editEdad = findViewById(R.id.años_perfil);
@@ -74,6 +75,7 @@ public class PerfilActivity extends NavigationActivity {
                     public void onComplete(@NonNull Task<Void> task) {
                         if (task.isSuccessful()) {
                             Log.d("PerfilActivity", "User profile updated.");
+                            PerfilActivity.super.updateHeader();
                         } else {
                             Log.d("PerfilActivity", "Couldn't update info");
                         }
