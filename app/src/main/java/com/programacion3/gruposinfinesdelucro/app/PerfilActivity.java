@@ -41,6 +41,7 @@ public class PerfilActivity extends NavigationActivity {
     public void onEditClick(View view) {
         Button editButton;
         editButton = findViewById(R.id.editButton);
+        //TODO
         EditText editNombre, editEdad, editMetas;
         editNombre = findViewById(R.id.nombrePerfil);
         //editEdad = findViewById(R.id.años_perfil);
