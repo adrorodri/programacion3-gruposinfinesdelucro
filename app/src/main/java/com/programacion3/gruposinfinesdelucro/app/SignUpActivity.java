@@ -20,6 +20,7 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.ActionCodeSettings;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseAuthException;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.UserProfileChangeRequest;
 import com.google.firebase.database.DatabaseReference;
@@ -109,7 +110,17 @@ public class SignUpActivity extends AppCompatActivity {
                         if (task.isSuccessful()) {
                             Log.d("SignUpActivity", "Correo enviado con éxito");
                             showDialog("Verificación de correo", "Correo de verificación de cuenta fue enviado con éxito");
-                            updateUserInfo();
+                            AlertDialog.Builder builder = new AlertDialog.Builder(SignUpActivity.this);
+                            builder.setMessage("Correo de verificación de cuenta fue enviado con éxito")
+                                    .setTitle("Verificación de correo")
+                                    .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                                        @Override
+                                        public void onClick(DialogInterface dialogInterface, int i) {
+                                            updateUserInfo();
+                                        }
+                                    });
+                            AlertDialog dialog = builder.create();
+                            dialog.show();
                         }else {
                             Log.d("SignUpActivity", "No se pudo enviar correo");
                             showDialog("Error", "No se pudo enviar el correo");
@@ -129,8 +140,8 @@ public class SignUpActivity extends AppCompatActivity {
                             signIn();
                         } else {
                             // If sign in fails, display a message to the user.
-                            showDialog("Error de verificación", "Ocurrió un error al verificar la cuenta" +
-                                    ", por favor verifica tus datos");
+                            FirebaseAuthException e = (FirebaseAuthException)task.getException();
+                            showDialog("Error de verificación", "Failed Registration: "+e.getMessage());
                         }
 
                     }
