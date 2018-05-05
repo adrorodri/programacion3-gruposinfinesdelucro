@@ -1,9 +1,7 @@
-package com.programacion3.gruposinfinesdelucro.app;
+package com.programacion3.gruposinfinesdelucro.app.activities;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
-import android.text.Editable;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -11,11 +9,10 @@ import android.widget.EditText;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
-import com.google.firebase.FirebaseApiNotAvailableException;
-import com.google.firebase.FirebaseApp;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.UserProfileChangeRequest;
+import com.programacion3.gruposinfinesdelucro.app.R;
 
 public class PerfilActivity extends NavigationActivity {
     boolean edit = false;

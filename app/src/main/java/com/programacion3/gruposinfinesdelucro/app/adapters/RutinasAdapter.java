@@ -1,4 +1,4 @@
-package com.programacion3.gruposinfinesdelucro.app;
+package com.programacion3.gruposinfinesdelucro.app.adapters;
 
 import android.content.Context;
 import android.content.Intent;
@@ -9,13 +9,17 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.programacion3.gruposinfinesdelucro.app.R;
+import com.programacion3.gruposinfinesdelucro.app.classes.Routines;
+import com.programacion3.gruposinfinesdelucro.app.activities.RutinasActivity;
+
 import java.util.ArrayList;
 
 public class RutinasAdapter extends RecyclerView.Adapter<RutinasAdapter.RecyclerViewHolder> {
     private ArrayList<Routines> arrayList = new ArrayList<>();
     private Context context;
 
-    RutinasAdapter(ArrayList<Routines> arrayList, Context context) {
+    public RutinasAdapter(ArrayList<Routines> arrayList, Context context) {
         this.arrayList = arrayList;
         this.context = context;
     }

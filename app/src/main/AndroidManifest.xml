@@ -9,27 +9,26 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".FirstActivity">
+        <activity android:name=".activities.FirstActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name=".LogInActivity"/>
-        <activity android:name=".SignUpActivity"/>
-        <activity android:name=".PerfilActivity"/>
-        <activity android:name=".NavigationActivity">
+        <activity android:name=".activities.LogInActivity"/>
+        <activity android:name=".activities.SignUpActivity"/>
+        <activity android:name=".activities.PerfilActivity"/>
+        <activity android:name=".activities.NavigationActivity">
         </activity>
-        <activity android:name=".ActividadDiariaActivity"/>
-        <activity android:name=".RutinasActivity"/>
-        <activity android:name=".EjercicioActivity"/>
-        <activity android:name=".ChooseRutineActivity"/>
+        <activity android:name=".activities.ActividadDiariaActivity"/>
+        <activity android:name=".activities.RutinasActivity"/>
+        <activity android:name=".activities.EjercicioActivity"/>
+        <activity android:name=".activities.ChooseRutineActivity"/>
 
 
-        <activity android:name=".ExplainActivity">
+        <activity android:name=".activities.ExplainActivity">
         </activity>
-        <activity android:name=".SignUpSuccess" />
     </application>
 
 

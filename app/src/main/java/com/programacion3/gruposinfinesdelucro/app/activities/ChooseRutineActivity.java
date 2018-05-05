@@ -1,8 +1,13 @@
-package com.programacion3.gruposinfinesdelucro.app;
+package com.programacion3.gruposinfinesdelucro.app.activities;
 
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+
+import com.programacion3.gruposinfinesdelucro.app.classes.Ejercicio;
+import com.programacion3.gruposinfinesdelucro.app.R;
+import com.programacion3.gruposinfinesdelucro.app.classes.Routines;
+import com.programacion3.gruposinfinesdelucro.app.adapters.RutinasAdapter;
 
 import java.util.ArrayList;
 import java.util.LinkedList;

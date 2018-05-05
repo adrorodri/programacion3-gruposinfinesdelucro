@@ -1,4 +1,6 @@
-package com.programacion3.gruposinfinesdelucro.app;
+package com.programacion3.gruposinfinesdelucro.app.classes;
+
+import com.programacion3.gruposinfinesdelucro.app.classes.Ejercicio;
 
 import java.util.List;
 

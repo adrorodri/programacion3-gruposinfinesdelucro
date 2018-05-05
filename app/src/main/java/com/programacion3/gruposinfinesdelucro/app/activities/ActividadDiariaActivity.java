@@ -1,6 +1,8 @@
-package com.programacion3.gruposinfinesdelucro.app;
+package com.programacion3.gruposinfinesdelucro.app.activities;
 
 import android.os.Bundle;
+
+import com.programacion3.gruposinfinesdelucro.app.R;
 
 /**
  * Created by Joaco99 on 20/04/2018.

@@ -1,4 +1,4 @@
-package com.programacion3.gruposinfinesdelucro.app;
+package com.programacion3.gruposinfinesdelucro.app.classes;
 
 import java.io.Serializable;
 

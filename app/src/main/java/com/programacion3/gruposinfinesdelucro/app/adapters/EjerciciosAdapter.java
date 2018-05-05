@@ -1,4 +1,4 @@
-package com.programacion3.gruposinfinesdelucro.app;
+package com.programacion3.gruposinfinesdelucro.app.adapters;
 
 import android.content.Context;
 import android.content.Intent;
@@ -9,13 +9,17 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.programacion3.gruposinfinesdelucro.app.classes.Ejercicio;
+import com.programacion3.gruposinfinesdelucro.app.R;
+import com.programacion3.gruposinfinesdelucro.app.activities.EjercicioActivity;
+
 import java.util.ArrayList;
 
-public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.RecyclerViewHolder> {
+public class EjerciciosAdapter extends RecyclerView.Adapter<EjerciciosAdapter.RecyclerViewHolder> {
     private ArrayList<Ejercicio> arrayList = new ArrayList<Ejercicio>();
     private Context context;
 
-    RecyclerAdapter(ArrayList<Ejercicio> arrayList, Context context) {
+    public EjerciciosAdapter(ArrayList<Ejercicio> arrayList, Context context) {
         this.arrayList = arrayList;
         this.context = context;
     }

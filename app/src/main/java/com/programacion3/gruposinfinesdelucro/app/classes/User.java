@@ -1,7 +1,4 @@
-package com.programacion3.gruposinfinesdelucro.app;
-
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
+package com.programacion3.gruposinfinesdelucro.app.classes;
 
 public class User {
     private String name;

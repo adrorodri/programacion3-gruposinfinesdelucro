@@ -1,8 +1,12 @@
-package com.programacion3.gruposinfinesdelucro.app;
+package com.programacion3.gruposinfinesdelucro.app.activities;
 
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+
+import com.programacion3.gruposinfinesdelucro.app.classes.Ejercicio;
+import com.programacion3.gruposinfinesdelucro.app.R;
+import com.programacion3.gruposinfinesdelucro.app.adapters.EjerciciosAdapter;
 
 import java.util.ArrayList;
 
@@ -27,7 +31,7 @@ public class RutinasActivity extends NavigationActivity {
         arrayList.add(ejercicio);
         arrayList.add(ejercicio1);
         arrayList.add(ejercicio2);
-        adapter = new RecyclerAdapter(arrayList, this);
+        adapter = new EjerciciosAdapter(arrayList, this);
         recyclerView.setHasFixedSize(true);
         layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
