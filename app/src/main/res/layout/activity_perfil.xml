@@ -20,7 +20,7 @@
             android:orientation="vertical">
 
             <de.hdodenhof.circleimageview.CircleImageView
-                android:id="@+id/circle_profile_activity"
+                android:id="@+id/circle_profile_image"
                 android:layout_width="200dp"
                 android:layout_height="200dp"
                 android:layout_marginStart="90dp"
@@ -41,10 +41,10 @@
                     android:textSize="30dp" />
 
                 <EditText
-                    android:id="@+id/email_perfil"
+                    android:id="@+id/pesol_perfil"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="jorger@gmail.com"
+                    android:text="Peso: 60 kg"
                     android:textColor="@color/colorWhite"
                     android:textSize="20dp" />
 
@@ -53,9 +53,9 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="20dp"
                     android:layout_marginTop="20dp"
-                    android:text="Tiempo: 2 semanas"
+                    android:text="Grasa Corporal: 15%"
                     android:textColor="@color/colorWhite"
-                    android:textSize="18dp" />
+                    android:textSize="20dp" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -67,17 +67,17 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_margin="20dp"
-                        android:text="Metas:"
+                        android:text="Tiempo:"
                         android:textColor="@color/colorWhite"
                         android:textSize="20dp" />
 
                     <EditText
-                        android:id="@+id/metas_perfil"
+                        android:id="@+id/tiempo_perfil"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="20dp"
                         android:layout_marginStart="20dp"
-                        android:text="Ser como Popeye"
+                        android:text="2 semanas"
                         android:textColor="@color/colorWhite"
                         android:textSize="20dp" />
                 </LinearLayout>
@@ -90,6 +90,15 @@
                     android:background="@drawable/rounded_button_white"
                     android:onClick="onEditClick"
                     android:text="Edit"
+                    android:textColor="@color/colorWhite" />
+                <Button
+                    android:id="@+id/subirFotoButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:background="@drawable/rounded_button_white"
+                    android:onClick="onSubirFoto"
+                    android:text="SubirFoto"
                     android:textColor="@color/colorWhite" />
             </LinearLayout>
         </LinearLayout>
