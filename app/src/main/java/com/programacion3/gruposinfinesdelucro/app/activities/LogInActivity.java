@@ -95,10 +95,10 @@ public class LogInActivity extends AppCompatActivity {
     private boolean validateForm(){
         if(Usua.getText().toString().equals("")){
             Usua.requestFocus();
-            Usua.setError("Campo oligatorio");
+            Usua.setError("Campo obligatorio");
         }else if(Contra.getText().toString().equals("")){
             Contra.requestFocus();
-            Contra.setError("Campo oligatorio");
+            Contra.setError("Campo obligatorio");
         }else {
             return true;
         }
