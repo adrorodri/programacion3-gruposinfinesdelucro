@@ -56,7 +56,7 @@ public class FirstActivity extends AppCompatActivity {
         sliderDotspanel = findViewById(R.id.SliderDots);
 
 
-        Integer[] images = {R.drawable.slide, R.drawable.slide2, R.drawable.slide3};
+        Integer[] images = {R.drawable.slidem, R.drawable.slidem2, R.drawable.slidem3};
 
         ViewPagerAdapter viewPagerAdapter = new ViewPagerAdapter(this, images);
 
