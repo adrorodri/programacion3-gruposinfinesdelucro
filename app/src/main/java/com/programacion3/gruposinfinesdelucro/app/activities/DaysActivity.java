@@ -28,7 +28,8 @@ public class DaysActivity extends NavigationActivity {
         lunes.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                Intent i=new Intent(DaysActivity.this,RutinasActivity.class);
+                startActivity(i);
             }
         });
         martes.setOnClickListener(new View.OnClickListener() {
