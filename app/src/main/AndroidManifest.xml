@@ -25,7 +25,7 @@
         <activity android:name=".activities.RutinasActivity"/>
         <activity android:name=".activities.EjercicioActivity"/>
         <activity android:name=".activities.ChooseRutineActivity"/>
-
+        <activity android:name=".activities.DaysActivity"/>
 
         <activity android:name=".activities.ExplainActivity">
         </activity>

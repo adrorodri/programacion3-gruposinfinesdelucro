@@ -7,16 +7,18 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.programacion3.gruposinfinesdelucro.app.R;
-import com.programacion3.gruposinfinesdelucro.app.classes.Rutina;
+import com.programacion3.gruposinfinesdelucro.app.activities.DaysActivity;
 import com.programacion3.gruposinfinesdelucro.app.activities.RutinasActivity;
+import com.programacion3.gruposinfinesdelucro.app.classes.Rutina;
 
 import java.util.ArrayList;
 
 public class RutinasAdapter extends RecyclerView.Adapter<RutinasAdapter.RecyclerViewHolder> {
-    private ArrayList<Rutina> arrayList = new ArrayList<>();
+    private ArrayList<Rutina> arrayList = new ArrayList<Rutina>();
     private Context context;
 
     public RutinasAdapter(ArrayList<Rutina> arrayList, Context context) {
@@ -35,24 +37,18 @@ public class RutinasAdapter extends RecyclerView.Adapter<RutinasAdapter.Recycler
         final Rutina rutina = arrayList.get(position);
         holder.nombre.setText(rutina.getNombre());
         holder.dificultad.setText(rutina.getDificultad());
-        if(rutina.getCreador()!= null){
-            holder.creador.setText(rutina.getCreador());
-        }
-        switch (rutina.getDificultad()) {
-            case "hard":
-                holder.dificultad.setTextColor(Color.parseColor("#CCFF1E1E"));
-                break;
-            case "medium":
-                holder.dificultad.setTextColor(Color.parseColor("#CCFFB20C"));
-                break;
-            default:
-                holder.dificultad.setTextColor(Color.parseColor("#CC69FF0C"));
-                break;
+        if(rutina.getDificultad()=="hard"){
+            holder.dificultad.setTextColor(Color.parseColor("#CCFF1E1E"));
+        }else if(rutina.getDificultad()=="medium"){
+            holder.dificultad.setTextColor(Color.parseColor("#CCFFB20C"));
+        }else{
+            holder.dificultad.setTextColor(Color.parseColor("#CC69FF0C"));
         }
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(context, RutinasActivity.class);
+                Intent intent = new Intent(context, DaysActivity.class);
+                intent.putExtra("name",rutina.getNombre());
                 context.startActivity(intent);
             }
         });
@@ -64,17 +60,16 @@ public class RutinasAdapter extends RecyclerView.Adapter<RutinasAdapter.Recycler
         return arrayList.size();
     }
 
-    static class RecyclerViewHolder extends RecyclerView.ViewHolder {
+    public static class RecyclerViewHolder extends RecyclerView.ViewHolder {
 
         View itemView;
         TextView nombre,creador,dificultad;
 
-        RecyclerViewHolder(View view) {
+        public RecyclerViewHolder(View view) {
             super(view);
             itemView = view;
-            nombre = view.findViewById(R.id.rutina);
-            creador= view.findViewById(R.id.creador);
-            dificultad= view.findViewById(R.id.dificultad);
+            nombre = (TextView) view.findViewById(R.id.rutina);
+            dificultad= (TextView) view.findViewById(R.id.dificultad);
 
         }
     }

@@ -96,9 +96,9 @@ public class ChooseRutineActivity extends NavigationActivity {
         ScheduledExercise exe2 = new ScheduledExercise(air_bike_exe, 20);
 
         Routine routine = new Routine("Primera Semana");
-        routine.addExercise(Enums.Day.MARTES, exe1);
-        routine.addExercise(Enums.Day.JUEVES, exe2);
-        routine.addExercise(Enums.Day.SABADO, exe1);
+        routine.addExercise(Enums.Day.TUESDAY, exe1);
+        routine.addExercise(Enums.Day.THURSDAY, exe2);
+        routine.addExercise(Enums.Day.SATURDAY, exe1);
 
         routineRef.child(routine.getName()).setValue(routine);
 

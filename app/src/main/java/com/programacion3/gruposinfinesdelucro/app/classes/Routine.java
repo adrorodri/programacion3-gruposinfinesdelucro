@@ -38,25 +38,25 @@ public class Routine {
     private int dayToIndex(Enums.Day day){
         int index = 0;
         switch (day){
-            case LUNES:
+            case MONDAY:
                 index = 0;
                 break;
-            case MARTES:
+            case TUESDAY:
                 index = 1;
                 break;
-            case MIERCOLES:
+            case WEDNESDAY:
                 index = 2;
                 break;
-            case JUEVES:
+            case THURSDAY:
                 index = 3;
                 break;
-            case VIERNES:
+            case FRIDAY:
                 index = 4;
                 break;
-            case SABADO:
+            case SATURDAY:
                 index = 5;
                 break;
-            case DOMINGO:
+            case SUNDAY:
                 index = 6;
                 break;
         }

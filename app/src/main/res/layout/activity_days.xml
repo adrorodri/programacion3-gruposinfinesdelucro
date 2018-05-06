@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.DrawerLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:openDrawer="end">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+    <Button
+        android:layout_marginTop="50dp"
+        android:layout_width="match_parent"
+        android:layout_height="76dp"
+        android:text="@string/lunes"
+        android:id="@+id/lunes"
+        android:textSize="30sp"
+        android:textAppearance="@style/Theme.AppCompat.Light"
+        android:fontFamily="@font/dk"/>
+    <Button
+
+        android:layout_width="match_parent"
+        android:layout_height="76dp"
+        android:id="@+id/martes"
+        android:text="@string/tuesday"
+        android:textSize="30sp"
+        android:textAppearance="@style/Theme.AppCompat.Light"
+        android:fontFamily="@font/dk"/>
+    <Button
+
+        android:layout_width="match_parent"
+        android:layout_height="76dp"
+        android:text="@string/miercoles"
+        android:id="@+id/miercoles"
+        android:textSize="30sp"
+        android:textAppearance="@style/Theme.AppCompat.Light"
+        android:fontFamily="@font/dk"/>
+    <Button
+
+        android:layout_width="match_parent"
+        android:layout_height="77dp"
+        android:text="@string/jueves"
+        android:id="@+id/jueves"
+        android:textSize="30sp"
+        android:textAppearance="@style/Theme.AppCompat.Light"
+        android:fontFamily="@font/dk"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="77dp"
+        android:id="@+id/viernes"
+        android:text="@string/viernes"
+        android:textSize="30sp"
+        android:textAppearance="@style/Theme.AppCompat.Light"
+        android:fontFamily="@font/dk"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="77dp"
+        android:text="@string/sabado"
+        android:textSize="30sp"
+        android:id="@+id/sabado"
+        android:textAppearance="@style/Theme.AppCompat.Light"
+        android:fontFamily="@font/dk"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="77dp"
+        android:text="@string/domingo"
+        android:id="@+id/domingo"
+        android:textSize="30sp"
+        android:textAppearance="@style/Theme.AppCompat.Light"
+        android:fontFamily="@font/dk"/>
+    </LinearLayout>
+    </ScrollView>
+    <include
+        layout="@layout/app_bar_menu"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+    <include
+        layout="@layout/navigation_menu"/>
+
+</android.support.v4.widget.DrawerLayout>
