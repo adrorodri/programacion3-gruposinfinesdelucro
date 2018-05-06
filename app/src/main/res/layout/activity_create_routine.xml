@@ -19,7 +19,7 @@
             android:layout_height="wrap_content"
             android:padding="10dp"
             android:layout_gravity="center"
-            android:id="@+id/crear_rutina"
+            android:id="@+id/crearlarutina"
             style="@style/RoundedButton"
             android:text="@string/rutinas_crear"/>
         <Button
@@ -27,7 +27,7 @@
             android:layout_height="wrap_content"
             android:padding="10dp"
             android:layout_gravity="center"
-            android:id="@+id/escojer_rutina"
+            android:id="@+id/escogerlarutina"
             style="@style/RoundedButton"
             android:text="@string/rutinas_hechas"/>
     </LinearLayout>
