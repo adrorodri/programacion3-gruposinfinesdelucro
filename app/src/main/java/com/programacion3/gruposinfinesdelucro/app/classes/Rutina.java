@@ -2,24 +2,30 @@ package com.programacion3.gruposinfinesdelucro.app.classes;
 
 import com.programacion3.gruposinfinesdelucro.app.classes.Ejercicio;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.util.ArrayList;
 import java.util.List;
 
-public class Routines {
+public class Rutina {
     private String creador;
     private String nombre;
     private String dificultad;
     private List<Ejercicio> ejercicios;
+    private List<List<List<Ejercicio>>> rutina = new ArrayList<>();
 
-    public Routines(String nombre,String creador,String dificultad,List<Ejercicio> ejercicios) {
+    public Rutina(String nombre, String creador, String dificultad, List<Ejercicio> ejercicios) {
         this.nombre=nombre;
         this.creador=creador;
         this.dificultad=dificultad;
         this.ejercicios=ejercicios;
     }
-    public Routines(String nombre,String dificultad,List<Ejercicio> ejercicios) {
-        this.nombre=nombre;
-        this.dificultad=dificultad;
-        this.ejercicios=ejercicios;
+
+    public Rutina(String nombre, String dificultad, List<Ejercicio> ejercicios) {
+        this.nombre = nombre;
+        this.dificultad = dificultad;
+        this.ejercicios = ejercicios;
     }
 
 
@@ -27,23 +33,11 @@ public class Routines {
         return creador;
     }
 
-    public void setCreador(String creador) {
-        this.creador = creador;
-    }
-
     public String getNombre() {
         return nombre;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
     public String getDificultad() {
         return dificultad;
-    }
-
-    public void setDificultad(String dificultad) {
-        this.dificultad = dificultad;
     }
 }

@@ -156,6 +156,7 @@ public class LogInActivity extends AppCompatActivity {
     }
 
     private void startApp() {
+        Log.d("LoginActivity", "es" + auth.getCurrentUser().getUid() + "esto");
         Intent intent = new Intent(this, ActividadDiariaActivity.class);
         startActivity(intent);
     }

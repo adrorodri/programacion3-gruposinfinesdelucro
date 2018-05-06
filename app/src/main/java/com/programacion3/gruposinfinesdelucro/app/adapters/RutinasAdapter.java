@@ -10,16 +10,16 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.programacion3.gruposinfinesdelucro.app.R;
-import com.programacion3.gruposinfinesdelucro.app.classes.Routines;
+import com.programacion3.gruposinfinesdelucro.app.classes.Rutina;
 import com.programacion3.gruposinfinesdelucro.app.activities.RutinasActivity;
 
 import java.util.ArrayList;
 
 public class RutinasAdapter extends RecyclerView.Adapter<RutinasAdapter.RecyclerViewHolder> {
-    private ArrayList<Routines> arrayList = new ArrayList<>();
+    private ArrayList<Rutina> arrayList = new ArrayList<>();
     private Context context;
 
-    public RutinasAdapter(ArrayList<Routines> arrayList, Context context) {
+    public RutinasAdapter(ArrayList<Rutina> arrayList, Context context) {
         this.arrayList = arrayList;
         this.context = context;
     }
@@ -32,7 +32,7 @@ public class RutinasAdapter extends RecyclerView.Adapter<RutinasAdapter.Recycler
 
     @Override
     public void onBindViewHolder(RutinasAdapter.RecyclerViewHolder holder, int position) {
-        final Routines rutina = arrayList.get(position);
+        final Rutina rutina = arrayList.get(position);
         holder.nombre.setText(rutina.getNombre());
         holder.dificultad.setText(rutina.getDificultad());
         if(rutina.getCreador()!= null){

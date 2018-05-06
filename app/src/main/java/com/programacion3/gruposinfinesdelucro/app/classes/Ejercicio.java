@@ -4,7 +4,6 @@ import java.io.Serializable;
 
 public class Ejercicio implements Serializable {
     private int img_type;
-    private int img_desc;
     private String name, duration;
 
     public Ejercicio(int img_type, String name, String duration) {
@@ -35,13 +34,5 @@ public class Ejercicio implements Serializable {
 
     public void setDuration(String duration) {
         this.duration = duration;
-    }
-
-    public int getImg_desc() {
-        return img_desc;
-    }
-
-    public void setImg_desc(int img_desc) {
-        this.img_desc = img_desc;
     }
 }

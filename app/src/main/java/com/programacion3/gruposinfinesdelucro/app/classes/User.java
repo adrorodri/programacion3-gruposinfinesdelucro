@@ -6,14 +6,14 @@ public class User {
     private int edad;
     private String metas;
     private transient String password;
-    private Routines routines;
+    private Rutina mRutina;
 
 
     public User(String name, String mail, String password, int edad, String metas) {
         this.name = name;
         this.mail = mail;
         this.password = password;
-        this.routines = routines;
+        this.mRutina = mRutina;
         this.edad = edad;
         this.metas = metas;
     }
@@ -46,8 +46,8 @@ public class User {
         return password;
     }
 
-    public Routines getRoutines() {
-        return routines;
+    public Rutina getRutina() {
+        return mRutina;
     }
 
     public void setName(String name) {
@@ -62,7 +62,7 @@ public class User {
         this.password = password;
     }
 
-    public void setRoutines(Routines routines) {
-        this.routines = routines;
+    public void setRutina(Rutina rutina) {
+        this.mRutina = rutina;
     }
 }
