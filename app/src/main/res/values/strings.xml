@@ -22,6 +22,7 @@
     <string name="sabado">Saturday</string>
     <string name="domingo">Sunday</string>
     <string name="tuesday">Tuesday</string>
-
+    <string name="rutinas_hechas">Add an existing routine</string>
+    <string name="rutinas_crear">Create a routine</string>
 
 </resources>
