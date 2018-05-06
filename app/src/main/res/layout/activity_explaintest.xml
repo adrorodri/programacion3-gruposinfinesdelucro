@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.v4.widget.DrawerLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/drawer_layout"
     xmlns:tools="http://schemas.android.com/tools"
@@ -14,28 +15,37 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="80dp"
-        android:text="Curl"
+        android:text="Crunches with Legs on an Exercise Ball"
+        android:fontFamily="@font/andyfont"
         android:gravity="center"
         android:layout_marginTop="50dp"
         android:textColor="#000000"
-        android:textSize="35dp"
+        android:textSize="30dp"
         android:textStyle="bold|italic"/>
     <ImageView
         android:layout_width="match_parent"
-        android:layout_height="300dp"
+        android:layout_height="250dp"
         android:src="@drawable/curlexp"/>
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Stand up with your torso upright while holding a barbell at a shoulder-width grip. While holding the upper arms stationary, curl the weights forward while contracting the biceps as you breathe out. Tip: Only the forearms should move."
-        android:textSize="18dp"/>
+        android:fontFamily="@font/moon"
+        android:text="Start off by taking a barbell and placing it in a corner or in a place where it can be stabilized, then place a weight at the one end that you will be grabbing.
+Slowly bend forward so that you are as close to parallel to the ground as possible, keeping your knees bent and feet planted firmly on the floor.
+Grab the bar with one hand on top of the other, just underneath the plates then pull the bar straight up towards your chest, keeping your elbows in, until the weight touches your lower chest and squeeze your back."
+        android:textSize="18dp"
+        android:layout_marginLeft="18dp"
+        android:layout_marginRight="18dp"
+        android:layout_marginTop="18dp"
+        />
+
 </LinearLayout>
     <include
         layout="@layout/app_bar_menu"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
 
-    <include
-        layout="@layout/navigation_menu"/>
+    <!---<include
+        layout="@layout/navigation_menu"/> -->
 
 </android.support.v4.widget.DrawerLayout>

@@ -1,4 +1,4 @@
-package com.programacion3.gruposinfinesdelucro.app;
+package com.programacion3.gruposinfinesdelucro.app.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,6 +11,8 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 
 import com.google.firebase.auth.FirebaseAuth;
+import com.programacion3.gruposinfinesdelucro.app.R;
+import com.programacion3.gruposinfinesdelucro.app.adapters.ViewPagerAdapter;
 
 public class FirstActivity extends AppCompatActivity {
 
@@ -54,7 +56,7 @@ public class FirstActivity extends AppCompatActivity {
         sliderDotspanel = findViewById(R.id.SliderDots);
 
 
-        Integer[] images = {R.drawable.slide, R.drawable.slide2, R.drawable.slide3};
+        Integer[] images = {R.drawable.slidem, R.drawable.slidem2, R.drawable.slidem3};
 
         ViewPagerAdapter viewPagerAdapter = new ViewPagerAdapter(this, images);
 
