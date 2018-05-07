@@ -10,6 +10,7 @@ import java.util.List;
 public class Routine {
     private String name;
     private List<List<ScheduledExercise>> daysList = new ArrayList<>();
+    private String dificultad = "medium";
 
     public Routine(){
         for(int i = 0; i < 7; i++){
@@ -61,6 +62,10 @@ public class Routine {
                 break;
         }
         return index;
+    }
+
+    public String getDificultad(){
+        return dificultad;
     }
 }
 

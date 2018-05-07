@@ -13,15 +13,16 @@ import android.widget.TextView;
 import com.programacion3.gruposinfinesdelucro.app.R;
 import com.programacion3.gruposinfinesdelucro.app.activities.DaysActivity;
 import com.programacion3.gruposinfinesdelucro.app.activities.RutinasActivity;
+import com.programacion3.gruposinfinesdelucro.app.classes.Routine;
 import com.programacion3.gruposinfinesdelucro.app.classes.Rutina;
 
 import java.util.ArrayList;
 
 public class RutinasAdapter extends RecyclerView.Adapter<RutinasAdapter.RecyclerViewHolder> {
-    private ArrayList<Rutina> arrayList = new ArrayList<Rutina>();
+    private ArrayList<Routine> arrayList = new ArrayList<Routine>();
     private Context context;
 
-    public RutinasAdapter(ArrayList<Rutina> arrayList, Context context) {
+    public RutinasAdapter(ArrayList<Routine> arrayList, Context context) {
         this.arrayList = arrayList;
         this.context = context;
     }
@@ -34,8 +35,8 @@ public class RutinasAdapter extends RecyclerView.Adapter<RutinasAdapter.Recycler
 
     @Override
     public void onBindViewHolder(RutinasAdapter.RecyclerViewHolder holder, int position) {
-        final Rutina rutina = arrayList.get(position);
-        holder.nombre.setText(rutina.getNombre());
+        final Routine rutina = arrayList.get(position);
+        holder.nombre.setText(rutina.getName());
         holder.dificultad.setText(rutina.getDificultad());
         if(rutina.getDificultad()=="hard"){
             holder.dificultad.setTextColor(Color.parseColor("#CCFF1E1E"));
@@ -48,7 +49,7 @@ public class RutinasAdapter extends RecyclerView.Adapter<RutinasAdapter.Recycler
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(context, DaysActivity.class);
-                intent.putExtra("name",rutina.getNombre());
+                intent.putExtra("name",rutina.getName());
                 context.startActivity(intent);
             }
         });

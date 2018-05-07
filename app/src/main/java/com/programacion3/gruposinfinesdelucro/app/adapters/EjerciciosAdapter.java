@@ -2,6 +2,7 @@ package com.programacion3.gruposinfinesdelucro.app.adapters;
 
 import android.content.Context;
 import android.content.Intent;
+import android.os.Parcelable;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,14 +13,15 @@ import android.widget.TextView;
 import com.programacion3.gruposinfinesdelucro.app.classes.Ejercicio;
 import com.programacion3.gruposinfinesdelucro.app.R;
 import com.programacion3.gruposinfinesdelucro.app.activities.EjercicioActivity;
+import com.programacion3.gruposinfinesdelucro.app.classes.Exercise;
 
 import java.util.ArrayList;
 
 public class EjerciciosAdapter extends RecyclerView.Adapter<EjerciciosAdapter.RecyclerViewHolder> {
-    private ArrayList<Ejercicio> arrayList = new ArrayList<Ejercicio>();
+    private ArrayList<Exercise> arrayList = new ArrayList<Exercise>();
     private Context context;
 
-    public EjerciciosAdapter(ArrayList<Ejercicio> arrayList, Context context) {
+    public EjerciciosAdapter(ArrayList<Exercise> arrayList, Context context) {
         this.arrayList = arrayList;
         this.context = context;
     }
@@ -32,15 +34,14 @@ public class EjerciciosAdapter extends RecyclerView.Adapter<EjerciciosAdapter.Re
 
     @Override
     public void onBindViewHolder(RecyclerViewHolder holder, int position) {
-        final Ejercicio ejercicio = arrayList.get(position);
-        holder.imageView.setImageResource(ejercicio.getImg_type());
+        final Exercise ejercicio = arrayList.get(position);
         holder.exercise.setText(ejercicio.getName());
-        holder.duration.setText(ejercicio.getDuration());
+        holder.duration.setText(ejercicio.getMusculo());
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(context, EjercicioActivity.class);
-                intent.putExtra("Ejercicio", ejercicio);
+                intent.putExtra("Ejercicio", (Parcelable) ejercicio);
                 context.startActivity(intent);
             }
         });
