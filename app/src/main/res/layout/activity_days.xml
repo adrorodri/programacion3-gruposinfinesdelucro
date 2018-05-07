@@ -65,7 +65,7 @@
         android:textSize="30sp"
         android:id="@+id/sabado"
         android:textAppearance="@style/Theme.AppCompat.Light"
-        android:fontFamily="@font/dk"/>
+        android:fontFamily="@font/dk" />
     <Button
         android:layout_width="match_parent"
         android:layout_height="77dp"

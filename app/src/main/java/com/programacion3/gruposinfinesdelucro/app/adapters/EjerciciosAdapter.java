@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.programacion3.gruposinfinesdelucro.app.classes.Ejercicio;
 import com.programacion3.gruposinfinesdelucro.app.R;
 import com.programacion3.gruposinfinesdelucro.app.activities.EjercicioActivity;
@@ -37,6 +38,7 @@ public class EjerciciosAdapter extends RecyclerView.Adapter<EjerciciosAdapter.Re
         final Exercise ejercicio = arrayList.get(position);
         holder.exercise.setText(ejercicio.getName());
         holder.duration.setText(ejercicio.getMusculo());
+        Glide.with(this.context).load(ejercicio.getImagen()).into(holder.imageView);;
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

@@ -8,6 +8,10 @@
     android:fitsSystemWindows="true"
     tools:openDrawer="start"
     >
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -15,7 +19,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="80dp"
-        android:text="Crunches with Legs on an Exercise Ball"
+        android:id="@+id/titulo"
         android:fontFamily="@font/andyfont"
         android:gravity="center"
         android:layout_marginTop="50dp"
@@ -25,27 +29,25 @@
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="250dp"
-        android:src="@drawable/curlexp"/>
+        android:id="@+id/imgex"/>
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:id="@+id/explicacion"
         android:fontFamily="@font/moon"
-        android:text="Start off by taking a barbell and placing it in a corner or in a place where it can be stabilized, then place a weight at the one end that you will be grabbing.
-Slowly bend forward so that you are as close to parallel to the ground as possible, keeping your knees bent and feet planted firmly on the floor.
-Grab the bar with one hand on top of the other, just underneath the plates then pull the bar straight up towards your chest, keeping your elbows in, until the weight touches your lower chest and squeeze your back."
         android:textSize="18dp"
         android:layout_marginLeft="18dp"
         android:layout_marginRight="18dp"
         android:layout_marginTop="18dp"
         />
 
-</LinearLayout>
+</LinearLayout></ScrollView>
     <include
         layout="@layout/app_bar_menu"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
 
-    <!---<include
-        layout="@layout/navigation_menu"/> -->
+    <include
+        layout="@layout/navigation_menu"/>
 
 </android.support.v4.widget.DrawerLayout>
