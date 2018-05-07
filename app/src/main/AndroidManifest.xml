@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
           package="com.programacion3.gruposinfinesdelucro.app">
+    
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
 
     <application
         android:allowBackup="true"
@@ -9,25 +13,30 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".FirstActivity">
+        <activity android:name=".activities.FirstActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivity"/>
-        <activity android:name=".LogInActivity"/>
-        <activity android:name=".SignUpActivity"/>
-        <activity
-            android:name=".MenuActivity"
-            android:label="@string/title_activity_menu"
-            android:theme="@style/AppTheme"/>
-        <activity android:name=".PerfilActivity"/>
-        <activity android:name=".NavigationActivity">
+        <activity android:name=".activities.LogInActivity"/>
+        <activity android:name=".activities.SignUpActivity"/>
+        <activity android:name=".activities.PerfilActivity"/>
+        <activity android:name=".activities.NavigationActivity">
         </activity>
-        <activity android:name=".ActividadDiariaActivity"/>
-        <activity android:name=".RutinasActivity" />
+        <activity android:name=".activities.ActividadDiariaActivity"/>
+        <activity android:name=".activities.RutinasActivity"/>
+        <activity android:name=".activities.EjercicioActivity"/>
+        <activity android:name=".activities.ChooseRutineActivity"/>
+        <activity android:name=".activities.DaysActivity"/>
+        <activity android:name=".activities.ShowAllExercises"/>
+        <activity android:name=".activities.CreateRoutine"/>
+        <activity android:name=".activities.ExplainActivity">
+
+        </activity>
     </application>
+
+
 
 </manifest>

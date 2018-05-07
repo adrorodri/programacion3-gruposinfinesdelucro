@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "800118568510",
+    "firebase_url": "https://fitapp-cf687.firebaseio.com",
+    "project_id": "fitapp-cf687",
+    "storage_bucket": "fitapp-cf687.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:800118568510:android:b93ac01474887b9b",
+        "android_client_info": {
+          "package_name": "com.programacion3.gruposinfinesdelucro.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "800118568510-acq6vbs14fk95mps9ihjhn3sv0q8mpti.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBuaigoRN5xZ3Fy2velqusVnxzVRWAqnrk"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

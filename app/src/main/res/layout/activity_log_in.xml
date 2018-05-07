@@ -5,32 +5,52 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.programacion3.gruposinfinesdelucro.app.LogInActivity"
+    tools:context="com.programacion3.gruposinfinesdelucro.app.activities.LogInActivity"
     android:orientation="vertical"
     android:layout_margin="20dp">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Are you ready?xD "
+        android:text="¿Aceptas el reto? "
         android:textSize="40sp"
-        android:padding="10dp"
+        android:padding="30dp"
         android:textAppearance="@style/Theme.AppCompat.Light"
+        android:fontFamily="@font/dk"
         android:textAlignment="center"/>
 
     <EditText
+        android:id="@+id/Usua"
         style="@style/EditTextBox"
-        android:hint="example@gmail.com"/>
+        android:hint="example@gmail.com"
+        android:inputType="textEmailAddress"
+        android:textColorHint="#a2a3a3"
+        android:maxLength="30"/>
 
     <EditText
+        android:id="@+id/Contra"
         style="@style/EditTextBox"
-        android:hint="password"/>
+        android:hint="password"
+        android:inputType="textPassword"
+        android:textColorHint="#a3a4a4"
+        android:maxLength="20"/>
 
     <Button
         android:text="INICIAR SESIÓN"
+        android:id="@+id/logButton"
         style="@style/RoundedButton"/>
 
+    <CheckBox
+    android:id="@+id/cond"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="start"
+    android:layout_margin="5dp"
+    android:buttonTint="@color/bg_color"
+    android:text="Recuérdame" />
+
     <TextView
+        android:id="@+id/resetPasswordTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
@@ -45,6 +65,7 @@
         android:layout_gravity="center_horizontal"/>
 
     <TextView
+        android:id="@+id/joinTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="UNETE AHORA"
