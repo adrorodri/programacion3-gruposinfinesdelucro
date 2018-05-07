@@ -145,11 +145,4 @@ public class PerfilActivity extends NavigationActivity {
                 .load(user.getPhotoUrl()).fitCenter().centerCrop().into(editFoto);
 
     }
-
-    @Override
-    public void onBackPressed() {
-        final Intent intent;
-        intent = new Intent(this, ActividadDiariaActivity.class);
-        startActivity(intent);
-    }
 }
