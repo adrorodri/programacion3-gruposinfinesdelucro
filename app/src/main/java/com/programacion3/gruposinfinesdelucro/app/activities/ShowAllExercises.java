@@ -17,10 +17,11 @@ import com.programacion3.gruposinfinesdelucro.app.classes.Exercise;
 import java.util.ArrayList;
 
 public class ShowAllExercises extends NavigationActivity {
-    private ArrayList<Exercise> exerciseArrayList= new ArrayList<Exercise>();
+    private ArrayList<Exercise> exerciseArrayList = new ArrayList<Exercise>();
     private RecyclerView recyclerView;
     private RecyclerView.Adapter adapter;
     private RecyclerView.LayoutManager layoutManager;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         setContentView(R.layout.activity_show_all_exercises);
@@ -41,10 +42,10 @@ public class ShowAllExercises extends NavigationActivity {
                 for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
                     Exercise exercise = snapshot.getValue(Exercise.class);
                     exerciseArrayList.add(exercise);
-                    Log.d("exercise",exercise.getDescription());
+                    Log.d("exercise", exercise.getDescription());
 
                 }
-                adapter = new EjerciciosAdapter(exerciseArrayList,ShowAllExercises.this);
+                adapter = new EjerciciosAdapter(exerciseArrayList, ShowAllExercises.this);
                 adapter.notifyDataSetChanged();
             }
 
@@ -55,6 +56,6 @@ public class ShowAllExercises extends NavigationActivity {
         });
         recyclerView.setAdapter(adapter);
 
-        
+
     }
 }

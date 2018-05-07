@@ -20,7 +20,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
-
 import com.google.firebase.auth.FirebaseUser;
 import com.programacion3.gruposinfinesdelucro.app.R;
 
@@ -50,17 +49,17 @@ public class NavigationActivity extends AppCompatActivity implements NavigationV
         emailTextView = header.findViewById(R.id.emailTextView);
 
 
-        if(displayNameTextView == null){
+        if (displayNameTextView == null) {
             Log.d("NavigationActivity", "Display name is null");
         }
 
-        if(emailTextView == null){
+        if (emailTextView == null) {
             Log.d("NavigationActivity", "Email is null");
         }
 
         View view = findViewById(R.id.nav_view);
 
-        if(view == null){
+        if (view == null) {
             Log.d("NavigationActivity", "Nav-view is null");
         }
 
@@ -162,7 +161,7 @@ public class NavigationActivity extends AppCompatActivity implements NavigationV
         return true;
     }
 
-    public void updateHeader(){
+    public void updateHeader() {
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
 
         displayNameTextView.setText(user.getDisplayName());

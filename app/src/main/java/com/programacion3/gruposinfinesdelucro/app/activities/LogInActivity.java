@@ -41,8 +41,8 @@ public class LogInActivity extends AppCompatActivity {
         joinTextView = findViewById(R.id.joinTextView);
 
         Intent intent = getIntent();
-        boolean signed_recently =  intent.getBooleanExtra("signed_recently", false);
-        if(signed_recently){
+        boolean signed_recently = intent.getBooleanExtra("signed_recently", false);
+        if (signed_recently) {
             String email = intent.getStringExtra("user_email");
             Usua.setText(email);
         }
@@ -51,7 +51,7 @@ public class LogInActivity extends AppCompatActivity {
         logInButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(!validateForm()){
+                if (!validateForm()) {
                     return;
                 }
 
@@ -92,14 +92,14 @@ public class LogInActivity extends AppCompatActivity {
 
     }
 
-    private boolean validateForm(){
-        if(Usua.getText().toString().equals("")){
+    private boolean validateForm() {
+        if (Usua.getText().toString().equals("")) {
             Usua.requestFocus();
             Usua.setError("Campo obligatorio");
-        }else if(Contra.getText().toString().equals("")){
+        } else if (Contra.getText().toString().equals("")) {
             Contra.requestFocus();
             Contra.setError("Campo obligatorio");
-        }else {
+        } else {
             return true;
         }
         return false;
@@ -112,14 +112,14 @@ public class LogInActivity extends AppCompatActivity {
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
                             Log.d("LogInActivity", "Cuenta ingresó con éxito");
-                            if(auth.getCurrentUser() == null){
+                            if (auth.getCurrentUser() == null) {
                                 return;
                             }
 
-                            if(!auth.getCurrentUser().isEmailVerified()){
+                            if (!auth.getCurrentUser().isEmailVerified()) {
                                 showDialog("Error de verificación", "El correo proporcionado no ha sido verificado");
                                 auth.signOut();
-                            }else{
+                            } else {
                                 startApp();
                             }
                         } else {
@@ -130,10 +130,10 @@ public class LogInActivity extends AppCompatActivity {
 
     }
 
-    private void resetPassword(){
+    private void resetPassword() {
         auth = FirebaseAuth.getInstance();
         String email = Usua.getText().toString();
-        if(TextUtils.isEmpty(email)){
+        if (TextUtils.isEmpty(email)) {
             showDialog("Error", "No se pudo enviar el correo de restablecimiento" +
                     " de contraseña");
             return;
@@ -144,10 +144,10 @@ public class LogInActivity extends AppCompatActivity {
                 .addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
-                        if(task.isSuccessful()){
+                        if (task.isSuccessful()) {
                             showDialog("Restablecer contraseña", "Correo de restablecimiento de contraseña" +
                                     "ha sido enviado con éxito");
-                        }else{
+                        } else {
                             showDialog("Error", "No se pudo enviar el correo de restablecimiento" +
                                     " de contraseña");
                         }

@@ -29,7 +29,7 @@ public class FirstActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_first);
 
-        if(FirebaseAuth.getInstance().getCurrentUser() != null){
+        if (FirebaseAuth.getInstance().getCurrentUser() != null) {
             startApp();
         }
 
@@ -115,7 +115,7 @@ public class FirstActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void startApp(){
+    public void startApp() {
         Intent intent = new Intent(this, ActividadDiariaActivity.class);
         startActivity(intent);
     }

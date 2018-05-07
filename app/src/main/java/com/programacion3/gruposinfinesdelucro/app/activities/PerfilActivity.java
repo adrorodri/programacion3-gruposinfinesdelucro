@@ -52,13 +52,12 @@ public class PerfilActivity extends NavigationActivity {
         mStorage = FirebaseStorage.getInstance().getReference();
 
 
-
         uplButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(Intent.ACTION_PICK);
                 intent.setType("image/*");
-                startActivityForResult(intent,GALLERY_INTENT);
+                startActivityForResult(intent, GALLERY_INTENT);
             }
         });
     }
@@ -66,7 +65,7 @@ public class PerfilActivity extends NavigationActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if(requestCode==GALLERY_INTENT&&resultCode== RESULT_OK){
+        if (requestCode == GALLERY_INTENT && resultCode == RESULT_OK) {
             Uri uri = data.getData();
             StorageReference filepath = mStorage.child("fotosDePerfil").child(uri.getLastPathSegment());
             filepath.putFile(uri).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
@@ -77,7 +76,7 @@ public class PerfilActivity extends NavigationActivity {
                             .load(descargarFoto).fitCenter().centerCrop().into(image);
 
 
-                    Toast.makeText(PerfilActivity.this,"Se subió la foto",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(PerfilActivity.this, "Se subió la foto", Toast.LENGTH_SHORT).show();
                 }
             });
 

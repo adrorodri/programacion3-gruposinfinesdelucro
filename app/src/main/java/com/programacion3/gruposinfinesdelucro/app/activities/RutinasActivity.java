@@ -4,7 +4,6 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
-import com.programacion3.gruposinfinesdelucro.app.classes.Ejercicio;
 import com.programacion3.gruposinfinesdelucro.app.R;
 import com.programacion3.gruposinfinesdelucro.app.adapters.EjerciciosAdapter;
 import com.programacion3.gruposinfinesdelucro.app.classes.Enums;
@@ -25,7 +24,7 @@ public class RutinasActivity extends NavigationActivity {
 
         recyclerView = findViewById(R.id.recycler);
 
-        Exercise ejercicio = new Exercise("squat","gluteo","hola","https://estaticos.muyinteresante.es/media/cache/760x570_thumb/uploads/images/pyr/55520750c0ea197b3fd51098/cuac-pato-p.jpg", Enums.Exercisetype.REPEATED);
+        Exercise ejercicio = new Exercise("squat", "gluteo", "hola", "https://estaticos.muyinteresante.es/media/cache/760x570_thumb/uploads/images/pyr/55520750c0ea197b3fd51098/cuac-pato-p.jpg", Enums.Exercisetype.REPEATED);
 
         arrayList.add(ejercicio);
 

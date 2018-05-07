@@ -9,7 +9,6 @@ import com.bumptech.glide.Glide;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.programacion3.gruposinfinesdelucro.app.R;
-import com.programacion3.gruposinfinesdelucro.app.classes.Ejercicio;
 import com.programacion3.gruposinfinesdelucro.app.classes.Exercise;
 
 public class ExplainActivity extends NavigationActivity {
@@ -29,8 +28,8 @@ public class ExplainActivity extends NavigationActivity {
         Intent intent = getIntent();
         eje = (Exercise) intent.getSerializableExtra("Ejercicio");
 
-        String nombre = eje.getName();
-        String descrip = eje.getDescription();
+        //String nombre = eje.getName();
+        //String descrip = eje.getDescription();
         String img = eje.getImagen();
 
         descripcion = findViewById(R.id.explicacion);
@@ -40,8 +39,8 @@ public class ExplainActivity extends NavigationActivity {
 
         Glide.with(this).load(img).into(imageView);
 
-        descripcion.setText(descrip);
-        titulo.setText(nombre);
+        descripcion.setText("hello");
+        titulo.setText("wuw");
 
 
     }

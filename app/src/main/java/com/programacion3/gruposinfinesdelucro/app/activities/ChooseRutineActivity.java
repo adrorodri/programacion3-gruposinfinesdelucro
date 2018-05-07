@@ -11,18 +11,14 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-import com.programacion3.gruposinfinesdelucro.app.classes.Ejercicio;
 import com.programacion3.gruposinfinesdelucro.app.R;
+import com.programacion3.gruposinfinesdelucro.app.adapters.RutinasAdapter;
 import com.programacion3.gruposinfinesdelucro.app.classes.Enums;
 import com.programacion3.gruposinfinesdelucro.app.classes.Exercise;
 import com.programacion3.gruposinfinesdelucro.app.classes.Routine;
-import com.programacion3.gruposinfinesdelucro.app.classes.Rutina;
-import com.programacion3.gruposinfinesdelucro.app.adapters.RutinasAdapter;
 import com.programacion3.gruposinfinesdelucro.app.classes.ScheduledExercise;
 
 import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
 
 public class ChooseRutineActivity extends NavigationActivity {
     RecyclerView recyclerView;
@@ -50,9 +46,9 @@ public class ChooseRutineActivity extends NavigationActivity {
         Exercise barbell_bicep_drag_curl_exe = new Exercise("Barbell Bicep Drag Curl",
                 "Bicep",
                 "To begin this exercise; take a barbell with " +
-                "palms facing forward with the barbell resting at your pelvis. Then take the " +
-                "barbell and curl it towards your upper chest as in a way to “Drag” the bar up. " +
-                "Hold and squeeze the biceps tightly.",
+                        "palms facing forward with the barbell resting at your pelvis. Then take the " +
+                        "barbell and curl it towards your upper chest as in a way to “Drag” the bar up. " +
+                        "Hold and squeeze the biceps tightly.",
                 "http://www.directlyfitness.com/wordpress/wp-content/uploads/2012/05/Barbell-Drag-Curls.jpg",
                 Enums.Exercisetype.REPEATED);
         ref.child(barbell_bicep_drag_curl_exe.getName()).setValue(barbell_bicep_drag_curl_exe);
@@ -60,7 +56,7 @@ public class ChooseRutineActivity extends NavigationActivity {
         ref.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                for(DataSnapshot snapshot : dataSnapshot.getChildren()){
+                for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
                     Log.d("ChooseRutineActivity", snapshot.getValue(Exercise.class).toString());
                 }
             }
@@ -94,8 +90,6 @@ public class ChooseRutineActivity extends NavigationActivity {
         routine.addExercise(Enums.Day.SATURDAY, exe1);
 
         usersRef.child(FirebaseAuth.getInstance().getCurrentUser().getUid()).child("routines").setValue(routine);
-
-
 
 
     }
