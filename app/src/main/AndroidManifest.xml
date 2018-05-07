@@ -33,10 +33,7 @@
         <activity android:name=".activities.ShowAllExercises"/>
         <activity android:name=".activities.CreateRoutine"/>
         <activity android:name=".activities.ExplainActivity">
-
         </activity>
     </application>
-
-
 
 </manifest>

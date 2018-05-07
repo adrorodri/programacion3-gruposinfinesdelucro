@@ -4,28 +4,28 @@
    <item>
     <shape
     android:shape="oval">
-    <size android:width="75dp"
-        android:height="75dp"/>
+    <size android:width="200dp"
+        android:height="200dp"/>
     <stroke
         android:width="3dp"
-        android:color="#34d123"/>
-    <solid android:color="#3ae111"/>
+        android:color="@color/colorAccent"/>
+    <solid android:color="@color/colorAccent"/>
     </shape>
    </item>
-    <item android:height="55dp"
-        android:width="4dp"
-        android:top="10dp"
-        android:left="35.5dp"
+    <item android:height="100dp"
+        android:width="8dp"
+        android:top="50dp"
+        android:left="96dp"
         >
         <shape android:shape="rectangle">
             <solid android:color="#ffff"/>
         </shape>
 
     </item>
-    <item android:height="4dp"
-        android:width="55dp"
-        android:top="35.5dp"
-        android:left="10dp"
+    <item android:height="8dp"
+        android:width="100dp"
+        android:top="96dp"
+        android:left="50dp"
         >
         <shape android:shape="rectangle">
             <solid android:color="#ffff"/>

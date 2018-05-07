@@ -24,5 +24,6 @@
     <string name="tuesday">Tuesday</string>
     <string name="rutinas_hechas">Add an existing routine</string>
     <string name="rutinas_crear">Create a routine</string>
+    <string name="title_activity_test">TestActivity</string>
 
 </resources>
