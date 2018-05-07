@@ -5,6 +5,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -80,7 +81,7 @@ public class ChooseRutineActivity extends NavigationActivity {
 
         //Prueba de la database
 
-        DatabaseReference routineRef = database.getReference("routines");
+        DatabaseReference usersRef = database.getReference("users");
 
         Exercise air_bike_exe = new Exercise("Air Bike",
                 "abs",
@@ -100,7 +101,8 @@ public class ChooseRutineActivity extends NavigationActivity {
         routine.addExercise(Enums.Day.THURSDAY, exe2);
         routine.addExercise(Enums.Day.SATURDAY, exe1);
 
-        routineRef.child(routine.getName()).setValue(routine);
+        usersRef.child(FirebaseAuth.getInstance().getCurrentUser().getUid()).child("routines").setValue(routine);
+
 
 
 

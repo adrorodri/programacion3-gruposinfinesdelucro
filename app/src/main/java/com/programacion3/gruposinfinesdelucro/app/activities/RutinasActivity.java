@@ -23,7 +23,7 @@ public class RutinasActivity extends NavigationActivity {
         setContentView(R.layout.activity_rutinas);
         super.onCreate(savedInstanceState);
 
-        recyclerView = (RecyclerView) findViewById(R.id.recycler);
+        recyclerView = findViewById(R.id.recycler);
         Ejercicio ejercicio = new Ejercicio(R.drawable.bicep1, "Curl", "12 min");
         Ejercicio ejercicio1 = new Ejercicio(R.drawable.chest1, "press", "12 reps");
         Ejercicio ejercicio2 = new Ejercicio(R.drawable.cardio1, "legs", "12 min");
