@@ -3,6 +3,7 @@ package com.programacion3.gruposinfinesdelucro.app.activities;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -16,15 +17,22 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.programacion3.gruposinfinesdelucro.app.R;
 
+import de.hdodenhof.circleimageview.CircleImageView;
+
 public class NavigationActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     private TextView displayNameTextView, emailTextView;
+    private ImageView profilePic;
+    private FirebaseAuth auth = FirebaseAuth.getInstance();
+    private FirebaseUser user = auth.getCurrentUser();
 
 
     @Override
@@ -47,6 +55,7 @@ public class NavigationActivity extends AppCompatActivity implements NavigationV
         View header = navigationView.getHeaderView(0);
         displayNameTextView = header.findViewById(R.id.displayNameTextView);
         emailTextView = header.findViewById(R.id.emailTextView);
+        profilePic = header.findViewById(R.id.circle_profile);
 
 
         if (displayNameTextView == null) {
@@ -62,8 +71,8 @@ public class NavigationActivity extends AppCompatActivity implements NavigationV
         if (view == null) {
             Log.d("NavigationActivity", "Nav-view is null");
         }
-
         updateHeader();
+        updatePicHeader();
     }
 
 
@@ -163,8 +172,12 @@ public class NavigationActivity extends AppCompatActivity implements NavigationV
 
     public void updateHeader() {
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-
         displayNameTextView.setText(user.getDisplayName());
         emailTextView.setText(user.getEmail());
+    }
+    public void updatePicHeader(){
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        Glide.with(NavigationActivity.this)
+                .load(user.getPhotoUrl()).fitCenter().centerCrop().into(profilePic);
     }
 }
