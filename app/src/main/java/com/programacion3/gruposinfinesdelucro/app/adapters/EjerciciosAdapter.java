@@ -61,7 +61,7 @@ public class EjerciciosAdapter extends RecyclerView.Adapter<EjerciciosAdapter.Re
         public RecyclerViewHolder(View view) {
             super(view);
             itemView = view;
-            imageView = view.findViewById(R.id.img);
+           // imageView = view.findViewById(R.id.img);
             exercise = view.findViewById(R.id.name);
             duration = view.findViewById(R.id.duration);
 

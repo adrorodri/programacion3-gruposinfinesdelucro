@@ -1,6 +1,7 @@
 package com.programacion3.gruposinfinesdelucro.app.activities;
 
 import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 
@@ -24,20 +25,26 @@ public class ShowAllExercises extends NavigationActivity {
     protected void onCreate(Bundle savedInstanceState) {
         setContentView(R.layout.activity_show_all_exercises);
         super.onCreate(savedInstanceState);
-        recyclerView = findViewById(R.id.recycler);
-        FirebaseDatabase database = FirebaseDatabase.getInstance();
-        DatabaseReference userDatabase = database.getReference("exercises");
+        recyclerView = (RecyclerView) findViewById(R.id.recycler2);
+        layoutManager = new LinearLayoutManager(this);
+        recyclerView.setHasFixedSize(true);
+        recyclerView.setLayoutManager(layoutManager);
 
-        ValueEventListener exerciseListener = new ValueEventListener() {
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        DatabaseReference userDatabase = database.getReference();
+
+
+        userDatabase.child("exercises").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
+                exerciseArrayList.removeAll(exerciseArrayList);
                 for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
                     Exercise exercise = snapshot.getValue(Exercise.class);
                     exerciseArrayList.add(exercise);
-                    Log.d("imagen",exercise.getImagen() + "nombre " +
-                           exercise.getName());
+                    Log.d("exercise",exercise.getDescription());
 
                 }
+                adapter = new EjerciciosAdapter(exerciseArrayList,ShowAllExercises.this);
                 adapter.notifyDataSetChanged();
             }
 
@@ -45,7 +52,9 @@ public class ShowAllExercises extends NavigationActivity {
             public void onCancelled(DatabaseError databaseError) {
 
             }
-        };
-        userDatabase.addValueEventListener(exerciseListener);
+        });
+        recyclerView.setAdapter(adapter);
+
+        
     }
 }

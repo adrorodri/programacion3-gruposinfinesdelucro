@@ -12,7 +12,7 @@ public class Exercise {
 
     }
 
-    public Exercise(String name, String musculo, String description, String imagen, Enums.Exercisetype type) {
+    public Exercise( String description, String imagen,String musculo, String name,Enums.Exercisetype type) {
         this.name = name;
         this.musculo = musculo;
         this.description = description;
