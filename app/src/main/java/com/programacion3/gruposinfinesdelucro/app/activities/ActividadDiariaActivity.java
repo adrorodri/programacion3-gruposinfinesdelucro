@@ -27,7 +27,7 @@ public class ActividadDiariaActivity extends NavigationActivity {
     private RecyclerView recyclerView;
     private RecyclerView.Adapter adapter;
     private RecyclerView.LayoutManager layoutManager;
-    ArrayList<Ejercicio> arrayList = new ArrayList<Ejercicio>();
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
