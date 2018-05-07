@@ -2,6 +2,7 @@ package com.programacion3.gruposinfinesdelucro.app.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -9,10 +10,11 @@ import android.widget.TextView;
 
 import com.programacion3.gruposinfinesdelucro.app.classes.Ejercicio;
 import com.programacion3.gruposinfinesdelucro.app.R;
+import com.programacion3.gruposinfinesdelucro.app.classes.Exercise;
 
 public class EjercicioActivity extends NavigationActivity {
 
-    Ejercicio eje;
+    Exercise eje;
 
     ImageView exerciseImage;
     TextView exerciseNameTextView, seriesNumberTextView, repetitionsNumberTextView;
@@ -24,7 +26,7 @@ public class EjercicioActivity extends NavigationActivity {
         super.onCreate(savedInstanceState);
 
         Intent intent = getIntent();
-        eje = (Ejercicio) intent.getSerializableExtra("Ejercicio");
+        eje = (Exercise) intent.getSerializableExtra("Ejercicio");
 
         exerciseImage = findViewById(R.id.exerciseImage);
         exerciseNameTextView = findViewById(R.id.exerciseNameTextView);
@@ -39,15 +41,12 @@ public class EjercicioActivity extends NavigationActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                start();
+                Intent intent = new Intent(EjercicioActivity.this, ExplainActivity.class);
+                intent.putExtra("Ejercicio", (Parcelable) eje);
+                startActivity(intent);
             }
         });
 
-    }
-
-    public void start() {
-        Intent intent = new Intent(this, ExplainActivity.class);
-        startActivity(intent);
     }
 
 }
