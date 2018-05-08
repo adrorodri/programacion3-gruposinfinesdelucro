@@ -2,11 +2,13 @@ package com.programacion3.gruposinfinesdelucro.app.classes;
 
 import android.support.design.internal.ParcelableSparseArray;
 
+import java.io.Serializable;
+
 /**
  * Created by Joaco99 on 05/05/2018.
  */
 
-public class Exercise extends ParcelableSparseArray {
+public class Exercise implements Serializable {
     private String description, imagen, name, musculo;
     private Enums.Exercisetype type;
 

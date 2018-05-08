@@ -28,8 +28,8 @@ public class ExplainActivity extends NavigationActivity {
         Intent intent = getIntent();
         eje = (Exercise) intent.getSerializableExtra("Ejercicio");
 
-        //String nombre = eje.getName();
-        //String descrip = eje.getDescription();
+        String nombre = eje.getName();
+        String descrip = eje.getDescription();
         String img = eje.getImagen();
 
         descripcion = findViewById(R.id.explicacion);
@@ -39,8 +39,8 @@ public class ExplainActivity extends NavigationActivity {
 
         Glide.with(this).load(img).into(imageView);
 
-        descripcion.setText("hello");
-        titulo.setText("wuw");
+        descripcion.setText(descrip);
+        titulo.setText(nombre);
 
 
     }

@@ -1,6 +1,7 @@
 package com.programacion3.gruposinfinesdelucro.app.adapters;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,6 +11,9 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.programacion3.gruposinfinesdelucro.app.R;
+import com.programacion3.gruposinfinesdelucro.app.activities.EjercicioActivity;
+import com.programacion3.gruposinfinesdelucro.app.activities.ExplainActivity;
+import com.programacion3.gruposinfinesdelucro.app.activities.RutinasActivity;
 import com.programacion3.gruposinfinesdelucro.app.classes.ScheduledExercise;
 
 import java.util.ArrayList;
@@ -36,7 +40,7 @@ public class ScheduledExerciseAdapter extends  RecyclerView.Adapter<ScheduledExe
 
     @Override
     public void onBindViewHolder(ScheduledExerciseHolder holder, int position) {
-        ScheduledExercise scheduledExercise = exercises.get(position);
+        final ScheduledExercise scheduledExercise = exercises.get(position);
         holder.name .setText(scheduledExercise.getExercise().getName());
         String content;
         if(scheduledExercise.getSec_duration() == -1){
@@ -47,6 +51,15 @@ public class ScheduledExerciseAdapter extends  RecyclerView.Adapter<ScheduledExe
         holder.schedule.setText(content);
 
         Glide.with(this.context).load(scheduledExercise.getExercise().getImagen()).into(holder.picture);
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(context, EjercicioActivity.class);
+                intent.putExtra("Ejercicio", scheduledExercise);
+                context.startActivity(intent);
+            }
+        });
 
     }
 
@@ -64,11 +77,12 @@ public class ScheduledExerciseAdapter extends  RecyclerView.Adapter<ScheduledExe
 
         private TextView name, schedule;
         private ImageView picture;
+        private View itemView;
 
         ScheduledExerciseHolder(View itemView) {
             super(itemView);
             itemView.setOnClickListener(this);
-
+            this.itemView = itemView;
             name = itemView.findViewById(R.id.nameScheduledExercise);
             schedule = itemView.findViewById(R.id.scheduleScheduledExercise);
             picture = itemView.findViewById(R.id.pictureScheduledExercise);

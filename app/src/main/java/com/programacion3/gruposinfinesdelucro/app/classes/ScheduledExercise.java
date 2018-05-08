@@ -1,10 +1,12 @@
 package com.programacion3.gruposinfinesdelucro.app.classes;
 
+import java.io.Serializable;
+
 /**
  * Created by Joaco99 on 05/05/2018.
  */
 
-public class ScheduledExercise {
+public class ScheduledExercise implements Serializable{
     private Exercise exercise;
     private int sec_duration = -1 , repetitions = -1, series = -1;
 

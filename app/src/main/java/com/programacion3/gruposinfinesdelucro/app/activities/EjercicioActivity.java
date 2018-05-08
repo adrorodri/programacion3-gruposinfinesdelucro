@@ -10,10 +10,11 @@ import android.widget.TextView;
 
 import com.programacion3.gruposinfinesdelucro.app.R;
 import com.programacion3.gruposinfinesdelucro.app.classes.Exercise;
+import com.programacion3.gruposinfinesdelucro.app.classes.ScheduledExercise;
 
 public class EjercicioActivity extends NavigationActivity {
 
-    Exercise eje;
+    ScheduledExercise eje;
 
     ImageView exerciseImage;
     TextView exerciseNameTextView, seriesNumberTextView, repetitionsNumberTextView;
@@ -25,22 +26,22 @@ public class EjercicioActivity extends NavigationActivity {
         super.onCreate(savedInstanceState);
 
         Intent intent = getIntent();
-        eje = (Exercise) intent.getSerializableExtra("Ejercicio");
+        eje = (ScheduledExercise) intent.getSerializableExtra("Ejercicio");
         exerciseImage = findViewById(R.id.exerciseImage);
         exerciseNameTextView = findViewById(R.id.exerciseNameTextView);
         seriesNumberTextView = findViewById(R.id.seriesNumberTextView);
         repetitionsNumberTextView = findViewById(R.id.repetitionsNumberTextView);
 
         exerciseImage.setImageResource(R.drawable.prueba);
-        exerciseNameTextView.setText("wow");
-        seriesNumberTextView.setText("4");
-        repetitionsNumberTextView.setText("20");
+        exerciseNameTextView.setText(eje.getExercise().getName());
+        seriesNumberTextView.setText(eje.getSeries() + "");
+        repetitionsNumberTextView.setText(eje.getRepetitions() + "");
         button = findViewById(R.id.info);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(EjercicioActivity.this, ExplainActivity.class);
-                intent.putExtra("Ejercicio", (Parcelable) eje);
+                intent.putExtra("Ejercicio", eje.getExercise());
                 startActivity(intent);
             }
         });

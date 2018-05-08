@@ -81,15 +81,16 @@ public class ActividadDiariaActivity extends NavigationActivity {
                     }
                 }
 
+                Exercise ejercicio = new Exercise("hola",
+                        "https://estaticos.muyinteresante.es/media/cache/760x570_thumb/uploads/images/pyr/55520750c0ea197b3fd51098/cuac-pato-p.jpg",
+                        "gluteo", "squat", Enums.Exercisetype.REPEATED);
+                ScheduledExercise sExe = new ScheduledExercise(ejercicio, 12, 4);
+                list.add(sExe);
                 Log.d(TAG, "Lista vacia: " + list.isEmpty());
                 if(list.isEmpty()){
 
                 }else{
-                    Exercise ejercicio = new Exercise("hola",
-                            "https://estaticos.muyinteresante.es/media/cache/760x570_thumb/uploads/images/pyr/55520750c0ea197b3fd51098/cuac-pato-p.jpg",
-                            "gluteo", "squat", Enums.Exercisetype.REPEATED);
-                    ScheduledExercise sExe = new ScheduledExercise(ejercicio, 12);
-                    list.add(sExe);
+
                     fillRecycler(list);
                 }
             }
