@@ -12,12 +12,13 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.programacion3.gruposinfinesdelucro.app.R;
 import com.programacion3.gruposinfinesdelucro.app.adapters.EjerciciosAdapter;
+import com.programacion3.gruposinfinesdelucro.app.adapters.ShowExerciseAdapter;
 import com.programacion3.gruposinfinesdelucro.app.classes.Exercise;
 
 import java.util.ArrayList;
 
 public class ShowAllExercises extends NavigationActivity {
-    private ArrayList<Exercise> exerciseArrayList = new ArrayList<Exercise>();
+    private ArrayList<Exercise> exerciseArrayList= new ArrayList<Exercise>();
     private RecyclerView recyclerView;
     private RecyclerView.Adapter adapter;
     private RecyclerView.LayoutManager layoutManager;
@@ -45,7 +46,7 @@ public class ShowAllExercises extends NavigationActivity {
                     Log.d("exercise", exercise.getDescription());
 
                 }
-                adapter = new EjerciciosAdapter(exerciseArrayList, ShowAllExercises.this);
+                adapter = new ShowExerciseAdapter(exerciseArrayList, ShowAllExercises.this);
                 adapter.notifyDataSetChanged();
             }
 
@@ -56,6 +57,6 @@ public class ShowAllExercises extends NavigationActivity {
         });
         recyclerView.setAdapter(adapter);
 
-
+        
     }
 }
