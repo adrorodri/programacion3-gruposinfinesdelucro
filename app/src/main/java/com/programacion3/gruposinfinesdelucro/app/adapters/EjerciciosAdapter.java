@@ -28,13 +28,13 @@ public class EjerciciosAdapter extends RecyclerView.Adapter<EjerciciosAdapter.Re
     }
 
     @Override
-    public RecyclerViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public EjerciciosAdapter.RecyclerViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.preview_exercises, parent, false);
         return new RecyclerViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(RecyclerViewHolder holder, int position) {
+    public void onBindViewHolder(EjerciciosAdapter.RecyclerViewHolder holder, int position) {
         final Exercise ejercicio = arrayList.get(position);
         holder.exercise.setText(ejercicio.getName());
         holder.duration.setText(ejercicio.getMusculo());
@@ -63,7 +63,7 @@ public class EjerciciosAdapter extends RecyclerView.Adapter<EjerciciosAdapter.Re
         public RecyclerViewHolder(View view) {
             super(view);
             itemView = view;
-           // imageView = view.findViewById(R.id.img);
+            imageView = view.findViewById(R.id.img);
             exercise = view.findViewById(R.id.name);
             duration = view.findViewById(R.id.duration);
 
