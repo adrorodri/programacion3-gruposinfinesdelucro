@@ -47,11 +47,11 @@ public class ShowExerciseAdapter extends RecyclerView.Adapter<ShowExerciseAdapte
                 Intent intent;
                 if(exercise.getType().toString().equals("REPEATED")){
                     intent = new Intent(context, SetRepsSetsActivity.class);
-                    intent.putExtra("name", exercise.getType().toString());
+                    intent.putExtra("Ejercicio", exercise.getType().toString());
                     context.startActivity(intent);
                 }else {
                     intent = new Intent(context, SetDurationActivity.class);
-                    intent.putExtra("name", exercise.getType().toString());
+                    intent.putExtra("Ejercicio", exercise.getType().toString());
                     context.startActivity(intent);
                 }
             }
@@ -60,7 +60,7 @@ public class ShowExerciseAdapter extends RecyclerView.Adapter<ShowExerciseAdapte
             @Override
             public void onClick(View view) {
                 Intent intent=new Intent(context, ExplainActivity.class);
-                intent.putExtra("nombre",exercise);
+                intent.putExtra("Ejercicio",exercise);
                 context.startActivity(intent);
             }
         });

@@ -21,6 +21,8 @@
     <string name="viernes">Friday</string>
     <string name="sabado">Saturday</string>
     <string name="domingo">Sunday</string>
+    <string name="todo_tiempo_sec">All selected in seconds</string>
+    <string name="tiempo_insertar">Insert Time</string>
     <string name="tuesday">Tuesday</string>
     <string name="rutinas_hechas">Add an existing routine</string>
     <string name="rutinas_crear">Create a routine</string>
