@@ -30,13 +30,15 @@ public class ShowAllExercises extends NavigationActivity {
         recyclerView = (RecyclerView) findViewById(R.id.recycler2);
         layoutManager = new LinearLayoutManager(this);
         recyclerView.setHasFixedSize(true);
+        adapter = new ShowExerciseAdapter(exerciseArrayList);
         recyclerView.setLayoutManager(layoutManager);
+        recyclerView.setAdapter(adapter);
 
         FirebaseDatabase database = FirebaseDatabase.getInstance();
-        DatabaseReference userDatabase = database.getReference();
+        DatabaseReference userDatabase = database.getReference("exercises");
 
 
-        userDatabase.child("exercises").addValueEventListener(new ValueEventListener() {
+        userDatabase.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 exerciseArrayList.removeAll(exerciseArrayList);
@@ -46,7 +48,6 @@ public class ShowAllExercises extends NavigationActivity {
                     Log.d("exercise", exercise.getDescription());
 
                 }
-                adapter = new ShowExerciseAdapter(exerciseArrayList, ShowAllExercises.this);
                 adapter.notifyDataSetChanged();
             }
 
@@ -55,7 +56,6 @@ public class ShowAllExercises extends NavigationActivity {
 
             }
         });
-        recyclerView.setAdapter(adapter);
 
         
     }

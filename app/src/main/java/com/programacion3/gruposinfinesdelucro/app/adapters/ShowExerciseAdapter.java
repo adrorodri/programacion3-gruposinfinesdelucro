@@ -15,11 +15,11 @@ import java.util.ArrayList;
 
 public class ShowExerciseAdapter extends RecyclerView.Adapter<ShowExerciseAdapter.RecyclerViewHold>{
     private ArrayList<Exercise> exercises= new ArrayList<Exercise>();
-    private Context context;
 
-    public ShowExerciseAdapter(ArrayList<Exercise> exercises, Context context) {
+
+    public ShowExerciseAdapter(ArrayList<Exercise> exercises) {
         this.exercises = exercises;
-        this.context = context;
+
     }
 
     @Override
