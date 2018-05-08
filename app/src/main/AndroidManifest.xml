@@ -26,10 +26,10 @@
         <activity android:name=".activities.NavigationActivity">
         </activity>
         <activity android:name=".activities.ActividadDiariaActivity"/>
-        <activity android:name=".activities.RutinasActivity"/>
+        <activity android:name=".activities.RoutineExerciseActivity"/>
         <activity android:name=".activities.SetDurationActivity"/>
         <activity android:name=".activities.EjercicioActivity"/>
-        <activity android:name=".activities.ChooseRutineActivity"/>
+        <activity android:name=".activities.RoutinesActivity"/>
         <activity android:name=".activities.DaysActivity"/>
         <activity android:name=".activities.ShowAllExercises"/>
         <activity android:name=".activities.CreateRoutine"/>

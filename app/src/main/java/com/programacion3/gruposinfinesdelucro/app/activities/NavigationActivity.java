@@ -3,7 +3,6 @@ package com.programacion3.gruposinfinesdelucro.app.activities;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -25,21 +24,21 @@ import com.bumptech.glide.Glide;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.programacion3.gruposinfinesdelucro.app.R;
-
-import de.hdodenhof.circleimageview.CircleImageView;
+import com.programacion3.gruposinfinesdelucro.app.adapters.RoutinesAdapter;
 
 public class NavigationActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     private TextView displayNameTextView, emailTextView;
     private ImageView profilePic;
     private FirebaseAuth auth = FirebaseAuth.getInstance();
     private FirebaseUser user = auth.getCurrentUser();
+    private Toolbar toolbar;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        Toolbar toolbar = findViewById(R.id.toolbar);
+        toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
@@ -116,14 +115,11 @@ public class NavigationActivity extends AppCompatActivity implements NavigationV
         if (id == R.id.nav_perfil) {
             intent = new Intent(this, PerfilActivity.class);
             startActivity(intent);
-        } else if (id == R.id.nav_perfil) {
-            intent = new Intent(this, PerfilActivity.class);
-            startActivity(intent);
         } else if (id == R.id.nav_actividad_diaria) {
             intent = new Intent(this, ActividadDiariaActivity.class);
             startActivity(intent);
         } else if (id == R.id.nav_rutinas) {
-            intent = new Intent(this, RutinasActivity.class);
+            intent = new Intent(this, RoutinesActivity.class);
             startActivity(intent);
         } else if (id == R.id.nav_configuration) {
 
@@ -179,5 +175,9 @@ public class NavigationActivity extends AppCompatActivity implements NavigationV
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
         Glide.with(NavigationActivity.this)
                 .load(user.getPhotoUrl()).fitCenter().centerCrop().into(profilePic);
+    }
+
+    public void setToolbarTitle(String title){
+        toolbar.setTitle(title);
     }
 }

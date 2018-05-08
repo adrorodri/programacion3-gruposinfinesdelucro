@@ -17,7 +17,7 @@ import com.programacion3.gruposinfinesdelucro.app.classes.ScheduledExercise;
 
 import java.util.ArrayList;
 
-public class RutinasActivity extends NavigationActivity {
+public class RoutineExerciseActivity extends NavigationActivity {
     RecyclerView recyclerView;
     RecyclerView.Adapter adapter;
     RecyclerView.LayoutManager layoutManager;

@@ -2,14 +2,12 @@ package com.programacion3.gruposinfinesdelucro.app.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Parcelable;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.programacion3.gruposinfinesdelucro.app.R;
-import com.programacion3.gruposinfinesdelucro.app.classes.Exercise;
 import com.programacion3.gruposinfinesdelucro.app.classes.ScheduledExercise;
 
 public class EjercicioActivity extends NavigationActivity {
@@ -50,7 +48,7 @@ public class EjercicioActivity extends NavigationActivity {
         button2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(EjercicioActivity.this, RutinasActivity.class);
+                Intent intent = new Intent(EjercicioActivity.this, RoutineExerciseActivity.class);
                 startActivity(intent);
             }
         });

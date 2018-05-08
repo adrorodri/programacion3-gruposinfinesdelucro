@@ -14,7 +14,7 @@
         android:layout_height="100dp"
         android:src="@drawable/curlexp"
         android:padding="0dp"
-        android:layout_marginStart="16dp"
+        android:layout_marginStart="0dp"
         android:layout_centerVertical="true"
         android:layout_alignParentStart="true"/>
 
@@ -25,7 +25,7 @@
         android:ellipsize="marquee"
         android:singleLine="true"
         android:text="Curl"
-        android:textSize="40sp"
+        android:textSize="35sp"
         android:paddingStart="5dp"
         android:paddingEnd="10dp"
         android:textColor="@color/colorPrimaryDark"
@@ -41,7 +41,7 @@
         android:ellipsize="marquee"
         android:singleLine="true"
         android:text="4 series, 12 rep."
-        android:textSize="30sp"
+        android:textSize="25sp"
         android:paddingStart="10dp"
         android:paddingEnd="10dp"
         android:textColor="@color/colorPrimary"

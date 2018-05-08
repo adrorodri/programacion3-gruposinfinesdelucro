@@ -9,11 +9,8 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.bumptech.glide.Glide;
 import com.programacion3.gruposinfinesdelucro.app.R;
 import com.programacion3.gruposinfinesdelucro.app.activities.EjercicioActivity;
-import com.programacion3.gruposinfinesdelucro.app.activities.ExplainActivity;
-import com.programacion3.gruposinfinesdelucro.app.activities.RutinasActivity;
 import com.programacion3.gruposinfinesdelucro.app.classes.ScheduledExercise;
 
 import java.util.ArrayList;
@@ -43,14 +40,15 @@ public class ScheduledExerciseAdapter extends  RecyclerView.Adapter<ScheduledExe
         final ScheduledExercise scheduledExercise = exercises.get(position);
         holder.name .setText(scheduledExercise.getExercise().getName());
         String content;
-        if(scheduledExercise.getSec_duration() == -1){
+        if(scheduledExercise.getSec_duration() != -1){
             content = scheduledExercise.getSec_duration() + " secs";
         }else{
             content = scheduledExercise.getSeries() + " series, " + scheduledExercise.getRepetitions() + " rep.";
         }
         holder.schedule.setText(content);
 
-        Glide.with(this.context).load(scheduledExercise.getExercise().getImagen()).into(holder.picture);
+        int img = getDrawable(scheduledExercise.getExercise().getMusculo());
+        holder.picture.setImageResource(img);
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -71,6 +69,30 @@ public class ScheduledExerciseAdapter extends  RecyclerView.Adapter<ScheduledExe
     public void setListContent(ArrayList<ScheduledExercise> exercises){
         this.exercises = exercises;
         notifyItemRangeChanged(0, exercises.size());
+    }
+
+    private int getDrawable(String muscle){
+        int draw;
+        if(muscle.equals("Biceps")){
+            draw = R.drawable.bicep;
+        }else if(muscle.equals("abs")){
+            draw = R.drawable.abs;
+        }else if(muscle.equals("cardio")){
+            draw = R.drawable.cardio;
+        }else if(muscle.equals("espalda")){
+            draw = R.drawable.back;
+        }else if(muscle.equals("hombros")){
+            draw = R.drawable.shoulder;
+        }else if(muscle.equals("pecho")){
+            draw = R.drawable.chest;
+        }else if(muscle.equals("piernainf") || muscle.equals("piernasup") || muscle.equals("gluteos")){
+            draw = R.drawable.leg;
+        }else if(muscle.equals("tricep") || muscle.equals("antebrazo")){
+            draw = R.drawable.tricep;
+        }else{
+            draw = R.drawable.bicep;
+        }
+        return draw;
     }
 
     class ScheduledExerciseHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
