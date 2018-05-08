@@ -52,13 +52,13 @@ public class EjerciciosAdapter extends RecyclerView.Adapter<EjerciciosAdapter.Re
         return arrayList.size();
     }
 
-    public static class RecyclerViewHolder extends RecyclerView.ViewHolder {
+    static class RecyclerViewHolder extends RecyclerView.ViewHolder {
 
         View itemView;
         ImageView imageView;
         TextView exercise, duration;
 
-        public RecyclerViewHolder(View view) {
+        RecyclerViewHolder(View view) {
             super(view);
             itemView = view;
             imageView = view.findViewById(R.id.img);

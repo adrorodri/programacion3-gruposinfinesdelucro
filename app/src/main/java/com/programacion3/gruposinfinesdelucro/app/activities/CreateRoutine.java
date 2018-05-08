@@ -8,22 +8,25 @@ import android.widget.Button;
 import com.programacion3.gruposinfinesdelucro.app.R;
 
 public class CreateRoutine extends NavigationActivity {
-    Button crear, escoger;
+    private Button createButton, chooseButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         setContentView(R.layout.activity_create_routine);
         super.onCreate(savedInstanceState);
-        crear = findViewById(R.id.crearlarutina);
-        escoger = findViewById(R.id.escogerlarutina);
-        crear.setOnClickListener(new View.OnClickListener() {
+        createButton = findViewById(R.id.crearlarutina);
+        chooseButton = findViewById(R.id.escogerlarutina);
+        createButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(CreateRoutine.this, ShowAllExercises.class);
+                Intent i= new Intent(CreateRoutine.this,ShowAllExercises.class );
                 startActivity(i);
             }
         });
-        escoger.setOnClickListener(new View.OnClickListener() {
+
+
+
+        chooseButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 //TODO
