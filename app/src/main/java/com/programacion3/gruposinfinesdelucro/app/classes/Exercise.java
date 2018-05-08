@@ -1,18 +1,19 @@
 package com.programacion3.gruposinfinesdelucro.app.classes;
 
+import android.support.design.internal.ParcelableSparseArray;
+
 /**
  * Created by Joaco99 on 05/05/2018.
  */
 
-public class Exercise {
+public class Exercise extends ParcelableSparseArray {
     private String description, imagen, name, musculo;
     private Enums.Exercisetype type;
 
-    public Exercise(){
-
+    public Exercise() {
     }
 
-    public Exercise( String description, String imagen,String musculo, String name,Enums.Exercisetype type) {
+    public Exercise(String description, String imagen, String musculo, String name, Enums.Exercisetype type) {
         this.name = name;
         this.musculo = musculo;
         this.description = description;

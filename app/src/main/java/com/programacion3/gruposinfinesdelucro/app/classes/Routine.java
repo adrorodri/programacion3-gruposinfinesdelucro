@@ -12,18 +12,18 @@ public class Routine {
     private List<List<ScheduledExercise>> daysList = new ArrayList<>();
     private String dificultad = "medium";
 
-    public Routine(){
-        for(int i = 0; i < 7; i++){
+    public Routine() {
+        for (int i = 0; i < 7; i++) {
             daysList.add(new ArrayList<ScheduledExercise>());
         }
     }
 
-    public Routine(String name){
+    public Routine(String name) {
         this();
         this.name = name;
     }
 
-    public void addExercise(Enums.Day day, ScheduledExercise exercise){
+    public void addExercise(Enums.Day day, ScheduledExercise exercise) {
         int index = dayToIndex(day);
         daysList.get(index).add(exercise);
     }
@@ -36,9 +36,9 @@ public class Routine {
         return daysList;
     }
 
-    private int dayToIndex(Enums.Day day){
+    private int dayToIndex(Enums.Day day) {
         int index = 0;
-        switch (day){
+        switch (day) {
             case MONDAY:
                 index = 0;
                 break;
@@ -64,7 +64,7 @@ public class Routine {
         return index;
     }
 
-    public String getDificultad(){
+    public String getDificultad() {
         return dificultad;
     }
 }

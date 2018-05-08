@@ -7,14 +7,11 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.programacion3.gruposinfinesdelucro.app.R;
 import com.programacion3.gruposinfinesdelucro.app.activities.DaysActivity;
-import com.programacion3.gruposinfinesdelucro.app.activities.RutinasActivity;
 import com.programacion3.gruposinfinesdelucro.app.classes.Routine;
-import com.programacion3.gruposinfinesdelucro.app.classes.Rutina;
 
 import java.util.ArrayList;
 
@@ -38,18 +35,18 @@ public class RutinasAdapter extends RecyclerView.Adapter<RutinasAdapter.Recycler
         final Routine rutina = arrayList.get(position);
         holder.nombre.setText(rutina.getName());
         holder.dificultad.setText(rutina.getDificultad());
-        if(rutina.getDificultad()=="hard"){
+        if (rutina.getDificultad() == "hard") {
             holder.dificultad.setTextColor(Color.parseColor("#CCFF1E1E"));
-        }else if(rutina.getDificultad()=="medium"){
+        } else if (rutina.getDificultad() == "medium") {
             holder.dificultad.setTextColor(Color.parseColor("#CCFFB20C"));
-        }else{
+        } else {
             holder.dificultad.setTextColor(Color.parseColor("#CC69FF0C"));
         }
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(context, DaysActivity.class);
-                intent.putExtra("name",rutina.getName());
+                intent.putExtra("name", rutina.getName());
                 context.startActivity(intent);
             }
         });
@@ -64,13 +61,13 @@ public class RutinasAdapter extends RecyclerView.Adapter<RutinasAdapter.Recycler
     public static class RecyclerViewHolder extends RecyclerView.ViewHolder {
 
         View itemView;
-        TextView nombre,creador,dificultad;
+        TextView nombre, creador, dificultad;
 
         public RecyclerViewHolder(View view) {
             super(view);
             itemView = view;
             nombre = (TextView) view.findViewById(R.id.rutina);
-            dificultad= (TextView) view.findViewById(R.id.dificultad);
+            dificultad = (TextView) view.findViewById(R.id.dificultad);
 
         }
     }

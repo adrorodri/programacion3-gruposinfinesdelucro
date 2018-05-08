@@ -4,19 +4,12 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.widget.RecyclerView;
-import android.text.format.Time;
 import android.util.Log;
 import android.view.View;
-import android.widget.Button;
 
 import com.programacion3.gruposinfinesdelucro.app.R;
-import com.programacion3.gruposinfinesdelucro.app.adapters.EjerciciosAdapter;
-import com.programacion3.gruposinfinesdelucro.app.classes.Ejercicio;
 
-import java.util.ArrayList;
 import java.util.Calendar;
-import java.util.Locale;
-import java.util.TimeZone;
 
 /**
  * Created by Joaco99 on 20/04/2018.
@@ -49,27 +42,27 @@ public class ActividadDiariaActivity extends NavigationActivity {
         recyclerView = findViewById(R.id.recycler);
     }
 
-    private void startCreateRoutineActivity(){
-        Intent intent= new Intent(ActividadDiariaActivity.this,CreateRoutine.class );
+    private void startCreateRoutineActivity() {
+        Intent intent = new Intent(ActividadDiariaActivity.this, CreateRoutine.class);
         startActivity(intent);
     }
 
-    private int fromDaytoIndex(int day){
-        if(day == Calendar.MONDAY){
+    private int fromDaytoIndex(int day) {
+        if (day == Calendar.MONDAY) {
             return 0;
-        }else if(day == Calendar.TUESDAY){
+        } else if (day == Calendar.TUESDAY) {
             return 1;
-        }else if(day == Calendar.WEDNESDAY){
+        } else if (day == Calendar.WEDNESDAY) {
             return 2;
-        }else if(day == Calendar.THURSDAY){
+        } else if (day == Calendar.THURSDAY) {
             return 3;
-        }else if(day == Calendar.FRIDAY){
+        } else if (day == Calendar.FRIDAY) {
             return 4;
-        }else if(day == Calendar.SATURDAY){
+        } else if (day == Calendar.SATURDAY) {
             return 5;
-        }else if(day == Calendar.SUNDAY){
+        } else if (day == Calendar.SUNDAY) {
             return 6;
-        }else{
+        } else {
             throw new IllegalStateException();
         }
     }

@@ -56,7 +56,6 @@ public class SignUpActivity extends AppCompatActivity {
         contra2 = findViewById(R.id.pass2);
 
 
-
         ccButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -70,7 +69,7 @@ public class SignUpActivity extends AppCompatActivity {
 
     }
 
-    private boolean validateForm(){
+    private boolean validateForm() {
         checkNombre = String.valueOf(nombre.getText());
         checkCorreo = String.valueOf(correo.getText());
         checkContra1 = String.valueOf(contra1.getText());
@@ -93,7 +92,7 @@ public class SignUpActivity extends AppCompatActivity {
 
         } else if (!condiciones.isChecked()) {
             Toast.makeText(SignUpActivity.this, "Debe aceptar las condiciones", Toast.LENGTH_SHORT).show();
-        } else{
+        } else {
             return true;
         }
         return false;
@@ -120,7 +119,7 @@ public class SignUpActivity extends AppCompatActivity {
                                     });
                             AlertDialog dialog = builder.create();
                             dialog.show();
-                        }else {
+                        } else {
                             Log.d("SignUpActivity", "No se pudo enviar correo");
                             showDialog("Error", "No se pudo enviar el correo");
                         }
@@ -139,15 +138,15 @@ public class SignUpActivity extends AppCompatActivity {
                             signIn();
                         } else {
                             // If sign in fails, display a message to the user.
-                            FirebaseAuthException e = (FirebaseAuthException)task.getException();
-                            showDialog("Error de verificación", "Failed Registration: "+e.getMessage());
+                            FirebaseAuthException e = (FirebaseAuthException) task.getException();
+                            showDialog("Error de verificación", "Failed Registration: " + e.getMessage());
                         }
 
                     }
                 });
     }
 
-    private void updateUserInfo(){
+    private void updateUserInfo() {
         FirebaseUser user = auth.getCurrentUser();
         UserProfileChangeRequest profileUpdates = new UserProfileChangeRequest.Builder()
                 .setDisplayName(nombre.getText().toString())
@@ -160,14 +159,14 @@ public class SignUpActivity extends AppCompatActivity {
                         if (task.isSuccessful()) {
                             Log.d("SignUpActivity", "User profile updated.");
                             goToLoginActivity();
-                        }else{
+                        } else {
                             Log.d("SignUpActivity", "Couldnt update info");
                         }
                     }
                 });
     }
 
-    private void goToLoginActivity(){
+    private void goToLoginActivity() {
         FirebaseUser user = auth.getCurrentUser();
         Intent intent = new Intent(this, LogInActivity.class);
         intent.putExtra("signed_recently", true);

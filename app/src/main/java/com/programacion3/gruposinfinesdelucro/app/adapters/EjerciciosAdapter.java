@@ -2,7 +2,6 @@ package com.programacion3.gruposinfinesdelucro.app.adapters;
 
 import android.content.Context;
 import android.content.Intent;
-import android.os.Parcelable;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,7 +10,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
-import com.programacion3.gruposinfinesdelucro.app.classes.Ejercicio;
 import com.programacion3.gruposinfinesdelucro.app.R;
 import com.programacion3.gruposinfinesdelucro.app.activities.EjercicioActivity;
 import com.programacion3.gruposinfinesdelucro.app.classes.Exercise;
@@ -38,12 +36,12 @@ public class EjerciciosAdapter extends RecyclerView.Adapter<EjerciciosAdapter.Re
         final Exercise ejercicio = arrayList.get(position);
         holder.exercise.setText(ejercicio.getName());
         holder.duration.setText(ejercicio.getMusculo());
-        Glide.with(this.context).load(ejercicio.getImagen()).into(holder.imageView);;
+        Glide.with(this.context).load(ejercicio.getImagen()).into(holder.imageView);
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(context, EjercicioActivity.class);
-                intent.putExtra("Ejercicio", (Parcelable) ejercicio);
+                intent.putExtra("Ejercicio", ejercicio);
                 context.startActivity(intent);
             }
         });

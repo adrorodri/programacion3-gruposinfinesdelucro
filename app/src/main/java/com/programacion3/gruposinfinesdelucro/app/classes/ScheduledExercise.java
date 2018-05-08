@@ -8,7 +8,7 @@ public class ScheduledExercise {
     private Exercise exercise;
     private int sec_duration = 0, repetitions;
 
-    public ScheduledExercise(){
+    public ScheduledExercise() {
 
     }
 
