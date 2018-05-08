@@ -14,6 +14,7 @@ import com.programacion3.gruposinfinesdelucro.app.R;
 import com.programacion3.gruposinfinesdelucro.app.activities.DaysActivity;
 import com.programacion3.gruposinfinesdelucro.app.activities.ExplainActivity;
 import com.programacion3.gruposinfinesdelucro.app.activities.SetDurationActivity;
+import com.programacion3.gruposinfinesdelucro.app.activities.SetRepsSetsActivity;
 import com.programacion3.gruposinfinesdelucro.app.classes.Exercise;
 
 import java.util.ArrayList;
@@ -45,12 +46,12 @@ public class ShowExerciseAdapter extends RecyclerView.Adapter<ShowExerciseAdapte
             public void onClick(View view) {
                 Intent intent;
                 if(exercise.getType().toString().equals("REPEATED")){
-                    intent = new Intent(context, DaysActivity.class);
-                    intent.putExtra("name", exercise.getType().toString());
+                    intent = new Intent(context, SetRepsSetsActivity.class);
+                    intent.putExtra("Ejercicio", exercise.getType().toString());
                     context.startActivity(intent);
                 }else {
                     intent = new Intent(context, SetDurationActivity.class);
-                    intent.putExtra("name", exercise.getType().toString());
+                    intent.putExtra("Ejercicio", exercise.getType().toString());
                     context.startActivity(intent);
                 }
             }
@@ -59,7 +60,7 @@ public class ShowExerciseAdapter extends RecyclerView.Adapter<ShowExerciseAdapte
             @Override
             public void onClick(View view) {
                 Intent intent=new Intent(context, ExplainActivity.class);
-                intent.putExtra("nombre",exercise);
+                intent.putExtra("Ejercicio",exercise);
                 context.startActivity(intent);
             }
         });

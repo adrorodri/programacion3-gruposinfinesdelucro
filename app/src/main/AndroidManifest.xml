@@ -31,6 +31,7 @@
         <activity android:name=".activities.EjercicioActivity"/>
         <activity android:name=".activities.RoutinesActivity"/>
         <activity android:name=".activities.DaysActivity"/>
+        <activity android:name=".activities.SetRepsSetsActivity"/>
         <activity android:name=".activities.ShowAllExercises"/>
         <activity android:name=".activities.CreateRoutine"/>
         <activity android:name=".activities.ExplainActivity">
