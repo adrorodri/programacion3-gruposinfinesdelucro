@@ -17,8 +17,10 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.programacion3.gruposinfinesdelucro.app.R;
 import com.programacion3.gruposinfinesdelucro.app.adapters.ScheduledExerciseAdapter;
+import com.programacion3.gruposinfinesdelucro.app.classes.Ejercicio;
 import com.programacion3.gruposinfinesdelucro.app.classes.Enums;
 import com.programacion3.gruposinfinesdelucro.app.classes.Exercise;
+import com.programacion3.gruposinfinesdelucro.app.classes.Routine;
 import com.programacion3.gruposinfinesdelucro.app.classes.ScheduledExercise;
 
 import java.util.ArrayList;

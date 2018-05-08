@@ -36,6 +36,7 @@
         android:layout_toRightOf="@+id/add"
         android:text="INFO"
         android:textStyle="bold|italic"
+        android:id="@+id/info"
         style="@style/RoundedButton"
         />
 </RelativeLayout>

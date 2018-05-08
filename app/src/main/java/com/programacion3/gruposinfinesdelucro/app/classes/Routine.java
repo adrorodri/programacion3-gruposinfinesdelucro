@@ -29,6 +29,10 @@ public class Routine {
         daysList.get(index).add(exercise);
     }
 
+    public void addExercise(int day, ScheduledExercise exercise){
+        daysList.get(day).add(exercise);
+    }
+
     public String getName() {
         return name;
     }
