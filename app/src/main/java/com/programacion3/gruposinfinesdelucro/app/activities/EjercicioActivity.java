@@ -17,7 +17,7 @@ public class EjercicioActivity extends NavigationActivity {
 
     ImageView exerciseImage;
     TextView exerciseNameTextView, seriesNumberTextView, repetitionsNumberTextView;
-    Button button;
+    Button button,button2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,6 +44,17 @@ public class EjercicioActivity extends NavigationActivity {
                 startActivity(intent);
             }
         });
+
+        button2 = findViewById(R.id.ok);
+        button2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(EjercicioActivity.this, RutinasActivity.class);
+                startActivity(intent);
+            }
+        });
+
+
 
     }
 

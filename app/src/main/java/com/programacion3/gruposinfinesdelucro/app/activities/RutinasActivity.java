@@ -24,7 +24,7 @@ public class RutinasActivity extends NavigationActivity {
 
         recyclerView = findViewById(R.id.recycler);
 
-        Exercise ejercicio = new Exercise("squat", "gluteo", "hola", "https://estaticos.muyinteresante.es/media/cache/760x570_thumb/uploads/images/pyr/55520750c0ea197b3fd51098/cuac-pato-p.jpg", Enums.Exercisetype.REPEATED);
+        Exercise ejercicio = new Exercise("hola", "https://estaticos.muyinteresante.es/media/cache/760x570_thumb/uploads/images/pyr/55520750c0ea197b3fd51098/cuac-pato-p.jpg", "gluteo", "squat", Enums.Exercisetype.REPEATED);
 
         arrayList.add(ejercicio);
 
