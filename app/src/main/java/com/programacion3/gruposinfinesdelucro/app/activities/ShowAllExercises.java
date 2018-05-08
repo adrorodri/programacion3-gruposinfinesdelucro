@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
+import android.widget.Toast;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -30,7 +31,7 @@ public class ShowAllExercises extends NavigationActivity {
         recyclerView = (RecyclerView) findViewById(R.id.recycler2);
         layoutManager = new LinearLayoutManager(this);
         recyclerView.setHasFixedSize(true);
-        adapter = new ShowExerciseAdapter(exerciseArrayList);
+        adapter = new ShowExerciseAdapter(exerciseArrayList,this);
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setAdapter(adapter);
 
@@ -53,7 +54,7 @@ public class ShowAllExercises extends NavigationActivity {
 
             @Override
             public void onCancelled(DatabaseError databaseError) {
-
+                Toast.makeText(ShowAllExercises.this, "NO INTERNET CONNECTION", Toast.LENGTH_SHORT).show();
             }
         });
 

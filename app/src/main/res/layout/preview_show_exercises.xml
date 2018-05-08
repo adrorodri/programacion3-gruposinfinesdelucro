@@ -3,7 +3,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
     android:layout_height="85dp">
     <TextView
-        android:layout_width="wrap_content"
+        android:layout_width="140dp"
         android:layout_height="80dp"
         android:id="@+id/nombre_ejercicio"
         android:padding="4dp"
@@ -13,11 +13,29 @@
         android:layout_marginStart="10dp"
         />
     <TextView
-        android:layout_width="150dp"
+        android:layout_width="80dp"
         android:layout_height="80dp"
         android:layout_toRightOf="@+id/nombre_ejercicio"
         android:gravity="center"
         android:textSize="15dp"
         android:id="@+id/tipo_ejercicio"
+        />
+    <Button
+        android:layout_width="60dp"
+        android:layout_height="80dp"
+        android:layout_toRightOf="@+id/tipo_ejercicio"
+        android:text="ADD"
+        android:id="@+id/add"
+        android:textStyle="bold|italic"
+        style="@style/RoundedButton"
+
+        />
+    <Button
+        android:layout_width="60dp"
+        android:layout_height="80dp"
+        android:layout_toRightOf="@+id/add"
+        android:text="INFO"
+        android:textStyle="bold|italic"
+        style="@style/RoundedButton"
         />
 </RelativeLayout>
