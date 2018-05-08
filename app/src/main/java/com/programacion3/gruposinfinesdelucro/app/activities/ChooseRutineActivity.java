@@ -84,7 +84,7 @@ public class ChooseRutineActivity extends NavigationActivity {
         ScheduledExercise exe1 = new ScheduledExercise(barbell_bicep_drag_curl_exe, 13);
         ScheduledExercise exe2 = new ScheduledExercise(air_bike_exe, 20);
 
-        Routine routine = new Routine("Primera Semana");
+        Routine routine = new Routine("Primera Semana", "medium");
         routine.addExercise(Enums.Day.TUESDAY, exe1);
         routine.addExercise(Enums.Day.THURSDAY, exe2);
         routine.addExercise(Enums.Day.SATURDAY, exe1);

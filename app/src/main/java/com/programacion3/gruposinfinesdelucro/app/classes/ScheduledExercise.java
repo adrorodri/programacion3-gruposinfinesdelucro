@@ -6,15 +6,21 @@ package com.programacion3.gruposinfinesdelucro.app.classes;
 
 public class ScheduledExercise {
     private Exercise exercise;
-    private int sec_duration = 0, repetitions;
+    private int sec_duration = -1 , repetitions = -1, series = -1;
 
     public ScheduledExercise() {
 
     }
 
-    public ScheduledExercise(Exercise exercise, int repetitions) {
+    public ScheduledExercise(Exercise exercise, int repetitions, int series) {
         this.exercise = exercise;
         this.repetitions = repetitions;
+        this.series  = series;
+    }
+
+    public ScheduledExercise(Exercise exercise, int sec_duration) {
+        this.exercise = exercise;
+        this.sec_duration = sec_duration;
     }
 
     public Exercise getExercise() {
@@ -27,6 +33,10 @@ public class ScheduledExercise {
 
     public int getRepetitions() {
         return repetitions;
+    }
+
+    public int getSeries() {
+        return series;
     }
 }
 

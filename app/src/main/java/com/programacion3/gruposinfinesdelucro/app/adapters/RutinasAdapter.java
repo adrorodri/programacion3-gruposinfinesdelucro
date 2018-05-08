@@ -58,12 +58,12 @@ public class RutinasAdapter extends RecyclerView.Adapter<RutinasAdapter.Recycler
         return arrayList.size();
     }
 
-    public static class RecyclerViewHolder extends RecyclerView.ViewHolder {
+    static class RecyclerViewHolder extends RecyclerView.ViewHolder {
 
         View itemView;
         TextView nombre, creador, dificultad;
 
-        public RecyclerViewHolder(View view) {
+        RecyclerViewHolder(View view) {
             super(view);
             itemView = view;
             nombre = (TextView) view.findViewById(R.id.rutina);
