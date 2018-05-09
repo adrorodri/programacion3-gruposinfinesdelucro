@@ -1,6 +1,7 @@
 package com.programacion3.gruposinfinesdelucro.app.adapters;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Color;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -9,6 +10,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.programacion3.gruposinfinesdelucro.app.R;
+import com.programacion3.gruposinfinesdelucro.app.activities.DaysActivity;
 import com.programacion3.gruposinfinesdelucro.app.classes.Routine;
 import com.programacion3.gruposinfinesdelucro.app.classes.ScheduledExercise;
 
@@ -38,12 +40,14 @@ public class RoutinesAdapter extends RecyclerView.Adapter<RoutinesAdapter.Routin
         holder.difficulty.setText(routine.getDifficulty());
 
         int color = getDifficultyColor(routine.getDifficulty());
-        holder.difficulty.setTextColor(color);
+        //holder.difficulty.setTextColor(color);
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                Intent intent = new Intent(context, DaysActivity.class);
+                intent.putExtra("routine", routine);
+                context.startActivity(intent);
             }
         });
     }

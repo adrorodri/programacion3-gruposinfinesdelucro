@@ -14,7 +14,9 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.programacion3.gruposinfinesdelucro.app.R;
 import com.programacion3.gruposinfinesdelucro.app.adapters.RoutinesAdapter;
+import com.programacion3.gruposinfinesdelucro.app.classes.Exercise;
 import com.programacion3.gruposinfinesdelucro.app.classes.Routine;
+import com.programacion3.gruposinfinesdelucro.app.classes.ScheduledExercise;
 
 import java.util.ArrayList;
 
@@ -46,9 +48,18 @@ public class RoutinesActivity extends NavigationActivity {
                 Log.d(TAG, "Se encontró la lista");
                 ArrayList<Routine> list = new ArrayList<>();
                 for(DataSnapshot snapshot : dataSnapshot.getChildren()){
-                    Routine routine = snapshot.getValue(Routine.class);
-                    Log.d(TAG, "name null?: " + (routine.getName() == null));
-                    Log.d(TAG, "diffficulty null?: " + (routine.getDifficulty() == null));
+                    String difficulty = (String) snapshot.child("difficulty").getValue();
+                    String name = (String) snapshot.child("name").getValue();
+                    Routine routine = new Routine(name, difficulty);
+                    routine.resetDaysList();
+                    for(DataSnapshot day : snapshot.child("daysList").getChildren()){
+                        int dayIndex = Integer.valueOf(day.getKey());
+                        for(DataSnapshot exe : day.getChildren()){
+                            ScheduledExercise exercise = exe.getValue(ScheduledExercise.class);
+                            routine.addExercise(dayIndex, exercise);
+                        }
+                    }
+
                     list.add(routine);
                 }
                 fillRecycler(list);

@@ -48,8 +48,7 @@ public class EjercicioActivity extends NavigationActivity {
         button2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(EjercicioActivity.this, RoutineExerciseActivity.class);
-                startActivity(intent);
+                onBackPressed();
             }
         });
 

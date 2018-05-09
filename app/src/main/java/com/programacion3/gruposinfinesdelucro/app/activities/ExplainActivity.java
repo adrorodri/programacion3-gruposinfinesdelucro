@@ -2,7 +2,9 @@ package com.programacion3.gruposinfinesdelucro.app.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ImageView;
+import android.widget.ScrollView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
@@ -41,6 +43,7 @@ public class ExplainActivity extends NavigationActivity {
 
         descripcion.setText(descrip);
         titulo.setText(nombre);
+
 
 
     }

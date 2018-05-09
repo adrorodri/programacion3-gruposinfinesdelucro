@@ -8,9 +8,9 @@ import java.util.List;
  * Created by Joaco99 on 05/05/2018.
  */
 
-public class Routine implements Serializable {
+public class Routine implements Serializable{
     private String name;
-    private List<List<ScheduledExercise>> daysList = new ArrayList<>();
+    private ArrayList<ArrayList<ScheduledExercise>> daysList = new ArrayList<>();
     private String difficulty;
 
     public Routine(){
@@ -23,6 +23,13 @@ public class Routine implements Serializable {
         this();
         this.name = name;
         this.difficulty = difficulty;
+    }
+
+    public void resetDaysList(){
+        daysList = new ArrayList<>();
+        for(int i = 0; i < 7; i++){
+            daysList.add(new ArrayList<ScheduledExercise>());
+        }
     }
 
     public void addExercise(Enums.Day day, ScheduledExercise exercise){
@@ -38,7 +45,7 @@ public class Routine implements Serializable {
         return name;
     }
 
-    public List<List<ScheduledExercise>> getDaysList() {
+    public ArrayList<ArrayList<ScheduledExercise>> getDaysList() {
         return daysList;
     }
 

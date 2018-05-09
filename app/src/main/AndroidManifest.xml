@@ -9,7 +9,7 @@
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
-        android:label="@string/app_name"
+        android:label="FIT APP"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
@@ -30,7 +30,7 @@
         <activity android:name=".activities.SetDurationActivity"/>
         <activity android:name=".activities.EjercicioActivity"/>
         <activity android:name=".activities.ChooseNameRoutineActivity"/>
-        <activity android:name=".activities.ChooseRutineActivity"/>
+        <activity android:name=".activities.RoutinesActivity"/>
         <activity android:name=".activities.DaysActivity"/>
         <activity android:name=".activities.SetRepsSetsActivity"/>
         <activity android:name=".activities.ShowAllExercises"/>
