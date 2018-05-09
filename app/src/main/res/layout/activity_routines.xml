@@ -14,7 +14,7 @@
         android:layout_height="match_parent"
         android:paddingTop="50dp"
         android:orientation="vertical"
-        tools:context=".activities.ChooseRutineActivity">
+        tools:context=".activities.RoutinesActivity">
 
         <android.support.v7.widget.RecyclerView
             xmlns:android="http://schemas.android.com/apk/res/android"

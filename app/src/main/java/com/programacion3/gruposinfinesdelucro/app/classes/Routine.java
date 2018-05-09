@@ -11,7 +11,7 @@ import java.util.List;
 public class Routine implements Serializable {
     private String name;
     private List<List<ScheduledExercise>> daysList = new ArrayList<>();
-    private String dificultad;
+    private String difficulty;
 
     public Routine(){
         for(int i = 0; i < 7; i++){
@@ -19,10 +19,10 @@ public class Routine implements Serializable {
         }
     }
 
-    public Routine(String name, String dificultad){
+    public Routine(String name, String difficulty){
         this();
         this.name = name;
-        this.dificultad = dificultad;
+        this.difficulty = difficulty;
     }
 
     public void addExercise(Enums.Day day, ScheduledExercise exercise){
@@ -70,8 +70,8 @@ public class Routine implements Serializable {
         return index;
     }
 
-    public String getDificultad(){
-        return dificultad;
+    public String getDifficulty(){
+        return difficulty;
     }
 }
 
