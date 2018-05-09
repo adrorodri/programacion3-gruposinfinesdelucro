@@ -4,23 +4,31 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
+import android.support.design.widget.Snackbar;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.text.InputType;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthCredential;
+import com.google.firebase.auth.EmailAuthProvider;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.programacion3.gruposinfinesdelucro.app.R;
@@ -97,8 +105,8 @@ public class NavigationActivity extends AppCompatActivity implements NavigationV
 
         int id = item.getItemId();
 
-
         if (id == R.id.action_settings) {
+            dialog();
             return true;
         }
 
@@ -109,7 +117,7 @@ public class NavigationActivity extends AppCompatActivity implements NavigationV
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
-        int id = item.getItemId();
+        final int id = item.getItemId();
 
         final Intent intent;
         if (id == R.id.nav_perfil) {
@@ -122,7 +130,8 @@ public class NavigationActivity extends AppCompatActivity implements NavigationV
             intent = new Intent(this, RoutinesActivity.class);
             startActivity(intent);
         } else if (id == R.id.nav_configuration) {
-
+            intent = new Intent(NavigationActivity.this, ChangeInfoActivity.class);
+            startActivity(intent);
         } else if (id == R.id.nav_cerrar_sesión) {
             intent = new Intent(NavigationActivity.this, FirstActivity.class);
             AlertDialog.Builder builder = new AlertDialog.Builder(this);
@@ -179,5 +188,39 @@ public class NavigationActivity extends AppCompatActivity implements NavigationV
 
     public void setToolbarTitle(String title){
         toolbar.setTitle(title);
+    }
+    public void dialog(){
+        AlertDialog.Builder text = new AlertDialog.Builder(this);
+        text.setTitle("Password");
+        text.setMessage("Enter Password");
+        final EditText editPass = new EditText(this);
+        editPass.setInputType(InputType.TYPE_CLASS_TEXT |
+                InputType.TYPE_TEXT_VARIATION_PASSWORD);
+        editPass.setSelection(editPass.getText().length());
+        text.setView(editPass);
+
+
+        text.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                final String password = editPass.getText().toString();
+                AuthCredential credential = EmailAuthProvider.getCredential(user.getEmail(), password);
+                user.reauthenticate(credential).addOnCompleteListener(new OnCompleteListener<Void>() {
+                    @Override
+                    public void onComplete(@NonNull Task<Void> task) {
+                        if (task.isSuccessful()) {
+                            Intent intent = new Intent(NavigationActivity.this, ChangeInfoActivity.class);
+                            intent.putExtra("key",password.toString());
+                            startActivity(intent);
+                        }else {
+                            Toast.makeText(NavigationActivity.this, "Incorrect Password", Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                });
+                dialogInterface.dismiss();
+            }
+        });
+        AlertDialog alertDialog = text.create();
+        alertDialog.show();
     }
 }
