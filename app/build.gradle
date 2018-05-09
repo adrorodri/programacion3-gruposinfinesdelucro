@@ -30,7 +30,7 @@ dependencies {
     implementation 'com.android.support:recyclerview-v7:26.1.0'
     implementation 'com.google.code.gson:gson:2.2.4'
 
-    //noinspection GradleCompatible
+
     implementation 'com.google.firebase:firebase-core:15.0.0'
     implementation 'com.google.firebase:firebase-database:15.0.0'
     implementation 'com.google.firebase:firebase-auth:15.0.0'
