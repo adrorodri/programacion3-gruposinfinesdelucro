@@ -24,7 +24,7 @@
         <EditText
             android:id="@+id/duracion"
             style="@style/EditTextBox"
-            android:layout_width="100dp"
+            android:layout_width="110dp"
             android:gravity="center"
             android:layout_height="100dp"
             android:layout_gravity="center"
