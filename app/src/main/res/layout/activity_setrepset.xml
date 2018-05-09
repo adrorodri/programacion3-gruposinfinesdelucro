@@ -11,6 +11,7 @@
     tools:openDrawer="start">
     <LinearLayout
         android:layout_width="match_parent"
+        android:paddingTop="50dp"
         android:layout_height="match_parent"
         android:orientation="vertical">
 
@@ -18,72 +19,75 @@
         android:layout_width="match_parent"
         android:layout_marginTop="50dp"
         android:hint="Repeticiones"
+        style="@style/EditTextBox"
         android:inputType="numberDecimal"
         android:layout_height="wrap_content"
         android:id="@+id/set_repeticiones"/>
     <EditText
         android:layout_width="match_parent"
         android:hint="Sets"
+        style="@style/EditTextBox"
         android:inputType="numberDecimal"
         android:layout_height="wrap_content"
         android:id="@+id/set_sets"/>
-    <Button
-        android:layout_marginTop="50dp"
-        android:layout_width="wrap_content"
-        android:id="@+id/done"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:text="DONE"
-        style="@style/RoundedButton"
-        android:gravity="center"/>
 
-      <RadioGroup
+        <RadioGroup
           android:layout_width="wrap_content"
           android:layout_gravity="center"
+            android:id="@+id/dias"
           android:layout_height="wrap_content">
-          <RadioButton
+            <RadioButton
               android:layout_width="wrap_content"
               android:layout_height="wrap_content"
               android:id="@+id/lunes"
               android:text="@string/lunes"
-              android:onClick="pasar_dia"/>
-          <RadioButton
+              />
+            <RadioButton
               android:layout_width="wrap_content"
               android:layout_height="wrap_content"
               android:id="@+id/martes"
               android:text="@string/martes"
-              android:onClick="pasar_dia"/>
-          <RadioButton
+              />
+            <RadioButton
               android:layout_width="wrap_content"
               android:layout_height="wrap_content"
               android:id="@+id/miercoles"
               android:text="@string/miercoles"
-              android:onClick="pasar_dia"/>
-          <RadioButton
+              />
+            <RadioButton
               android:layout_width="wrap_content"
               android:layout_height="wrap_content"
               android:id="@+id/jueves"
               android:text="@string/jueves"
-              android:onClick="pasar_dia"/>
-          <RadioButton
+              />
+            <RadioButton
               android:layout_width="wrap_content"
               android:layout_height="wrap_content"
               android:id="@+id/viernes"
               android:text="@string/viernes"
-              android:onClick="pasar_dia"/>
-          <RadioButton
+              />
+            <RadioButton
               android:layout_width="wrap_content"
               android:layout_height="wrap_content"
               android:id="@+id/sabado"
               android:text="@string/sabado"
-              android:onClick="pasar_dia"/>
-          <RadioButton
+              />
+            <RadioButton
               android:layout_width="wrap_content"
               android:layout_height="wrap_content"
               android:id="@+id/domingo"
               android:text="@string/domingo"
-              android:onClick="pasar_dia"/>
-      </RadioGroup>
+              />
+        </RadioGroup>
+        <Button
+            android:layout_marginTop="50dp"
+            android:layout_width="wrap_content"
+            android:id="@+id/done"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="DONE"
+            style="@style/RoundedButton"
+            android:gravity="center"/>
     </LinearLayout>
 
 

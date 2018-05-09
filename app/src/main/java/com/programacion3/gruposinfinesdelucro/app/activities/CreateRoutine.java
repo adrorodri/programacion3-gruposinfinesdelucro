@@ -19,7 +19,7 @@ public class CreateRoutine extends NavigationActivity {
         createButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i= new Intent(CreateRoutine.this,ShowAllExercises.class );
+                Intent i= new Intent(CreateRoutine.this,ChooseNameRoutineActivity.class );
                 startActivity(i);
             }
         });

@@ -1,5 +1,6 @@
 package com.programacion3.gruposinfinesdelucro.app.classes;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -7,7 +8,7 @@ import java.util.List;
  * Created by Joaco99 on 05/05/2018.
  */
 
-public class Routine {
+public class Routine implements Serializable {
     private String name;
     private List<List<ScheduledExercise>> daysList = new ArrayList<>();
     private String dificultad;

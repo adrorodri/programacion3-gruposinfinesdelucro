@@ -16,16 +16,19 @@ import com.programacion3.gruposinfinesdelucro.app.activities.ExplainActivity;
 import com.programacion3.gruposinfinesdelucro.app.activities.SetDurationActivity;
 import com.programacion3.gruposinfinesdelucro.app.activities.SetRepsSetsActivity;
 import com.programacion3.gruposinfinesdelucro.app.classes.Exercise;
+import com.programacion3.gruposinfinesdelucro.app.classes.Routine;
 
 import java.util.ArrayList;
 
 public class ShowExerciseAdapter extends RecyclerView.Adapter<ShowExerciseAdapter.RecyclerViewHold>{
     private ArrayList<Exercise> exercises= new ArrayList<Exercise>();
     private Context context;
+    private Routine routine;
 
-    public ShowExerciseAdapter(ArrayList<Exercise> exercises ,Context context) {
+    public ShowExerciseAdapter(ArrayList<Exercise> exercises , Context context, Routine routine) {
         this.exercises = exercises;
         this.context=context;
+        this.routine=routine;
 
     }
 
@@ -40,18 +43,18 @@ public class ShowExerciseAdapter extends RecyclerView.Adapter<ShowExerciseAdapte
         final Exercise exercise=exercises.get(position);
         holder.nombre_ejercicio.setText(exercise.getName());
         holder.tipo_ejercicio.setText(exercise.getType().toString());
-
         holder.add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent;
                 if(exercise.getType().toString().equals("REPEATED")){
                     intent = new Intent(context, SetRepsSetsActivity.class);
-                    intent.putExtra("Ejercicio", exercise.getType().toString());
+                    intent.putExtra("Ejercicio", exercise);
+                    intent.putExtra("rutina",routine);
                     context.startActivity(intent);
                 }else {
                     intent = new Intent(context, SetDurationActivity.class);
-                    intent.putExtra("Ejercicio", exercise.getType().toString());
+                    intent.putExtra("Ejercicio", exercise);
                     context.startActivity(intent);
                 }
             }

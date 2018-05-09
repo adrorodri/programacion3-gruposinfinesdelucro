@@ -1,5 +1,6 @@
 package com.programacion3.gruposinfinesdelucro.app.activities;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -15,6 +16,7 @@ import com.programacion3.gruposinfinesdelucro.app.R;
 import com.programacion3.gruposinfinesdelucro.app.adapters.EjerciciosAdapter;
 import com.programacion3.gruposinfinesdelucro.app.adapters.ShowExerciseAdapter;
 import com.programacion3.gruposinfinesdelucro.app.classes.Exercise;
+import com.programacion3.gruposinfinesdelucro.app.classes.Routine;
 
 import java.util.ArrayList;
 
@@ -23,15 +25,20 @@ public class ShowAllExercises extends NavigationActivity {
     private RecyclerView recyclerView;
     private RecyclerView.Adapter adapter;
     private RecyclerView.LayoutManager layoutManager;
+    private Bundle datos;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         setContentView(R.layout.activity_show_all_exercises);
         super.onCreate(savedInstanceState);
+        datos = getIntent().getExtras();
+        Routine routine=(Routine) datos.getSerializable("rutina");
         recyclerView = (RecyclerView) findViewById(R.id.recycler2);
         layoutManager = new LinearLayoutManager(this);
         recyclerView.setHasFixedSize(true);
-        adapter = new ShowExerciseAdapter(exerciseArrayList,this);
+        Intent intent= new Intent(this,SetRepsSetsActivity.class);
+        Intent intent2= new Intent(this,SetDurationActivity.class);
+        adapter = new ShowExerciseAdapter(exerciseArrayList,this,routine);
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setAdapter(adapter);
 

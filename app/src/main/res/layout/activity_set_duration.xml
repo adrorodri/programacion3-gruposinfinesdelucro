@@ -17,16 +17,14 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:textSize="20dp"
+            android:textSize="20sp"
             android:text="@string/todo_tiempo_sec"/>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:orientation="horizontal">
             <EditText
                 android:layout_width="100dp"
+                android:layout_gravity="center"
                 android:inputType="numberDecimal"
+                style="@style/EditTextBox"
+                android:id="@+id/duracion"
                 android:hint="@string/tiempo_insertar"
                 android:layout_height="100dp" />
             <RadioGroup
@@ -38,57 +36,55 @@
                     android:layout_height="wrap_content"
                     android:id="@+id/lunes"
                     android:text="@string/lunes"
-                    android:onClick="pasar_dia"/>
+                    />
                 <RadioButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/martes"
                     android:text="@string/martes"
-                    android:onClick="pasar_dia"/>
+                    />
                 <RadioButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/miercoles"
                     android:text="@string/miercoles"
-                    android:onClick="pasar_dia"/>
+                    />
                 <RadioButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/jueves"
                     android:text="@string/jueves"
-                    android:onClick="pasar_dia"/>
+                   />
                 <RadioButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/viernes"
                     android:text="@string/viernes"
-                    android:onClick="pasar_dia"/>
+                    />
                 <RadioButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/sabado"
                     android:text="@string/sabado"
-                    android:onClick="pasar_dia"/>
+                   />
                 <RadioButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/domingo"
                     android:text="@string/domingo"
-                    android:onClick="pasar_dia"/>
+                    />
             </RadioGroup>
 
+            <Button
+                android:layout_marginTop="50dp"
+                android:layout_width="wrap_content"
+                android:id="@+id/done"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="DONE"
+                style="@style/RoundedButton"
+                android:gravity="center"/>
 
-
-        </LinearLayout>
-        <Button
-            android:layout_marginTop="50dp"
-            android:layout_width="wrap_content"
-            android:id="@+id/done"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="DONE"
-            style="@style/RoundedButton"
-            android:gravity="center"/>
 
 
     </LinearLayout>
