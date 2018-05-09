@@ -88,6 +88,12 @@
             android:text="DONE"
             style="@style/RoundedButton"
             android:gravity="center"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="You don´t need to fill all blanks"/>
+
     </LinearLayout>
 
 
