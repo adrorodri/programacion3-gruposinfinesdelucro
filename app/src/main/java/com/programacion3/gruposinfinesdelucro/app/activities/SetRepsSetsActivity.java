@@ -37,6 +37,7 @@ public class SetRepsSetsActivity extends NavigationActivity {
         setContentView(R.layout.activity_setrepset);
         super.onCreate(savedInstanceState);
         final String[] str = new String[1];
+        str[0]="SUNDAY";
         done = (Button) findViewById(R.id.done);
         reps = (EditText) findViewById(R.id.set_repeticiones);
         sets = (EditText) findViewById(R.id.set_sets);
@@ -74,8 +75,15 @@ public class SetRepsSetsActivity extends NavigationActivity {
             public void onClick(View view) {
                 int repsIngresado;
                 int setsIngresado;
-                repsIngresado = Integer.parseInt(reps.getText().toString());
-                setsIngresado = Integer.parseInt(sets.getText().toString());
+                if(!isNumeric(sets.getText().toString())){
+                    setsIngresado=4;
+                }else {
+                    setsIngresado = Integer.parseInt(sets.getText().toString());
+                } if(!isNumeric(reps.getText().toString())){
+                    repsIngresado=15;
+                }else {
+                    repsIngresado= Integer.parseInt(reps.getText().toString());
+                }
                 ScheduledExercise exe1 = new ScheduledExercise(exercise, repsIngresado, setsIngresado);
                 if (str[0].equals("MONDAY")){
                     routine.addExercise(Enums.Day.MONDAY,exe1);
@@ -89,13 +97,26 @@ public class SetRepsSetsActivity extends NavigationActivity {
                     routine.addExercise(Enums.Day.FRIDAY,exe1);
                 }else if(str[0].equals("SATURDAY")){
                     routine.addExercise(Enums.Day.SATURDAY,exe1);
-                }else {
+                }else{
                     routine.addExercise(Enums.Day.SUNDAY,exe1);
                 }
-                usersRef.child(FirebaseAuth.getInstance().getCurrentUser().getUid()).child(routine.getName()).setValue(routine);
+                usersRef.child(FirebaseAuth.getInstance().getCurrentUser().getUid()).child("routines").child(routine.getName()).setValue(routine);
                 Toast.makeText(SetRepsSetsActivity.this, "EXERCISE ADDED SUCCESFULLY", Toast.LENGTH_SHORT).show();
             }
         });
+    }
+    public  boolean isNumeric(String cadena) {
+
+        boolean resultado;
+
+        try {
+            Integer.parseInt(cadena);
+            resultado = true;
+        } catch (NumberFormatException excepcion) {
+            resultado = false;
+        }
+
+        return resultado;
     }
 
 

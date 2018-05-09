@@ -31,6 +31,7 @@ public class SetDurationActivity extends NavigationActivity {
         setContentView(R.layout.activity_set_duration);
         super.onCreate(savedInstanceState);
         final String[] str = new String[1];
+        str[0]="SUNDAY";
         done = (Button) findViewById(R.id.done);
         duracion = (EditText) findViewById(R.id.duracion);
         radioGroup = findViewById(R.id.dias);
@@ -66,8 +67,11 @@ public class SetDurationActivity extends NavigationActivity {
             @Override
             public void onClick(View view) {
                 int duracionIngresado;
-
-                duracionIngresado = Integer.parseInt(duracion.getText().toString());
+                if(!isNumeric(duracion.getText().toString())){
+                    duracionIngresado=30;
+                }else {
+                    duracionIngresado = Integer.parseInt(duracion.getText().toString());
+                }
                 ScheduledExercise exe1 = new ScheduledExercise(exercise, duracionIngresado);
                 if (str[0].equals("MONDAY")){
                     routine.addExercise(Enums.Day.MONDAY,exe1);
@@ -84,10 +88,23 @@ public class SetDurationActivity extends NavigationActivity {
                 }else {
                     routine.addExercise(Enums.Day.SUNDAY,exe1);
                 }
-                usersRef.child(FirebaseAuth.getInstance().getCurrentUser().getUid()).child(routine.getName()).setValue(routine);
+                usersRef.child(FirebaseAuth.getInstance().getCurrentUser().getUid()).child("routines").child(routine.getName()).setValue(routine);
                 Toast.makeText(SetDurationActivity.this, "EXERCISE ADDED SUCCESFULLY", Toast.LENGTH_SHORT).show();
             }
         });
+    }
+    public  boolean isNumeric(String cadena) {
+
+        boolean resultado;
+
+        try {
+            Integer.parseInt(cadena);
+            resultado = true;
+        } catch (NumberFormatException excepcion) {
+            resultado = false;
+        }
+
+        return resultado;
     }
 
 
