@@ -25,7 +25,7 @@ public class DaysActivity extends NavigationActivity {
         domingo = findViewById(R.id.domingo);
 
         Intent intent = getIntent();
-        routine = (Routine)intent.getSerializableExtra("routine");
+        routine = (Routine) intent.getSerializableExtra("routine");
         lunes.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -71,7 +71,7 @@ public class DaysActivity extends NavigationActivity {
 
     }
 
-    public void showDayExercises(int day){
+    public void showDayExercises(int day) {
         Intent intent = new Intent(this, RoutineExerciseActivity.class);
         intent.putExtra("day", day);
         intent.putExtra("routine", routine);

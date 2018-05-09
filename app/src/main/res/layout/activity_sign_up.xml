@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -19,32 +19,32 @@
             android:text="Unete a nuestra comunidad"
             android:textAlignment="center"
             android:textAppearance="@style/Theme.AppCompat.Light"
-            android:textSize="40sp" />
+            android:textSize="40sp"/>
 
         <EditText
             android:id="@+id/nombre"
             style="@style/EditTextBox"
             android:hint="Nombre"
-            android:inputType="textPersonName|textCapWords" />
+            android:inputType="textPersonName|textCapWords"/>
 
         <EditText
             android:id="@+id/correo"
             style="@style/EditTextBox"
             android:hint="Correo"
-            android:inputType="textEmailAddress" />
+            android:inputType="textEmailAddress"/>
 
 
         <EditText
             android:id="@+id/pass"
             style="@style/EditTextBox"
             android:hint="Contraseña"
-            android:inputType="textPassword" />
+            android:inputType="textPassword"/>
 
         <EditText
             android:id="@+id/pass2"
             style="@style/EditTextBox"
             android:hint="Repetir contraseña"
-            android:inputType="textPassword" />
+            android:inputType="textPassword"/>
 
 
         <RadioGroup
@@ -59,14 +59,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:buttonTint="@color/bg_color"
-                android:text="hombre" />
+                android:text="hombre"/>
 
             <RadioButton
                 android:id="@+id/bmujer"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:buttonTint="@color/bg_color"
-                android:text="mujer" />
+                android:text="mujer"/>
         </RadioGroup>
 
         <CheckBox
@@ -76,12 +76,12 @@
             android:layout_gravity="start"
             android:layout_margin="10dp"
             android:buttonTint="@color/bg_color"
-            android:text="Acepto los términos de usuario" />
+            android:text="Acepto los términos de usuario"/>
 
         <Button
             android:id="@+id/crearCuenta"
             style="@style/RoundedButton"
-            android:text="CREAR CUENTA" />
+            android:text="CREAR CUENTA"/>
 
     </LinearLayout>
 

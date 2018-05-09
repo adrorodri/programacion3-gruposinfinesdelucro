@@ -21,7 +21,7 @@ import com.programacion3.gruposinfinesdelucro.app.classes.Routine;
 import java.util.ArrayList;
 
 public class ShowAllExercises extends NavigationActivity {
-    private ArrayList<Exercise> exerciseArrayList= new ArrayList<Exercise>();
+    private ArrayList<Exercise> exerciseArrayList = new ArrayList<Exercise>();
     private RecyclerView recyclerView;
     private RecyclerView.Adapter adapter;
     private RecyclerView.LayoutManager layoutManager;
@@ -32,13 +32,13 @@ public class ShowAllExercises extends NavigationActivity {
         setContentView(R.layout.activity_show_all_exercises);
         super.onCreate(savedInstanceState);
         datos = getIntent().getExtras();
-        Routine routine=(Routine) datos.getSerializable("rutina");
+        Routine routine = (Routine) datos.getSerializable("rutina");
         recyclerView = (RecyclerView) findViewById(R.id.recycler2);
         layoutManager = new LinearLayoutManager(this);
         recyclerView.setHasFixedSize(true);
-        Intent intent= new Intent(this,SetRepsSetsActivity.class);
-        Intent intent2= new Intent(this,SetDurationActivity.class);
-        adapter = new ShowExerciseAdapter(exerciseArrayList,this,routine);
+        Intent intent = new Intent(this, SetRepsSetsActivity.class);
+        Intent intent2 = new Intent(this, SetDurationActivity.class);
+        adapter = new ShowExerciseAdapter(exerciseArrayList, this, routine);
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setAdapter(adapter);
 
@@ -65,6 +65,6 @@ public class ShowAllExercises extends NavigationActivity {
             }
         });
 
-        
+
     }
 }

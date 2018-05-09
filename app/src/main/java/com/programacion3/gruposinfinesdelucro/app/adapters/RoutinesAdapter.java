@@ -57,19 +57,19 @@ public class RoutinesAdapter extends RecyclerView.Adapter<RoutinesAdapter.Routin
         return routines.size();
     }
 
-    public void setListContent(ArrayList<Routine> routines){
+    public void setListContent(ArrayList<Routine> routines) {
         this.routines = routines;
         notifyItemRangeChanged(0, routines.size());
     }
 
-    private int getDifficultyColor(String difficulty){
-        if(difficulty.equals("EASY")){
+    private int getDifficultyColor(String difficulty) {
+        if (difficulty.equals("EASY")) {
             return Color.GREEN;
-        }else if(difficulty.equals("MEDIUM")){
+        } else if (difficulty.equals("MEDIUM")) {
             return Color.YELLOW;
-        }else if(difficulty.equals("HARD")){
-            return  Color.RED;
-        }else{
+        } else if (difficulty.equals("HARD")) {
+            return Color.RED;
+        } else {
             return Color.BLUE;
         }
     }

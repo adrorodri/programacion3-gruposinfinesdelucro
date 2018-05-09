@@ -1,44 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
     android:layout_height="85dp"
-    android:weightSum="5"
-    android:orientation="horizontal">
+    android:orientation="horizontal"
+    android:weightSum="5">
+
     <TextView
+        android:id="@+id/nombre_ejercicio"
         android:layout_width="140dp"
         android:layout_height="80dp"
-        android:id="@+id/nombre_ejercicio"
-        android:padding="4dp"
-        android:gravity="center"
-        android:layout_weight="2"
-        android:textStyle="italic|bold"
         android:layout_marginStart="10dp"
+        android:layout_weight="2"
+        android:gravity="center"
+        android:padding="4dp"
+        android:textStyle="italic|bold"
         />
+
     <TextView
+        android:id="@+id/tipo_ejercicio"
         android:layout_width="80dp"
         android:layout_height="80dp"
         android:layout_weight="1"
         android:gravity="center"
-        android:textSize="15dp"
-        android:id="@+id/tipo_ejercicio"
+        android:textSize="15sp"
         />
+
     <Button
+        android:id="@+id/add"
+        style="@style/RoundedButton"
         android:layout_width="60dp"
         android:layout_height="70dp"
         android:layout_weight="1"
         android:text="ADD"
-        android:id="@+id/add"
         android:textStyle="bold|italic"
-        style="@style/RoundedButton"
 
         />
+
     <Button
+        android:id="@+id/info"
+        style="@style/RoundedButton"
         android:layout_width="60dp"
         android:layout_height="70dp"
         android:layout_weight="1"
         android:text="INFO"
         android:textStyle="bold|italic"
-        android:id="@+id/info"
-        style="@style/RoundedButton"
         />
 </LinearLayout>

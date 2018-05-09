@@ -8,36 +8,36 @@ import java.util.List;
  * Created by Joaco99 on 05/05/2018.
  */
 
-public class Routine implements Serializable{
+public class Routine implements Serializable {
     private String name;
     private ArrayList<ArrayList<ScheduledExercise>> daysList = new ArrayList<>();
     private String difficulty;
 
-    public Routine(){
-        for(int i = 0; i < 7; i++){
+    public Routine() {
+        for (int i = 0; i < 7; i++) {
             daysList.add(new ArrayList<ScheduledExercise>());
         }
     }
 
-    public Routine(String name, String difficulty){
+    public Routine(String name, String difficulty) {
         this();
         this.name = name;
         this.difficulty = difficulty;
     }
 
-    public void resetDaysList(){
+    public void resetDaysList() {
         daysList = new ArrayList<>();
-        for(int i = 0; i < 7; i++){
+        for (int i = 0; i < 7; i++) {
             daysList.add(new ArrayList<ScheduledExercise>());
         }
     }
 
-    public void addExercise(Enums.Day day, ScheduledExercise exercise){
+    public void addExercise(Enums.Day day, ScheduledExercise exercise) {
         int index = dayToIndex(day);
         daysList.get(index).add(exercise);
     }
 
-    public void addExercise(int day, ScheduledExercise exercise){
+    public void addExercise(int day, ScheduledExercise exercise) {
         daysList.get(day).add(exercise);
     }
 
@@ -49,9 +49,9 @@ public class Routine implements Serializable{
         return daysList;
     }
 
-    private int dayToIndex(Enums.Day day){
+    private int dayToIndex(Enums.Day day) {
         int index = 0;
-        switch (day){
+        switch (day) {
             case MONDAY:
                 index = 0;
                 break;
@@ -77,7 +77,7 @@ public class Routine implements Serializable{
         return index;
     }
 
-    public String getDifficulty(){
+    public String getDifficulty() {
         return difficulty;
     }
 }

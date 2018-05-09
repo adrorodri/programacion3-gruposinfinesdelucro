@@ -26,39 +26,40 @@ public class SetDurationActivity extends NavigationActivity {
     private Exercise exercise;
     private RadioGroup radioGroup;
     private Routine routine;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         setContentView(R.layout.activity_set_duration);
         super.onCreate(savedInstanceState);
         final String[] str = new String[1];
-        str[0]="SUNDAY";
+        str[0] = "SUNDAY";
         done = (Button) findViewById(R.id.done);
         duracion = (EditText) findViewById(R.id.duracion);
         radioGroup = findViewById(R.id.dias);
         radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup radioGroup, int i) {
-                if(i==R.id.lunes){
-                    str[0] ="MONDAY";
-                }else if (i==R.id.martes){
-                    str[0] ="TUESDAY";
-                }else if (i==R.id.miercoles){
-                    str[0] ="WEDNESDAY";
-                }else if (i==R.id.jueves){
-                    str[0] ="THURSDAY";
-                }else if (i==R.id.viernes){
-                    str[0] ="FRIDAY";
-                }else if (i==R.id.sabado){
-                    str[0] ="SATURDAY";
-                }else{
-                    str[0] ="SUNDAY";
+                if (i == R.id.lunes) {
+                    str[0] = "MONDAY";
+                } else if (i == R.id.martes) {
+                    str[0] = "TUESDAY";
+                } else if (i == R.id.miercoles) {
+                    str[0] = "WEDNESDAY";
+                } else if (i == R.id.jueves) {
+                    str[0] = "THURSDAY";
+                } else if (i == R.id.viernes) {
+                    str[0] = "FRIDAY";
+                } else if (i == R.id.sabado) {
+                    str[0] = "SATURDAY";
+                } else {
+                    str[0] = "SUNDAY";
                 }
 
             }
         });
         datos = getIntent().getExtras();
         exercise = (Exercise) datos.getSerializable("Ejercicio");
-        routine= (Routine) datos.getSerializable("rutina");
+        routine = (Routine) datos.getSerializable("rutina");
 
         final DatabaseReference usersRef = database.getReference("users");
 
@@ -67,33 +68,34 @@ public class SetDurationActivity extends NavigationActivity {
             @Override
             public void onClick(View view) {
                 int duracionIngresado;
-                if(!isNumeric(duracion.getText().toString())){
-                    duracionIngresado=30;
-                }else {
+                if (!isNumeric(duracion.getText().toString())) {
+                    duracionIngresado = 30;
+                } else {
                     duracionIngresado = Integer.parseInt(duracion.getText().toString());
                 }
                 ScheduledExercise exe1 = new ScheduledExercise(exercise, duracionIngresado);
-                if (str[0].equals("MONDAY")){
-                    routine.addExercise(Enums.Day.MONDAY,exe1);
-                }else if(str[0].equals("TUESDAY")){
-                    routine.addExercise(Enums.Day.TUESDAY,exe1);
-                }else if(str[0].equals("WEDNESDAY")){
-                    routine.addExercise(Enums.Day.WEDNESDAY,exe1);
-                }else if(str[0].equals("THURSDAY")){
-                    routine.addExercise(Enums.Day.THURSDAY,exe1);
-                }else if(str[0].equals("FRIDAY")){
-                    routine.addExercise(Enums.Day.FRIDAY,exe1);
-                }else if(str[0].equals("SATURDAY")){
-                    routine.addExercise(Enums.Day.SATURDAY,exe1);
-                }else {
-                    routine.addExercise(Enums.Day.SUNDAY,exe1);
+                if (str[0].equals("MONDAY")) {
+                    routine.addExercise(Enums.Day.MONDAY, exe1);
+                } else if (str[0].equals("TUESDAY")) {
+                    routine.addExercise(Enums.Day.TUESDAY, exe1);
+                } else if (str[0].equals("WEDNESDAY")) {
+                    routine.addExercise(Enums.Day.WEDNESDAY, exe1);
+                } else if (str[0].equals("THURSDAY")) {
+                    routine.addExercise(Enums.Day.THURSDAY, exe1);
+                } else if (str[0].equals("FRIDAY")) {
+                    routine.addExercise(Enums.Day.FRIDAY, exe1);
+                } else if (str[0].equals("SATURDAY")) {
+                    routine.addExercise(Enums.Day.SATURDAY, exe1);
+                } else {
+                    routine.addExercise(Enums.Day.SUNDAY, exe1);
                 }
                 usersRef.child(FirebaseAuth.getInstance().getCurrentUser().getUid()).child("routines").child(routine.getName()).setValue(routine);
                 Toast.makeText(SetDurationActivity.this, "EXERCISE ADDED SUCCESFULLY", Toast.LENGTH_SHORT).show();
             }
         });
     }
-    public  boolean isNumeric(String cadena) {
+
+    public boolean isNumeric(String cadena) {
 
         boolean resultado;
 

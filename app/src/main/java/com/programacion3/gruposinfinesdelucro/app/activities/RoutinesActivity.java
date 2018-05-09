@@ -37,7 +37,7 @@ public class RoutinesActivity extends NavigationActivity {
         loadData();
     }
 
-    private void loadData(){
+    private void loadData() {
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
         DatabaseReference ref = database.getReference("users").child(user.getUid()).child("routines");
@@ -47,14 +47,14 @@ public class RoutinesActivity extends NavigationActivity {
             public void onDataChange(DataSnapshot dataSnapshot) {
                 Log.d(TAG, "Se encontró la lista");
                 ArrayList<Routine> list = new ArrayList<>();
-                for(DataSnapshot snapshot : dataSnapshot.getChildren()){
+                for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
                     String difficulty = (String) snapshot.child("difficulty").getValue();
                     String name = (String) snapshot.child("name").getValue();
                     Routine routine = new Routine(name, difficulty);
                     routine.resetDaysList();
-                    for(DataSnapshot day : snapshot.child("daysList").getChildren()){
+                    for (DataSnapshot day : snapshot.child("daysList").getChildren()) {
                         int dayIndex = Integer.valueOf(day.getKey());
-                        for(DataSnapshot exe : day.getChildren()){
+                        for (DataSnapshot exe : day.getChildren()) {
                             ScheduledExercise exercise = exe.getValue(ScheduledExercise.class);
                             routine.addExercise(dayIndex, exercise);
                         }
@@ -73,7 +73,7 @@ public class RoutinesActivity extends NavigationActivity {
     }
 
 
-    private void fillRecycler(ArrayList<Routine> routines){
+    private void fillRecycler(ArrayList<Routine> routines) {
         adapter.setListContent(routines);
         recyclerView.setAdapter(adapter);
     }

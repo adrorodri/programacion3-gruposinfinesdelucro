@@ -6,9 +6,9 @@ import java.io.Serializable;
  * Created by Joaco99 on 05/05/2018.
  */
 
-public class ScheduledExercise implements Serializable{
+public class ScheduledExercise implements Serializable {
     private Exercise exercise;
-    private int sec_duration = -1 , repetitions = -1, series = -1;
+    private int sec_duration = -1, repetitions = -1, series = -1;
 
     public ScheduledExercise() {
 
@@ -17,7 +17,7 @@ public class ScheduledExercise implements Serializable{
     public ScheduledExercise(Exercise exercise, int repetitions, int series) {
         this.exercise = exercise;
         this.repetitions = repetitions;
-        this.series  = series;
+        this.series = series;
     }
 
     public ScheduledExercise(Exercise exercise, int sec_duration) {

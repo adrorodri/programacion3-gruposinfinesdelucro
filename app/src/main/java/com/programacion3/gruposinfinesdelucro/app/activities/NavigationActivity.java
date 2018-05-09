@@ -180,13 +180,14 @@ public class NavigationActivity extends AppCompatActivity implements NavigationV
         displayNameTextView.setText(user.getDisplayName());
         emailTextView.setText(user.getEmail());
     }
-    public void updatePicHeader(){
+
+    public void updatePicHeader() {
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
         Glide.with(NavigationActivity.this)
                 .load(user.getPhotoUrl()).fitCenter().centerCrop().into(profilePic);
     }
 
-    public void setToolbarTitle(String title){
+    public void setToolbarTitle(String title) {
         toolbar.setTitle(title);
     }
     public void dialog(){

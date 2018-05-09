@@ -10,23 +10,24 @@
     tools:openDrawer="start">
 
 
-
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:paddingTop="50dp"
         >
-        <HorizontalScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-        <android.support.v7.widget.RecyclerView
-            android:id="@+id/recyclerView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
 
-            />
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/recyclerView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                />
         </HorizontalScrollView>
+
         <android.support.design.widget.FloatingActionButton
             android:id="@+id/floatingActionButton"
             android:layout_width="wrap_content"
@@ -35,16 +36,16 @@
             android:layout_alignParentEnd="true"
             android:layout_marginBottom="50dp"
             android:layout_marginEnd="50dp"
-            app:fabSize="normal"
             android:clickable="true"
             android:focusable="true"
+            app:fabSize="normal"
             app:srcCompat="@drawable/circle_button"/>
     </RelativeLayout>
 
     <include
         layout="@layout/app_bar_menu"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"/>
 
     <include
         layout="@layout/navigation_menu"/>

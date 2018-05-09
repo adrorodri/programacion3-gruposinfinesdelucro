@@ -7,16 +7,17 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.programacion3.gruposinfinesdelucro.app.R;
 import com.programacion3.gruposinfinesdelucro.app.classes.ScheduledExercise;
 
 public class EjercicioActivity extends NavigationActivity {
 
-    ScheduledExercise eje;
+    private ScheduledExercise eje;
 
     ImageView exerciseImage;
-    TextView exerciseNameTextView, seriesNumberTextView, repetitionsNumberTextView;
-    Button button,button2;
+    TextView exerciseNameTextView, seriesNumberTextView, repetitionsNumberTextView, seriesFieldTextView, repetitionsFieldTextView;
+    Button button, button2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,10 +31,24 @@ public class EjercicioActivity extends NavigationActivity {
         seriesNumberTextView = findViewById(R.id.seriesNumberTextView);
         repetitionsNumberTextView = findViewById(R.id.repetitionsNumberTextView);
 
-        exerciseImage.setImageResource(R.drawable.prueba);
-        exerciseNameTextView.setText(eje.getExercise().getName());
-        seriesNumberTextView.setText(eje.getSeries() + "");
-        repetitionsNumberTextView.setText(eje.getRepetitions() + "");
+        seriesFieldTextView = findViewById(R.id.seriesFieldTextView);
+        repetitionsFieldTextView = findViewById(R.id.repetitionsFieldTextView);
+
+
+        if (eje.getSec_duration() != -1) {
+            repetitionsNumberTextView.setVisibility(View.GONE);
+            repetitionsFieldTextView.setVisibility(View.GONE);
+            seriesFieldTextView.setText("Duration");
+            seriesNumberTextView.setText(eje.getSec_duration() + " secs");
+        } else {
+            exerciseImage.setImageResource(R.drawable.prueba);
+            exerciseNameTextView.setText(eje.getExercise().getName());
+            seriesNumberTextView.setText(eje.getSeries() + "");
+            repetitionsNumberTextView.setText(eje.getRepetitions() + "");
+
+        }
+        Glide.with(this).load(eje.getExercise().getImagen()).into(exerciseImage);
+
         button = findViewById(R.id.info);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -51,7 +66,6 @@ public class EjercicioActivity extends NavigationActivity {
                 onBackPressed();
             }
         });
-
 
 
     }

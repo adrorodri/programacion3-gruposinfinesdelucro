@@ -20,15 +20,15 @@ import com.programacion3.gruposinfinesdelucro.app.classes.Routine;
 
 import java.util.ArrayList;
 
-public class ShowExerciseAdapter extends RecyclerView.Adapter<ShowExerciseAdapter.RecyclerViewHold>{
-    private ArrayList<Exercise> exercises= new ArrayList<Exercise>();
+public class ShowExerciseAdapter extends RecyclerView.Adapter<ShowExerciseAdapter.RecyclerViewHold> {
+    private ArrayList<Exercise> exercises = new ArrayList<Exercise>();
     private Context context;
     private Routine routine;
 
-    public ShowExerciseAdapter(ArrayList<Exercise> exercises , Context context, Routine routine) {
+    public ShowExerciseAdapter(ArrayList<Exercise> exercises, Context context, Routine routine) {
         this.exercises = exercises;
-        this.context=context;
-        this.routine=routine;
+        this.context = context;
+        this.routine = routine;
 
     }
 
@@ -40,22 +40,22 @@ public class ShowExerciseAdapter extends RecyclerView.Adapter<ShowExerciseAdapte
 
     @Override
     public void onBindViewHolder(ShowExerciseAdapter.RecyclerViewHold holder, int position) {
-        final Exercise exercise=exercises.get(position);
+        final Exercise exercise = exercises.get(position);
         holder.nombre_ejercicio.setText(exercise.getName());
         holder.tipo_ejercicio.setText(exercise.getType().toString());
         holder.add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent;
-                if(exercise.getType().toString().equals("REPEATED")){
+                if (exercise.getType().toString().equals("REPEATED")) {
                     intent = new Intent(context, SetRepsSetsActivity.class);
                     intent.putExtra("Ejercicio", exercise);
-                    intent.putExtra("rutina",routine);
+                    intent.putExtra("rutina", routine);
                     context.startActivity(intent);
-                }else {
+                } else {
                     intent = new Intent(context, SetDurationActivity.class);
                     intent.putExtra("Ejercicio", exercise);
-                    intent.putExtra("rutina",routine);
+                    intent.putExtra("rutina", routine);
                     context.startActivity(intent);
                 }
             }
@@ -63,8 +63,8 @@ public class ShowExerciseAdapter extends RecyclerView.Adapter<ShowExerciseAdapte
         holder.info.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent=new Intent(context, ExplainActivity.class);
-                intent.putExtra("Ejercicio",exercise);
+                Intent intent = new Intent(context, ExplainActivity.class);
+                intent.putExtra("Ejercicio", exercise);
                 context.startActivity(intent);
             }
         });
@@ -75,11 +75,12 @@ public class ShowExerciseAdapter extends RecyclerView.Adapter<ShowExerciseAdapte
     public int getItemCount() {
         return exercises.size();
     }
+
     public static class RecyclerViewHold extends RecyclerView.ViewHolder {
 
         View itemView;
         TextView nombre_ejercicio, tipo_ejercicio;
-        Button add,info;
+        Button add, info;
 
         public RecyclerViewHold(View view) {
             super(view);
@@ -87,8 +88,8 @@ public class ShowExerciseAdapter extends RecyclerView.Adapter<ShowExerciseAdapte
             // imageView = view.findViewById(R.id.img);
             nombre_ejercicio = view.findViewById(R.id.nombre_ejercicio);
             tipo_ejercicio = view.findViewById(R.id.tipo_ejercicio);
-            add= view.findViewById(R.id.add);
-            info= view.findViewById(R.id.info);
+            add = view.findViewById(R.id.add);
+            info = view.findViewById(R.id.info);
         }
     }
 }

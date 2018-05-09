@@ -23,6 +23,7 @@ import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 import com.programacion3.gruposinfinesdelucro.app.R;
+
 import de.hdodenhof.circleimageview.CircleImageView;
 
 public class PerfilActivity extends NavigationActivity {
@@ -46,8 +47,6 @@ public class PerfilActivity extends NavigationActivity {
 
 
     }
-
-
 
 
     public void updateInformation(TextView editNombre, TextView editMail, ImageView editFoto) {

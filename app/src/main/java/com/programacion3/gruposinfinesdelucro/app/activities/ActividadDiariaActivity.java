@@ -17,10 +17,6 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.programacion3.gruposinfinesdelucro.app.R;
 import com.programacion3.gruposinfinesdelucro.app.adapters.ScheduledExerciseAdapter;
-import com.programacion3.gruposinfinesdelucro.app.classes.Ejercicio;
-import com.programacion3.gruposinfinesdelucro.app.classes.Enums;
-import com.programacion3.gruposinfinesdelucro.app.classes.Exercise;
-import com.programacion3.gruposinfinesdelucro.app.classes.Routine;
 import com.programacion3.gruposinfinesdelucro.app.classes.ScheduledExercise;
 
 import java.util.ArrayList;
@@ -63,7 +59,7 @@ public class ActividadDiariaActivity extends NavigationActivity {
         loadData(day);
     }
 
-    private void loadData(final int day){
+    private void loadData(final int day) {
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
         DatabaseReference ref = database.getReference("users").child(user.getUid()).child("routines");
@@ -82,10 +78,7 @@ public class ActividadDiariaActivity extends NavigationActivity {
                 }
 
                 Log.d(TAG, "Lista vacia: " + list.isEmpty());
-                if(list.isEmpty()){
-
-                }else{
-
+                if (!list.isEmpty()) {
                     fillRecycler(list);
                 }
             }

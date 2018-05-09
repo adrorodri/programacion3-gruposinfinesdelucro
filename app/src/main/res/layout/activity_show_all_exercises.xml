@@ -14,15 +14,17 @@
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:paddingTop="50dp"
         android:orientation="vertical"
+        android:paddingTop="50dp"
         tools:context=".activities.ShowAllExercises">
 
-        <android.support.v7.widget.RecyclerView xmlns:android="http://schemas.android.com/apk/res/android"
+        <android.support.v7.widget.RecyclerView
+            xmlns:android="http://schemas.android.com/apk/res/android"
             android:id="@+id/recycler2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:scrollbars="vertical" />
+            android:scrollbars="vertical"/>
+
         <android.support.design.widget.FloatingActionButton
             android:id="@+id/botonrutina"
             android:layout_width="wrap_content"
@@ -31,9 +33,9 @@
             android:layout_alignParentEnd="true"
             android:layout_marginBottom="30dp"
             android:layout_marginEnd="30dp"
-            app:fabSize="normal"
             android:clickable="true"
             android:focusable="true"
+            app:fabSize="normal"
             app:srcCompat="@drawable/circle_button"/>
 
     </RelativeLayout>

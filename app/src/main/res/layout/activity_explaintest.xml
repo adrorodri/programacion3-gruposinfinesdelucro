@@ -13,39 +13,41 @@
         android:id="@+id/scrollView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
+
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="vertical">
+
             <TextView
+                android:id="@+id/titulo"
                 android:layout_width="match_parent"
                 android:layout_height="80dp"
-                android:id="@+id/titulo"
+                android:layout_marginTop="50dp"
                 android:fontFamily="@font/andyfont"
                 android:gravity="center"
-                android:layout_marginTop="50dp"
                 android:textColor="#000000"
-                android:textSize="30dp"
+                android:textSize="30sp"
                 android:textStyle="bold|italic"/>
+
             <ImageView
+                android:id="@+id/imgex"
                 android:layout_width="match_parent"
                 android:layout_height="250dp"
-                android:id="@+id/imgex"/>
+                android:contentDescription="@string/excersice_explanation"/>
+
             <TextView
+                android:id="@+id/explicacion"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/explicacion"
-                android:fontFamily="@font/moon"
-                android:textSize="18dp"
+                android:layout_marginBottom="18dp"
                 android:layout_marginLeft="18dp"
                 android:layout_marginRight="18dp"
                 android:layout_marginTop="18dp"
-                android:layout_marginBottom="18dp"/>
-            </LinearLayout>
-        </ScrollView>
-
-
-
+                android:fontFamily="@font/moon"
+                android:textSize="18sp"/>
+        </LinearLayout>
+    </ScrollView>
 
     <include
         layout="@layout/app_bar_menu"

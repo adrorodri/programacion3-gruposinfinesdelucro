@@ -19,7 +19,7 @@ import java.util.ArrayList;
  * Created by Joaco99 on 07/05/2018.
  */
 
-public class ScheduledExerciseAdapter extends  RecyclerView.Adapter<ScheduledExerciseAdapter.ScheduledExerciseHolder>{
+public class ScheduledExerciseAdapter extends RecyclerView.Adapter<ScheduledExerciseAdapter.ScheduledExerciseHolder> {
     private ArrayList<ScheduledExercise> exercises = new ArrayList<>();
     private Context context;
     private LayoutInflater inflater;
@@ -38,11 +38,11 @@ public class ScheduledExerciseAdapter extends  RecyclerView.Adapter<ScheduledExe
     @Override
     public void onBindViewHolder(ScheduledExerciseHolder holder, int position) {
         final ScheduledExercise scheduledExercise = exercises.get(position);
-        holder.name .setText(scheduledExercise.getExercise().getName());
+        holder.name.setText(scheduledExercise.getExercise().getName());
         String content;
-        if(scheduledExercise.getSec_duration() != -1){
+        if (scheduledExercise.getSec_duration() != -1) {
             content = scheduledExercise.getSec_duration() + " secs";
-        }else{
+        } else {
             content = scheduledExercise.getSeries() + " series, " + scheduledExercise.getRepetitions() + " rep.";
         }
         holder.schedule.setText(content);
@@ -66,36 +66,36 @@ public class ScheduledExerciseAdapter extends  RecyclerView.Adapter<ScheduledExe
         return exercises.size();
     }
 
-    public void setListContent(ArrayList<ScheduledExercise> exercises){
+    public void setListContent(ArrayList<ScheduledExercise> exercises) {
         this.exercises = exercises;
         notifyItemRangeChanged(0, exercises.size());
     }
 
-    private int getDrawable(String muscle){
+    private int getDrawable(String muscle) {
         int draw;
-        if(muscle.equals("Biceps")){
+        if (muscle.equals("Biceps")) {
             draw = R.drawable.bicep;
-        }else if(muscle.equals("abs")){
+        } else if (muscle.equals("abs")) {
             draw = R.drawable.abs;
-        }else if(muscle.equals("cardio")){
+        } else if (muscle.equals("cardio")) {
             draw = R.drawable.cardio;
-        }else if(muscle.equals("espalda")){
+        } else if (muscle.equals("espalda")) {
             draw = R.drawable.back;
-        }else if(muscle.equals("hombros")){
+        } else if (muscle.equals("hombros")) {
             draw = R.drawable.shoulder;
-        }else if(muscle.equals("pecho")){
+        } else if (muscle.equals("pecho")) {
             draw = R.drawable.chest;
-        }else if(muscle.equals("piernainf") || muscle.equals("piernasup") || muscle.equals("gluteos")){
+        } else if (muscle.equals("piernainf") || muscle.equals("piernasup") || muscle.equals("gluteos")) {
             draw = R.drawable.leg;
-        }else if(muscle.equals("tricep") || muscle.equals("antebrazo")){
+        } else if (muscle.equals("tricep") || muscle.equals("antebrazo")) {
             draw = R.drawable.tricep;
-        }else{
+        } else {
             draw = R.drawable.bicep;
         }
         return draw;
     }
 
-    class ScheduledExerciseHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
+    class ScheduledExerciseHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
         private TextView name, schedule;
         private ImageView picture;

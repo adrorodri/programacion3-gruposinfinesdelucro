@@ -37,7 +37,7 @@ public class RoutineExerciseActivity extends NavigationActivity {
         recyclerView.setLayoutManager(layoutManager);
 
         Intent intent = getIntent();
-        Routine routine = (Routine)intent.getSerializableExtra("routine");
+        Routine routine = (Routine) intent.getSerializableExtra("routine");
         int day = intent.getIntExtra("day", -1);
 
         ArrayList<ScheduledExercise> exercises = routine.getDaysList().get(day);
@@ -48,7 +48,7 @@ public class RoutineExerciseActivity extends NavigationActivity {
     }
 
 
-    }
+}
 
 
 
