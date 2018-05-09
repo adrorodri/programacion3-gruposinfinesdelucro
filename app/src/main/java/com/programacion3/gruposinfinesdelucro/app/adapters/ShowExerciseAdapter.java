@@ -55,6 +55,7 @@ public class ShowExerciseAdapter extends RecyclerView.Adapter<ShowExerciseAdapte
                 }else {
                     intent = new Intent(context, SetDurationActivity.class);
                     intent.putExtra("Ejercicio", exercise);
+                    intent.putExtra("rutina",routine);
                     context.startActivity(intent);
                 }
             }

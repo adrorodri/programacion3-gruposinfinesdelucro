@@ -25,6 +25,7 @@
             android:id="@+id/duracion"
             style="@style/EditTextBox"
             android:layout_width="100dp"
+            android:gravity="center"
             android:layout_height="100dp"
             android:layout_gravity="center"
             android:hint="@string/tiempo_insertar"
@@ -33,6 +34,7 @@
         <RadioGroup
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:id="@+id/dias"
             android:layout_gravity="center">
 
             <RadioButton

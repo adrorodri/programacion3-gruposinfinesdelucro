@@ -15,7 +15,6 @@ public class CreateRoutine extends NavigationActivity {
         setContentView(R.layout.activity_create_routine);
         super.onCreate(savedInstanceState);
         createButton = findViewById(R.id.crearlarutina);
-        chooseButton = findViewById(R.id.escogerlarutina);
         createButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -24,14 +23,6 @@ public class CreateRoutine extends NavigationActivity {
             }
         });
 
-
-
-        chooseButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                //TODO
-            }
-        });
     }
 
 }
