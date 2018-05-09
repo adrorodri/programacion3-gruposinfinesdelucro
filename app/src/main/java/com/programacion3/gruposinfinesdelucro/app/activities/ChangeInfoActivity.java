@@ -218,22 +218,25 @@ public class ChangeInfoActivity extends NavigationActivity implements Serializab
             @Override
             public void onClick(final DialogInterface dialogInterface, int i) {
                 final String password = editPass.getText().toString();
-                AuthCredential credential = EmailAuthProvider.getCredential(user.getEmail(), password);
-                user.reauthenticate(credential).addOnCompleteListener(new OnCompleteListener<Void>() {
-                    @Override
-                    public void onComplete(@NonNull Task<Void> task) {
-                        if (task.isSuccessful() && !password.equals("") && password != null) {
-                            ChangeInfoActivity.this.credential = EmailAuthProvider.getCredential(user.getEmail(), password);
-                            dialogInterface.dismiss();
+                if(!password.equals("")) {
+                    AuthCredential credential = EmailAuthProvider.getCredential(user.getEmail(), password);
+                    user.reauthenticate(credential).addOnCompleteListener(new OnCompleteListener<Void>() {
+                        @Override
+                        public void onComplete(@NonNull Task<Void> task) {
+                            if (task.isSuccessful()) {
+                                ChangeInfoActivity.this.credential = EmailAuthProvider.getCredential(user.getEmail(), password);
+                                dialogInterface.dismiss();
 
-                            ChangeInfoActivity.this.setPassword(password);
-                        }else {
-                            dialog();
-                            Toast.makeText(ChangeInfoActivity.this, "Incorrect Password", Toast.LENGTH_SHORT).show();
+                                ChangeInfoActivity.this.setPassword(password);
+                            } else {
+                                dialog();
+                                Toast.makeText(ChangeInfoActivity.this, "Incorrect Password", Toast.LENGTH_SHORT).show();
+                            }
                         }
-                    }
-                });
-
+                    });
+                }else{
+                    dialog();
+                }
             }
         });
         AlertDialog alertDialog = text.create();
